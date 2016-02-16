@@ -36,6 +36,16 @@ function printGroup(groupId){
     })
 }
 
+function printCurrentGroupName (){
+    if (currentGroup == 0){
+        console.log('root>')
+    }
+    else{
+            var cGroup = findGroup(currentGroup);
+            console.log(cGroup.name+'>')
+    }
+}
+
 function findGroup(groupId){
     var foundGroup = null;
     groups.forEach(function(group){
@@ -76,16 +86,13 @@ function addNewGroup (name){
 }
 
 function switchCurrentGroup (groupName) {
-//todo go up
+
     if (groupName == "..") {
         var cGroup = findGroup(currentGroup);
         if (cGroup) {
             currentGroup = cGroup.parentId;
         }
-        else if (cGroup == 0) {
-            console.log('you are already in the root folder');
-            printCurrentGroup();
-        }
+        printCurrentGroupName();
     }
     else {
         //finding the group by name
@@ -94,37 +101,12 @@ function switchCurrentGroup (groupName) {
                 if (group.name == groupName && group.parentId == currentGroup) {
                     currentGroup = group.id;
                     console.log('success');
+                    printCurrentGroupName();
                 }
             }
         )
     }
 }
-
-/*
-function changeCurrentGroup (groupName) {//refactoring to switch current group
-    var foundGroup = false;
-    groups.forEach(function(group){
-       if (group.name == groupName){
-           if (group.parentId == currentGroup){
-               foundGroup = true;
-               currentGroup = group.id;
-           }
-       }
-       else {
-            if (groupName == '..'){
-                currentGroup = group.parentId;
-                foundGroup = true
-            }
-       }
-       if( foundGroup ){
-           console.log('success');
-           printCurrentGroupName();
-       } else{
-           console.log('the name you typed is not a group or your not in the write parent group');
-       }
-    });
-}
-*/
 
 //print all pepole that have this group id as group
 //print groups that have this group id as parent id
@@ -195,14 +177,14 @@ function deleteGroup(groupId){
     delete groups[groupId];
 }
 
-function printCurrentGroupName(){
-    groups.map(function(group){
-       if (group.id == currentGroup){
-           console.log('you are in -' + group.name + ' group');
-       }
-    });
 
-}
+
+
+
+
+
+
+
 
 //testing core functionalty
 /*addNewGroup('friends');
