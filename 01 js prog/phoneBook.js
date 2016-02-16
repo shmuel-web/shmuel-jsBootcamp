@@ -11,38 +11,45 @@ var readlineSync = require('readline-sync');
 
 var persons = [];
 var groups = [];
+groups.push({
+    id:1,
+    name:'root',
+    parentId:0
+})
+
 var currentGroup = 0;
 
 //helpers
-var idPointer = 0;
+var idPointer = 1;
 function genarateID(){
     idPointer++;
     return idPointer;
 }
 
 function printGroup(groupId){
-    console.log('sub groups:');
+    cGroup = findGroup(groupId);
+    console.log(cGroup.name+' sub groups:');
     groups.forEach(function(group){
         if (groupId == group.parentId){
-            console.log("   "+group.name,'id:',group.id);
+            console.log("name: "+group.name,'id:',group.id);
         }
     });
 
     console.log('contacts names:');
     persons.forEach(function(person){
         if (groupId == person.group){
-            console.log("   "+person.fName + " " + person.lName, person.phoneNum,'id:',person.id);
+            console.log("name: "+person.fName + ". " + person.lName,"phone:", person.phoneNum,'id:',person.id);
         }
     })
 }
 
 function printCurrentGroupName (){
     if (currentGroup == 0){
-        console.log('root>')
+        console.log('root>');
     }
     else{
-            var cGroup = findGroup(currentGroup);
-            console.log(cGroup.name+'>')
+        var cGroup = findGroup(currentGroup);
+        console.log(cGroup.name+'>')
     }
 }
 
@@ -86,13 +93,14 @@ function addNewGroup (name){
 }
 
 function switchCurrentGroup (groupName) {
+    //todo create a meesage for failure
 
     if (groupName == "..") {
         var cGroup = findGroup(currentGroup);
         if (cGroup) {
             currentGroup = cGroup.parentId;
+            console.log('success');
         }
-        printCurrentGroupName();
     }
     else {
         //finding the group by name
@@ -101,11 +109,14 @@ function switchCurrentGroup (groupName) {
                 if (group.name == groupName && group.parentId == currentGroup) {
                     currentGroup = group.id;
                     console.log('success');
-                    printCurrentGroupName();
+                }
+                else {
+
                 }
             }
         )
     }
+    //printCurrentGroupName();
 }
 
 //print all pepole that have this group id as group
@@ -176,15 +187,6 @@ function deleteContact(contactId) {
 function deleteGroup(groupId){
     delete groups[groupId];
 }
-
-
-
-
-
-
-
-
-
 
 //testing core functionalty
 /*addNewGroup('friends');
@@ -267,6 +269,7 @@ function phoneBookCLI (){
                 deleteGroup(groupId);
                 break;
         }
+        printCurrentGroupName();
         index = readlineSync.question();
     }
 }
