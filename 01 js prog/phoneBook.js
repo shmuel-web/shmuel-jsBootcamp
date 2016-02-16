@@ -6,9 +6,8 @@
 //    TODO create a DB system using a json file & FS node module that saves the phone book to a file and reads the file on startup
 //    TODO create a unike id for groups and contacts
 //    TODO create a function that listen to the user key press and return a message if not one of the options
-//    todo create a find group helper
-//
 
+var readlineSync = require('readline-sync');
 
 var persons = [];
 var groups = [];
@@ -23,7 +22,7 @@ function genarateID(){
 
 function printGroup(groupId){
     console.log('sub groups:');
-    groups.map(function(group){
+    groups.forEach(function(group){
         if (groupId == group.parentId){
             console.log("   "+group.name,'id:',group.id);
         }
@@ -66,14 +65,14 @@ function addNewPerson(fName, lName, phoneNum) {
     var unikeId = genarateID();
     var nPerson = new Person(unikeId, fName, lName, phoneNum, currentGroup);
     persons.push(nPerson);
-    console.log('your new contact',nPerson.fName,' was successfully added')
+    console.log('your new contact "'+nPerson.fName.toUpperCase()+'" was successfully added')
 }
 
 function addNewGroup (name){
     var unikeId = genarateID();
     var nGroup = new Group(unikeId, name, currentGroup);
     groups.push(nGroup);
-    console.log('your new group',nGroup.name,' was successfully added')
+    console.log('your new group "'+nGroup.name.toUpperCase()+'" was successfully added')
 }
 
 function switchCurrentGroup (groupName) {
@@ -217,7 +216,6 @@ changeCurrentGroup('family');
 changeCurrentGroup('..');*/
 
 //console UI
-var readlineSync = require('readline-sync');
 
 var options = [
     'Add new contact',
@@ -293,8 +291,4 @@ function phoneBookCLI (){
 
 phoneBookCLI();
 
-
-
-//data base
-//var fs = require(fs);
 
