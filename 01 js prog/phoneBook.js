@@ -7,49 +7,47 @@
 //    TODO create a unike id for groups and contacts
 //    TODO create a function that listen to the user key press and return a message if not one of the options
 
+//    TODO devide the file to 3, helper functions, core functions, UI
+
 var readlineSync = require('readline-sync');
-
-var persons = [];
+var contacts = [];
 var groups = [];
-groups.push({
-    id:1,
-    name:'root',
-    parentId:0
-})
-
 var currentGroup = 0;
+var root = {
+    id: 1,
+    name: 'root',
+    parentId: 0
+    }
+groups.push(root);
 
-//helpers
+
+
+/*Helper functions
+* -------------------------------------*/
 var idPointer = 1;
-function genarateID(){
+function genarateID (){
     idPointer++;
     return idPointer;
 }
 
-function printGroup(groupId){
-    cGroup = findGroup(groupId);
-    console.log(cGroup.name+' sub groups:');
-    groups.forEach(function(group){
-        if (groupId == group.parentId){
-            console.log("name: "+group.name,'id:',group.id);
+function findContact (contactID){
+    var foundContact = null;
+    contacts.forEach(function(contact){
+        if (contact.id == contactID) {
+            foundContact = contact;
         }
     });
-
-    console.log('contacts names:');
-    persons.forEach(function(person){
-        if (groupId == person.group){
-            console.log("name: "+person.fName + ". " + person.lName,"phone:", person.phoneNum,'id:',person.id);
-        }
-    })
+    return foundContact;
 }
 
-function printCurrentGroupName (){
-    if (currentGroup == 0){
-        console.log('root>');
+function printContact (contactID){
+//TODO print multipule phone numbers from arrey
+    var contact = findContact(contactID);
+    if (contact !== null){
+        console.log(contact.fName,contact.lName,contact.phoneNum);
     }
     else{
-        var cGroup = findGroup(currentGroup);
-        console.log(cGroup.name+'>')
+        console.log('error in print contact function');
     }
 }
 
@@ -63,8 +61,54 @@ function findGroup(groupId){
     return foundGroup;
 }
 
-//Core functions
-function Person (id, fName, lName, phoneNum, group){
+function printGroup(groupId){
+    if (groupId == 0){
+        ++groupId;
+    }
+    cGroup = findGroup(groupId);
+    console.log(cGroup.name+">");
+    printSubGroups(groupId);
+    printGroupContacts(groupId);
+}
+
+function printSubGroups (groupId){
+    //TODO check for sub groups
+    var hasSubGroups = false;
+    groups.forEach(function(group){
+        if (groupId == group.parentId){
+            hasSubGroups = true;
+        }
+    });
+    if (hasSubGroups) {
+        console.log('sub groups:');
+        groups.forEach(function(group){
+            console.log(group.name,'id:',group.id);
+        })
+    }
+}
+
+function printGroupContacts (groupId){
+    //chck for contacts
+    var hasContacts = false;
+    contacts.forEach(function(contact){
+        if (groupId == contact.group){
+            //console.log("   name: "+contact.fName + ". " + contact.lName,"phone:", contact.phoneNum,'id:',contact.id);
+            hasContacts =true;
+        }
+    });
+    if (hasContacts) {
+        console.log('contacts:')
+        contacts.forEach(function(contact){
+            if (groupId == contact.group){
+                console.log("   name: "+contact.fName + ". " + contact.lName,"phone:", contact.phoneNum,'id:',contact.id);
+            }
+        });
+    }
+}
+
+/*Classes
+* -------------------------------------*/
+function Contact (id, fName, lName, phoneNum, group){
     this.id = id;
     this.fName = fName;
     this.lName = lName;
@@ -78,22 +122,26 @@ function Group (id, name, parentId){
     this.parentId = parentId;
 }
 
-function addNewPerson(fName, lName, phoneNum) {
+/*Core functions
+* -------------------------------------*/
+function addNewContact (fName, lName, phoneNum){
+    //todo phoneNum shold by an arrey
     var unikeId = genarateID();
-    var nPerson = new Person(unikeId, fName, lName, phoneNum, currentGroup);
-    persons.push(nPerson);
-    console.log('your new contact "'+nPerson.fName.toUpperCase()+'" was successfully added')
+    var newContact = new Contact(unikeId, fName, lName, phoneNum, currentGroup);
+    contacts.push(newContact);
+    printContact(newContact.id);
 }
 
 function addNewGroup (name){
     var unikeId = genarateID();
     var nGroup = new Group(unikeId, name, currentGroup);
     groups.push(nGroup);
-    console.log('your new group "'+nGroup.name.toUpperCase()+'" was successfully added')
+    //console.log('your new group "'+nGroup.name.toUpperCase()+'" was successfully added')
+    printGroup(nGroup.id);
+
 }
 
-function switchCurrentGroup (groupName) {
-    //todo create a meesage for failure
+function changeCurrentGroup (groupName){
 
     if (groupName == "..") {
         var cGroup = findGroup(currentGroup);
@@ -111,96 +159,35 @@ function switchCurrentGroup (groupName) {
                     console.log('success');
                 }
                 else {
-
+                    //todo create a message for failure
                 }
             }
         )
     }
-    //printCurrentGroupName();
+    printCurrentGroupName();
+
 }
 
-//print all pepole that have this group id as group
-//print groups that have this group id as parent id
+
+
 function printCurrentGroup (){
-    //refactored
-    printGroup(currentGroup);
-    //console.log('groups:')
-    //groups.map(function(group){
-    //    if (currentGroup == group.parentId){
-    //        console.log("   "+group.name);
-    //    }
-    //})
-    //
-    //console.log('contacts names:')
-    //persons.map(function(person){
-    //    if (currentGroup == person.group){
-    //        console.log("   "+person.fName + " " + person.lName);
-    //    }
-    //})
+
 }
 
-//enter each group serch for sub group then print all contacts in that group
+function printAll (){
 
-function printAll(groupId, indent){
-    if(groupId!=null){
-        if (!indent){
-            var indent = "";
-        }
-        //if (!groupId){
-        //    groupId = 0;
-        //}
-
-        persons.map(function(person){
-            if(person.group == groupId){
-                console.log(indent +"  "+ person.fName + " " + person.lName);
-            }
-        });
-
-        groups.map(function(group){
-            if(group.parentId == groupId){
-                console.log(indent +"  "+ group.name);
-                indent = indent + "  ";
-                printAll(group.id, indent);
-            }
-
-        });
-    }
 }
 
-function find(param){
-    groups.map(function(group){
-        if (group.name == param){
-            console.log(group.name)
-        }
-    });
-    persons.map(function(person){
-        if (person.fName == param || person.lName == param){
-            console.log(person.fName + ' ' + person.lName + " " +person.phoneNum);
-        }
-    })
+function find (){
+
 }
 
-function deleteContact(contactId) {
-    delete persons[contactId];
+function deleteItem (){
+
 }
 
-function deleteGroup(groupId){
-    delete groups[groupId];
-}
-
-//testing core functionalty
-/*addNewGroup('friends');
-addNewGroup('family');
-addNewPerson('a','b','c');
-addNewPerson('d','e','f');
-addNewPerson('g','h','i');
-addNewPerson('j','k','l');
-addNewPerson('m','n','o');
-changeCurrentGroup('family');
-changeCurrentGroup('..');*/
-
-//console UI
-
+/*UI
+* -------------------------------------*/
 var options = [
     'Add new contact',
     'Add new group',
@@ -250,8 +237,8 @@ function phoneBookCLI (){
                 printCurrentGroup();
                 break;
 
-            case 'Print all':
-                printAll(0);
+            case 'Print all'://todo refactoring to printALL
+                printALL();
                 break;
 
             case 'Find':
@@ -274,6 +261,122 @@ function phoneBookCLI (){
     }
 }
 
-phoneBookCLI();
+//REFACTORING THE REST
+
+//helpers
+
+function printCurrentGroupName (){
+    if (currentGroup == 0){
+        console.log('root>');
+    }
+    else{
+        var cGroup = findGroup(currentGroup);
+        console.log(cGroup.name+'>')
+    }
+}
+
+
+//Core functions
+
+function printCurrentGroup (){
+    //refactored
+    printGroup(currentGroup);
+}
+
+//enter each group serch for sub group then print all contacts in that group
+function printAll(groupID, indent){
+    //todo refactoring to printALL
+    if(groupID!=null){
+        if (!indent){
+            var indent = "";
+        }
+        //if (!groupID){
+        //    groupId = 0;
+        //}
+
+        persons.map(function(person){
+            if(person.group == groupID){
+                console.log(indent +"  "+ person.fName + " " + person.lName);
+            }
+        });
+
+        groups.map(function(group){
+            if(group.parentId == groupID){
+                console.log(indent +"  "+ group.name);
+                indent = indent + "  ";
+                printAll(group.id, indent);
+            }
+
+        });
+    }
+}
+
+function printALL(groupID, indent){
+    //todo initialaize the groupID var
+    if (!groupID || groupID == 0){
+        groupID =1;
+    }
+    if (!indent){
+        var indent = "";
+    }
+    printGroupContents(groupID,indent);//TODO create this function
+
+    indent = indent+"    ";
+
+    groups.forEach(function(group){
+        if (group.parentId == groupID){
+            printALL(groupID, indent);
+        }
+    });
+}
+
+function printGroupContents(groupID,indent){
+    var cGroup = findGroup(groupID);
+
+    console.log(indent+cGroup.name,'contacts:');
+    indent = indent+"  ";
+
+    persons.forEach(function(contact){
+        if (contact.group == groupID){
+            console.log(indent+contact.fName,contact.lName,"phone:",contact.phoneNum);
+        }
+    })
+}
+
+function find(param){
+    groups.map(function(group){
+        if (group.name == param){
+            console.log(group.name)
+        }
+    });
+    persons.map(function(person){
+        if (person.fName == param || person.lName == param){
+            console.log(person.fName + ' ' + person.lName + " " +person.phoneNum);
+        }
+    })
+}
+
+function deleteContact(contactId) {
+    delete persons[contactId];
+}
+
+function deleteGroup(groupId){
+    delete groups[groupId];
+}
+
+/*testing core functionality
+* ----------------------------------------------*/
+addNewContact('Avi','Cohen',123);
+addNewContact('haim','michael',234);
+addNewGroup('friends');
+changeCurrentGroup('friends');
+addNewContact('eyal','yakov',456);
+addNewGroup('bestFriends');
+changeCurrentGroup('bestFriends');
+addNewContact('doron','natan',678);
+
+
+
+
 
 
