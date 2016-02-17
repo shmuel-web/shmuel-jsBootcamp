@@ -1,0 +1,9 @@
+textarea.too-long, textarea.too-long:focus, textarea.too-long:hover{
+    border: solid red 1px!important;
+    outline: 0;
+}
+
+
+#error{
+    color:red;
+}

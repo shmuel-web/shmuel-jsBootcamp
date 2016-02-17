@@ -7,7 +7,6 @@
 //    TODO create a unike id for groups and contacts
 //    TODO create a function that listen to the user key press and return a message if not one of the options
 
-//    TODO devide the file to 3, helper functions, core functions, UI
 
 var readlineSync = require('readline-sync');
 var contacts = [];
