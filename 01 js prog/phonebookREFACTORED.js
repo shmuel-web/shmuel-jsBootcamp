@@ -101,8 +101,10 @@ function printSubGroups (groupId,indent){
     if (hasSubGroups) {
         console.log(indent+'sub groups:');
         groups.forEach(function(group){
-            console.log(indent+group.name,'id:',group.id);
-        })
+            if (groupId == group.parentId) {
+                console.log(indent + group.name, 'id:', group.id);
+            }
+        });
     }
 }
 
@@ -295,8 +297,9 @@ function deleteItem (itemId){
         });
         deleteGroup(itemId);
     }
-
-
+    if (currentGroupId == itemId){//if you delete the current group the program
+        currentGroupId = 1;
+    }
 }
 
 /*UI
@@ -308,15 +311,14 @@ var options = [
     'Print current group',
     'Print all',
     'Find',
-    'Delete contact',
-    'Delete group',
+    'Delete item',
     'Options',
     'Exit'
 ];
 
 function phoneBookCLI (){
 
-    var index = 9;
+    var index = 8;
 
     while ( options [index -1] !== 'Exit' ) {
 
@@ -333,7 +335,7 @@ function phoneBookCLI (){
                 var fName = readlineSync.question('please type contacts first name:');
                 var lName = readlineSync.question('please type contacts last name:');
                 var phoneNum = readlineSync.question('please type contacts phone number:');
-                addNewPerson(fName, lName, phoneNum);
+                addNewContact(fName, lName, phoneNum);
                 break;
 
             case 'Add new group':
@@ -343,7 +345,7 @@ function phoneBookCLI (){
 
             case 'Change current group':
                 var groupName = readlineSync.question('please type a group name under the current group:');
-                switchCurrentGroup(groupName);
+                changeCurrentGroup(groupName);
                 break;
 
             case 'Print current group':
@@ -351,7 +353,7 @@ function phoneBookCLI (){
                 break;
 
             case 'Print all'://todo refactoring to printALL
-                printALL();
+                printAll();
                 break;
 
             case 'Find':
@@ -359,35 +361,44 @@ function phoneBookCLI (){
                 find(param);
                 break;
 
-            case 'Delete contact':
-                var contactId = readlineSync.question('please type the id of the contact you wish to delete:');
-                deleteContact(contactId);
-                break;
-
-            case 'Delete group':
-                var groupId = readlineSync.question('please type the id of the group you wish to delete:');
-                deleteGroup(groupId);
+            case 'Delete item':
+                var itemId = readlineSync.question('please type the id of the contact you wish to delete:');
+                deleteItem(itemId);
                 break;
         }
         printCurrentGroupName();
         index = readlineSync.question();
     }
 }
-addNewContact('Avi','Cohen',123);
+/*addNewContact('Avi','Cohen',123);
 addNewContact('haim','michael',234);
 addNewGroup('family');
 addNewGroup('MiCHa');
 addNewGroup('friends');
+addNewGroup('friends1');
+addNewGroup('friends2');
+addNewGroup('friends3');
 changeCurrentGroup('friends');
 addNewGroup('best-friends');
+addNewGroup('bad-friends');
+changeCurrentGroup('best-friends');
 addNewContact('yosi','micha',234);
 addNewContact('la la','micha',234);
+changeCurrentGroup('..');
+addNewContact('m','m','m');
+changeCurrentGroup('bad-friends');
+addNewContact('a','b',345);
+changeCurrentGroup('..');
+changeCurrentGroup('..');
+changeCurrentGroup('..');*/
 
 console.log("=============================");
 /*
 find('mIcha');
 find('bibi');
 */
+/*printAll();
+deleteItem(6);
+printAll();*/
 
-deleteItem(26);
-printAll();
+phoneBookCLI();
