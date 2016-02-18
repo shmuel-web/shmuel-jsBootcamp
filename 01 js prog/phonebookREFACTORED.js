@@ -143,14 +143,16 @@ function printCurrentGroupName (){
 function deleteContact(contactId) {
     contacts.forEach(function(contact,index){
         if (contact.id == contactId){
-            contact.splice(index,1);
+            contacts.splice(index,1);
         }
     });
 }
 
 function deleteGroup (groupId){
     groups.forEach(function(group,index){
-        if (group.id == )
+        if (group.id == groupId){
+            groups.splice(index,1);
+        }
     })
 }
 
@@ -373,7 +375,6 @@ function phoneBookCLI (){
 }
 addNewContact('Avi','Cohen',123);
 addNewContact('haim','michael',234);
-
 addNewGroup('family');
 addNewGroup('MiCHa');
 addNewGroup('friends');
@@ -385,7 +386,8 @@ addNewContact('la la','micha',234);
 console.log("=============================");
 /*
 find('mIcha');
-find('bibi');*/
+find('bibi');
+*/
 
-
-deleteItem(2)
+deleteItem(26);
+printAll();
