@@ -16,18 +16,18 @@ var root = {
 groups.push(root);
 
 /*
-                    Helper functions
+ Helper functions
  * ---------------------------------------------------------------------*/
 
 var idPointer = 1;
-function genarateID (){
+function genarateID() {
     idPointer++;
     return idPointer;
 }
 
-function findContact (contactID){
+function findContact(contactID) {
     var foundContact = null;
-    contacts.forEach(function(contact){
+    contacts.forEach(function (contact) {
         if (contact.id == contactID) {
             foundContact = contact;
         }
@@ -35,59 +35,59 @@ function findContact (contactID){
     return foundContact;
 }
 
-function printContact (contactID){
+function printContact(contactID) {
     var contact = findContact(contactID);
-    if (contact !== null){
-        console.log("name: " + contact.fName + "." + contact.lName ,"phone number:" + contact.phoneNum,"id:",contact.id);
+    if (contact !== null) {
+        console.log("name: " + contact.fName + "." + contact.lName, "phone number:" + contact.phoneNum, "id:", contact.id);
     }
-    else{
+    else {
         console.log('error in print contact function');
     }
 }
 
-function findGroup(groupId){
+function findGroup(groupId) {
     var foundGroup = null;
-    groups.forEach(function(group){
-        if (group.id == groupId){
-            foundGroup =  group;
+    groups.forEach(function (group) {
+        if (group.id == groupId) {
+            foundGroup = group;
             return // exit the function if finds at least one group
         }
     });
     return foundGroup;
 }
 
-function findContact(contactId){
+function findContact(contactId) {
     var foundContact = null;
-    contacts.forEach(function(contact){
-        if (contact.id == contactId){
-            foundContact =  contact;
+    contacts.forEach(function (contact) {
+        if (contact.id == contactId) {
+            foundContact = contact;
             return // exit the function if finds at least one contact
         }
     });
     return foundContact;
 }
 
-function printGroup(groupId){
-    if (groupId == 0){
+function printGroup(groupId) {
+    if (groupId == 0) {
         ++groupId;
     }
     var cGroup = findGroup(groupId);
-    console.log(cGroup.name+"> id:",cGroup.id);
+    console.log(cGroup.name + "> id:", cGroup.id);
     printSubGroups(groupId);
     printGroupContacts(groupId);
 }
 
-function printGroupContents(groupId,indent){
+function printGroupContents(groupId, indent) {
     var cGroup = findGroup(groupId);
-    console.log(indent+cGroup.name+"> id: "+cGroup.id);
-    indent = indent+"  ";
-    printGroupContacts(groupId,indent);
+    console.log(indent + cGroup.name + "> id: " + cGroup.id);
+    indent = indent + "  ";
+    printGroupContacts(groupId, indent);
 }
 
-function hasSubGroups (groupId){
+function hasSubGroups(groupId) {
     var hasSubGroup = false;
-    for (var i = 0; i < groups.length; i++){
-        if (groupId == groups[i].parentId){
+    for (var i = 0; i < groups.length; i++) {
+        if (groupId == groups[i].parentId) {
             hasSubGroup = true;
             break;
         }
@@ -95,85 +95,85 @@ function hasSubGroups (groupId){
     return hasSubGroup;
 }
 
-function printSubGroups (groupId,indent){
+function printSubGroups(groupId, indent) {
     //indent optional
-    if (!indent){
+    if (!indent) {
         indent = "";
     }
     //todo refactor i have a function that does this more efficiently
     var hasSubGroups = false;
-    groups.forEach(function(group){
-        if (groupId == group.parentId){
+    groups.forEach(function (group) {
+        if (groupId == group.parentId) {
             hasSubGroups = true;
             return //exits the for each if finds at least one sub group
         }
     });
     if (hasSubGroups) {
-        console.log(indent+'sub groups:');
-        groups.forEach(function(group){
+        console.log(indent + 'sub groups:');
+        groups.forEach(function (group) {
             if (groupId == group.parentId) {
-                console.log(indent +group.name, 'id:', group.id);
+                console.log(indent + group.name, 'id:', group.id);
             }
         });
     }
 }
 
-function printGroupContacts (groupId,indent){
+function printGroupContacts(groupId, indent) {
     //indent optional
-    if (!indent){
+    if (!indent) {
         indent = "";
     }
     //todo sholed be a function that chks for childern by id
     //chck for contacts
     var hasContacts = false;
-    contacts.forEach(function(contact){
-        if (groupId == contact.group){
-            hasContacts =true;
+    contacts.forEach(function (contact) {
+        if (groupId == contact.group) {
+            hasContacts = true;
             return //exits the for each if finds at least one contact
         }
     });
     if (hasContacts) {
-        console.log(indent+'contacts:')
+        console.log(indent + 'contacts:')
         indent = indent + "  ";
-        contacts.forEach(function(contact){
-            if (groupId == contact.group){
-                console.log(indent+"name: "+contact.fName + ". " + contact.lName,"phone:", contact.phoneNum,'id:',contact.id);
+        contacts.forEach(function (contact) {
+            if (groupId == contact.group) {
+                console.log(indent + "name: " + contact.fName + ". " + contact.lName, "phone:", contact.phoneNum, 'id:', contact.id);
             }
         });
     }
 }
 
-function printCurrentGroupName (){
-    if (currentGroupId == 0){
+function printCurrentGroupName() {
+    if (currentGroupId == 0) {
         console.log('root>');
     }
-    else{
+    else {
         var cGroup = findGroup(currentGroupId);
-        console.log(cGroup.name+'>')
+        console.log(cGroup.name + '>')
     }
 }
 
 function deleteContact(contactId) {
-    contacts.forEach(function(contact,index){
-        if (contact.id == contactId){
-            contacts.splice(index,1);
+    contacts.forEach(function (contact, index) {
+        if (contact.id == contactId) {
+            contacts.splice(index, 1);
         }
     });
 }
 
-function deleteGroup (groupId){
-    groups.forEach(function(group,index){
-        if (group.id == groupId){
-            groups.splice(index,1);
+function deleteGroup(groupId) {
+    groups.forEach(function (group, index) {
+        if (group.id == groupId) {
+            groups.splice(index, 1);
         }
     })
 }
 
 /*
-            Classes
+ Classes
  * ------------------------------------------------------------------*/
 
-function Contact (id, fName, lName, phoneNum, group){
+function Contact(id, fName, lName, phoneNum, group) {
     this.id = id;
     this.fName = fName;
     this.lName = lName;
@@ -181,33 +181,32 @@ function Contact (id, fName, lName, phoneNum, group){
     this.group = group;
 }
 
-function Group (id, name, parentId){
+function Group(id, name, parentId) {
     this.id = id;
     this.name = name;
     this.parentId = parentId;
 }
 
 /*
-            Core functions
+ Core functions
  * -------------------------------------------------------------------*/
 
-function addNewContact (fName, lName, phoneNum){
+function addNewContact(fName, lName, phoneNum) {
     var unikeId = genarateID();
     var newContact = new Contact(unikeId, fName, lName, phoneNum, currentGroupId);
     contacts.push(newContact);
     printContact(newContact.id);
 }
 
-function addNewGroup (name){
+function addNewGroup(name) {
     var unikeId = genarateID();
     var nGroup = new Group(unikeId, name, currentGroupId);
     groups.push(nGroup);
     //console.log('your new group "'+nGroup.name.toUpperCase()+'" was successfully added')
     printGroup(nGroup.id);
-
 }
 
-function changeCurrentGroup (groupName){
+function changeCurrentGroup(groupName) {
     if (groupName == "..") {
         var cGroup = findGroup(currentGroupId);
         if (cGroup) {
@@ -231,58 +230,58 @@ function changeCurrentGroup (groupName){
     }
 }
 
-function printCurrentGroup (){
+function printCurrentGroup() {
     printGroup(currentGroupId);
 }
 
-function printAll (groupId,indent){
-    if (!groupId || groupId == 0){
-        groupId =1;
+function printAll(groupId, indent) {
+    if (!groupId || groupId == 0) {
+        groupId = 1;
     }
-    if (!indent){
+    if (!indent) {
         var indent = "";
     }
 
-    printGroupContents(groupId,indent);
-    indent = indent+"  ";
+    printGroupContents(groupId, indent);
+    indent = indent + "  ";
     //chck for sub groups
-    if (hasSubGroups(groupId)){
-        console.log(indent+'sub groups:')
+    if (hasSubGroups(groupId)) {
+        console.log(indent + 'sub groups:')
     }
-    indent = indent+"  ";
-    groups.forEach(function(group){
-        if (group.parentId == groupId){
+    indent = indent + "  ";
+    groups.forEach(function (group) {
+        if (group.parentId == groupId) {
             printAll(group.id, indent);//recurse
         }
     });
 }
 
-function find(param){
+function find(param) {
     //check for parm
     var foundParam = 0;
-    groups.forEach(function(group){
-        if (group.name.toLowerCase() == param.toLowerCase()){
+    groups.forEach(function (group) {
+        if (group.name.toLowerCase() == param.toLowerCase()) {
             foundParam++;
         }
     });
-    contacts.forEach(function(person){
+    contacts.forEach(function (person) {
         if (person.fName.toLowerCase() == param.toLowerCase() ||
-            person.lName.toLowerCase() == param.toLowerCase()){
+            person.lName.toLowerCase() == param.toLowerCase()) {
             foundParam++;
         }
     })
 
-    if (foundParam !==0){
-        console.log('--found "'+param+'" in '+foundParam+' places--');
-        groups.forEach(function(group){
-            if (group.name.toLowerCase() == param.toLowerCase()){
-                console.log("---group: "+group.name)
+    if (foundParam !== 0) {
+        console.log('--found "' + param + '" in ' + foundParam + ' places--');
+        groups.forEach(function (group) {
+            if (group.name.toLowerCase() == param.toLowerCase()) {
+                console.log("---group: " + group.name)
             }
         });
-        contacts.forEach(function(person){
+        contacts.forEach(function (person) {
             if (person.fName.toLowerCase() == param.toLowerCase() ||
-                person.lName.toLowerCase() == param.toLowerCase()){
-                console.log('---contact: '+person.fName + ' ' + person.lName + ' ' +person.phoneNum);
+                person.lName.toLowerCase() == param.toLowerCase()) {
+                console.log('---contact: ' + person.fName + ' ' + person.lName + ' ' + person.phoneNum);
             }
         });
     }
@@ -291,33 +290,33 @@ function find(param){
     }
 }
 
-function deleteItem (itemId){
+function deleteItem(itemId) {
 //   check if the id exists
     var foundContact = findContact(itemId);
     var foundGroup = findGroup(itemId);
-    if (foundContact){
+    if (foundContact) {
         deleteContact(itemId);
     }
-    else if (foundGroup){
-        contacts.forEach(function(contact){
-           if(contact.group == itemId){
-               deleteContact(contact.id);
-           }
+    else if (foundGroup) {
+        contacts.forEach(function (contact) {
+            if (contact.group == itemId) {
+                deleteContact(contact.id);
+            }
         });
-        groups.forEach(function(group){
-            if (group.parentId == itemId){
+        groups.forEach(function (group) {
+            if (group.parentId == itemId) {
                 deleteItem(group.id);//recurse
             }
         });
         deleteGroup(itemId);
     }
-    if (currentGroupId == itemId){//if you delete the current group the program
+    if (currentGroupId == itemId) {//if you delete the current group the program
         currentGroupId = 1;
     }
 }
 
 /*
-            UI
+ UI
  * --------------------------------------------------------------------------*/
 var options = [
     'Add new contact',
@@ -331,16 +330,16 @@ var options = [
     'Exit'
 ];
 
-function phoneBookCLI (){
+function phoneBookCLI() {
 
     var index = 8;//initializing the index to the options menu
 
-    while ( options [index -1] !== 'Exit' ) {
+    while (options [index - 1] !== 'Exit') {
 
-        switch (options[index -1]) {
+        switch (options[index - 1]) {
             case 'Options':
-                for (var i = 0; i<options.length; i++){
-                    console.log('['+(i+1)+']  '+options[i]);
+                for (var i = 0; i < options.length; i++) {
+                    console.log('[' + (i + 1) + ']  ' + options[i]);
                 }
                 console.log('Please type one of the numbers for the following options:');
                 break;
@@ -385,35 +384,5 @@ function phoneBookCLI (){
         index = readlineSync.question();
     }
 }
-/*addNewContact('Avi','Cohen',123);
-addNewContact('haim','michael',234);
-addNewGroup('family');
-addNewGroup('MiCHa');
-addNewGroup('friends');
-addNewGroup('friends1');
-addNewGroup('friends2');
-addNewGroup('friends3');
-changeCurrentGroup('friends');
-addNewGroup('best-friends');
-addNewGroup('bad-friends');
-changeCurrentGroup('best-friends');
-addNewContact('yosi','micha',234);
-addNewContact('la la','micha',234);
-changeCurrentGroup('..');
-addNewContact('m','m','m');
-changeCurrentGroup('bad-friends');
-addNewContact('a','b',345);
-changeCurrentGroup('..');
-changeCurrentGroup('..');
-changeCurrentGroup('..');*/
-
-console.log("=============================");
-/*
-find('mIcha');
-find('bibi');
-*/
-/*printAll();
-deleteItem(6);
-printAll();*/
 
 phoneBookCLI();
