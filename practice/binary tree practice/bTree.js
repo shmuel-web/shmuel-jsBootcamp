@@ -1,6 +1,7 @@
 /**
- * Created by shmuel-d on 21.2.2016.
- */
+* Created by shmuel-d on 21.2.2016.
+*/
+
 
 function createTree(comp) {
     tree = {
@@ -65,8 +66,16 @@ function add(tree, data){
     }
 }
 
-function remove(tree, data){
+function remove(tree, data){//todo
     var node = contains(tree, data);
+    if (node){
+        var parentNode = node.parent;
+        if (parentNode.right == node){
+
+        }
+    }
+
+
 }
 
 function contains(tree, data){
@@ -122,4 +131,3 @@ module.exports = {
     contains:contains,
     scan:scan
 };
-
