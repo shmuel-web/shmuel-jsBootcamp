@@ -42,3 +42,12 @@ aside {
     float: right;
     width: 60px;
 }
+
+.panel{
+    display: none;
+}
+
+
+div .panel .active {
+    display: block;
+}
