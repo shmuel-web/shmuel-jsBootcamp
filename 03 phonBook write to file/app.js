@@ -82,7 +82,7 @@ function addNewContact(){
         phoneNumbers.push(phoneNumber);
     }
 
-    var contact = createContact(firstName, lastName, phoneNumbers)
+    var contact = createContact(firstName, lastName, phoneNumbers);
     addItem(contact);
 }
 
@@ -142,27 +142,24 @@ function exit(){
 }
 
 function createContact(firstName, lastName, phoneNumbers) {
-    var contact = {
+    return {
         id: generateNextId(),
         firstName: firstName,
         lastName: lastName,
-        phoneNumbers: phoneNumbers,
-    };
-
-    return contact;
+        phoneNumbers: phoneNumbers
+    }
 }
 
 function createGroup(name) {
-    var group = {
+    return {
         id: generateNextId(),
         name: name,
-        items: [],
-    };
-    return group;
+        items: []
+    }
 }
 
-function addItem(item) {
-    if(currentGroup.item){
+function addItem (item) {
+    if (currentGroup.item) {
         throw Error("Item with id " + item.id + " was already added to group: " + item.currentGroup.id);
     }
 
@@ -195,13 +192,15 @@ function readNonEmptyString(message) {
 
 function writePhoneBook(item, PhoneBookItemsArray ) {
     var PhoneBookItems = PhoneBookItemsArray || [];
+
     if (!item){
         item = root;
     }
+
     if (item) {
         var itemJson;
         if (item.firstName) {
-            //    is contact
+            //this means it's a contact
             itemJson = {
                 "firstName": item.firstName,
                 "lastName": item.lastName,
@@ -211,7 +210,7 @@ function writePhoneBook(item, PhoneBookItemsArray ) {
             PhoneBookItems.push(itemJson);
         }
         else if (item.name) {
-            //is group
+            //this means it's a group
             itemJson = {
                 "name": item.name,
                 "items": item.items.length
@@ -219,8 +218,7 @@ function writePhoneBook(item, PhoneBookItemsArray ) {
             PhoneBookItems.push(itemJson);
             item.items.forEach(function (childItem) {
                 writePhoneBook(childItem,PhoneBookItems);
-            })
-
+            });
         }
         return PhoneBookItems;
     }
@@ -229,9 +227,8 @@ function writePhoneBook(item, PhoneBookItemsArray ) {
 function writeToFile(){
     var phoneBookArrey = writePhoneBook();
     var jsonPhonebook = JSON.stringify(phoneBookArrey);
-    //todo write to file here
     fs.writeFileSync('phonebook.json',jsonPhonebook,'utf8');
-    console.log(jsonPhonebook);
+    console.log(jsonPhonebook);//testing purpose
 }
 
 function findGroup(name){
@@ -240,7 +237,7 @@ function findGroup(name){
         if (item.name == name){
             subGroup = item;
         }
-    })
+    });
     return subGroup;
 }
 
@@ -248,7 +245,6 @@ function readFile() {
     var phonebook = fs.readFileSync('phonebook.json', 'utf8');
     //console.log(phonebook);
     phonebook = JSON.parse(phonebook);
-
     phonebook.forEach(function(item,index,array){
         load(item,index,array);
     })
@@ -266,8 +262,8 @@ function load (item,index,array){
         if (item.items > 0){
             currentGroup = group;
 
-            for (var i = ++index; i < index + item.items; i++){ //etarating over his childern
-                load(array[i],i,array);
+            for (var i = ++index; i < index + item.items; i++){ //iterating over his children & inserting them
+                load(array[i],i,array);//recurse
             }
             array.splice(index,item.items);//removing the added items so that the for each loop cold continue properly
             currentGroup = group.parent;
