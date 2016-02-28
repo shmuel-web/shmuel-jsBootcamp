@@ -259,19 +259,28 @@ function load (item,index,array){
         var contact = createContact(item.firstName,item.lastName,item.phoneNumbers);
         addItem(contact);
     }
-    else if(item.name && item.name !=='~'){
+    else if(item.name && item.name !== "~"){
         var group = createGroup(item.name);
         addItem(group);
 
         if (item.items > 0){
             currentGroup = group;
-            var j = 0;
-            for (var i = index++; i < index + item.items; i++){
+
+            for (var i = ++index; i < index + item.items; i++){ //etarating over his childern
                 load(array[i],i,array);
-                j++;
             }
-            array.splice(index,j);
+            array.splice(index,item.items);//removing the added items so that the for each loop cold continue properly
             currentGroup = group.parent;
+        }
+    }
+    else if (item.name == "~"){
+        if (item.items > 0){
+
+            for (var i = ++index; i < index + item.items; i++){
+                load(array[i],i,array);
+            }
+            array.splice(index,item.items);
+            currentGroup = root;
         }
     }
 }
