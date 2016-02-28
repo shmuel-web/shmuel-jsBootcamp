@@ -4,7 +4,8 @@ var fs = require('fs');
 var root = createGroup("~");
 var currentGroup = root;
 var nextId = 0;
-var allPhoneBookItems = [];
+
+
 
 var Menu = {
     ADD_NEW_CONTACT: 1,
@@ -92,33 +93,36 @@ function addNewGroup(){
     addItem(group);
 }
 
-function changeCurrentGroup(){
-    var name = readNonEmptyString("Name: ");
-    if(name == ".."){
-        if(!currentGroup.parent){
+function changeCurrentGroup(arg) {
+    var name = arg || readNonEmptyString("Name: ");
+    if (name == "..") {
+        if (!currentGroup.parent) {
             return;
         }
 
         currentGroup = currentGroup.parent;
     }
     else {
-        var sunGroup = findGroup(currentGroup, name);
-        if(!subGroup){
+        var subGroup = findGroup(name);
+        if (!subGroup) {
             console.log("Group with name " + name + " was not found")
         }
+        else {
+            currentGroup = subGroup;
+        }
 
-        currentGroup = subGroup;
-    }}
+    }
+}
 
 function print() {
-    for(var item in currentGroup.items){
-        if(item.type == "Group"){
-            printGroup(item);
+    currentGroup.items.forEach(function(childItem){
+        if(childItem.name){
+            printGroup(childItem);
         }
-        else{
-            printContact(item);
+        else if (childItem.firstName){
+            printContact(childItem);
         }
-    }
+    })
 }
 
 function printAll() {
@@ -133,6 +137,7 @@ function deleteItem(){
 }
 
 function exit(){
+    writeToFile();
     process.exit(0);
 }
 
@@ -153,7 +158,6 @@ function createGroup(name) {
         name: name,
         items: [],
     };
-
     return group;
 }
 
@@ -165,21 +169,19 @@ function addItem(item) {
     currentGroup.items.push(item);
 
     item.parent = currentGroup;
-    //todo dont send the intaier root for every time the a new item is created
-    writeToFile();
-
 }
 
 function generateNextId(){
     return nextId++;
 }
 
+
 function printGroup(group){
     console.log(group.name);
 }
 
-function printContact(cpntact){
-    console.log(contact.name);
+function printContact(contact){
+    console.log(contact.firstName,contact.lastName,contact.phoneNumbers);
 }
 
 function readNonEmptyString(message) {
@@ -191,10 +193,11 @@ function readNonEmptyString(message) {
     }
 }
 
-run();
-
-
-function writePhoneBook(item) {
+function writePhoneBook(item, PhoneBookItemsArray ) {
+    var PhoneBookItems = PhoneBookItemsArray || [];
+    if (!item){
+        item = root;
+    }
     if (item) {
         var itemJson;
         if (item.firstName) {
@@ -205,7 +208,7 @@ function writePhoneBook(item) {
                 "phoneNumbers": item.phoneNumbers,
                 "items": 0
             };
-            allPhoneBookItems.push(itemJson);
+            PhoneBookItems.push(itemJson);
         }
         else if (item.name) {
             //is group
@@ -213,30 +216,68 @@ function writePhoneBook(item) {
                 "name": item.name,
                 "items": item.items.length
             };
-            allPhoneBookItems.push(itemJson);
-            item.items.forEach(function (item) {
-                writePhoneBook(item);
+            PhoneBookItems.push(itemJson);
+            item.items.forEach(function (childItem) {
+                writePhoneBook(childItem,PhoneBookItems);
             })
 
         }
-        return  allPhoneBookItems;
+        return PhoneBookItems;
     }
 }
 
 function writeToFile(){
-    var phoneBookArrey = writePhoneBook(root);
+    var phoneBookArrey = writePhoneBook();
     var jsonPhonebook = JSON.stringify(phoneBookArrey);
-    fs.writeFile("json", jsonPhonebook, function(err) {
-        if(err) {
-            return console.log(err);
-        }
-
-        console.log("The file was saved!");
-    });
+    //todo write to file here
+    fs.writeFileSync('phonebook.json',jsonPhonebook,'utf8');
     console.log(jsonPhonebook);
-
 }
 
+function findGroup(name){
+    var subGroup = false;
+    currentGroup.items.forEach(function (item){
+        if (item.name == name){
+            subGroup = item;
+        }
+    })
+    return subGroup;
+}
+
+function readFile() {
+    var phonebook = fs.readFileSync('phonebook.json', 'utf8');
+    //console.log(phonebook);
+    phonebook = JSON.parse(phonebook);
+
+    phonebook.forEach(function(item,index,array){
+        load(item,index,array);
+    })
+}
+
+function load (item,index,array){
+    if (item.firstName){
+        var contact = createContact(item.firstName,item.lastName,item.phoneNumbers);
+        addItem(contact);
+    }
+    else if(item.name && item.name !=='~'){
+        var group = createGroup(item.name);
+        addItem(group);
+
+        if (item.items > 0){
+            currentGroup = group;
+            var j = 0;
+            for (var i = index++; i < index + item.items; i++){
+                load(array[i],i,array);
+                j++;
+            }
+            array.splice(index,j);
+            currentGroup = group.parent;
+        }
+    }
+}
+
+readFile();
+run();
 
 
 
