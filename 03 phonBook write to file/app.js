@@ -125,14 +125,90 @@ function print() {
     })
 }
 
-function printAll() {
+function printItem(item,indentation){
+    var indent = indentation || "";
+    if (item == root){
+        console.log(indent+item.name);
+    }
+    else if (item.name){
+        console.log(indent + 'group:',item.name,'id:',item.id);
+    }
+    else if (item.firstName){
+        console.log(indent + item.firstName,item.lastName,item.phoneNumbers,'id:',item.id);
+    }
 }
 
-function find(){
+function printAll(phoneBookItem,indentation) {
+    var item = phoneBookItem || root;
+    var indent = indentation || "";
 
+    if (item.firstName || item.name){
+        printItem(item,indent);
+    }
+    if (item.items && item.items.length >0){
+        indent = indent + "    ";
+        item.items.forEach(function(childItem){
+            printAll(childItem,indent);
+        });
+    }
 }
 
+/*
+* gets a search parameter
+* returns every item the string is in
+* */
+function find(searchParam, item) {
+
+    var sParam = searchParam || readNonEmptyString("please type a search parameter: ").toUpperCase();
+    if (!item){
+        item = root;
+    }
+
+    if (item.firstName) {
+        if (item.firstName.toUpperCase() == sParam || item.lastName.toUpperCase() == sParam) {
+            printItem(item);
+        }
+    }
+    else if (item.name) {
+        if (item.name.toUpperCase() == sParam) {
+            printItem(item)
+        }
+        if (item.items.length > 0) {
+            item.items.forEach(function (childItem) {
+                find(sParam, childItem);
+            });
+        }
+    }
+}
+
+function findItemById(id ,phonbookItem,foundItem){
+    foundItem = foundItem || false;
+        var item = phonbookItem || root;
+
+        if (item.id == id){
+            foundItem = item;
+        }else if(item.items && item.items.length > 0 && !foundItem){
+            item.items.forEach(function(childItem){
+               foundItem = findItemById(id ,childItem, foundItem);
+            });
+        }
+    return foundItem;
+}
+
+/*
+* gets id num
+* and delete the item*/
 function deleteItem(){
+//    todo
+    var id = readNonEmptyString('please type the id of the item you wish to delete :');
+    if (!isNaN(id)){
+        var item = findItemById(id);
+        item.parent.items.forEach(function(childItem,index,array){
+            if (childItem.id == id){
+                array.splice(index,1);
+            }
+        })
+    }
 
 }
 

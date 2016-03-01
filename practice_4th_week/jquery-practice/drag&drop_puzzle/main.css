@@ -1,0 +1,44 @@
+.puzzle{
+    border: 1px solid black;
+    position: absolute;
+    width: calc(450px * 0.922222);
+    height:450px;
+}
+.part{
+    float: left;
+    width: 33.333%;
+    height: 33.333%;
+    background: no-repeat;
+    background-size: cover;
+}
+div .part:hover{
+    background-color: rgba(250, 0, 239, 0.5);
+    opacity: 0.5;
+}
+/*phone*/
+@media (max-width: 600px) {
+    .container {
+        margin: 0;
+    }
+}
+
+/*tablets*/
+@media
+(min-width: 600px) and (max-width: 1200px) {
+    .container{
+        margin-right:15vh;
+        margin-left:15vh;
+    }
+
+}
+
+/*laptops*/
+@media (min-width: 1200px) and (max-width: 2000px) {
+    .container{
+        margin-right:25vh;
+        margin-left:25vh;
+    }
+
+}
+
+

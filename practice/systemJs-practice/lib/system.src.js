@@ -1578,7 +1578,7 @@ function coreResolve(name, parentName) {
 
   if (this.has(name))
     return name;
-  // dynamically load node-core modules when requiring `@node/fs` for example
+  // dynamically load node-core modules when requiring `@node/fs` for pic
   if (name.substr(0, 6) == '@node/' && nodeCoreModules.indexOf(name.substr(6)) != -1) {
     if (!this._nodeRequire)
       throw new TypeError('Error loading ' + name + '. Can only load node core modules in Node.');
@@ -1915,7 +1915,7 @@ SystemJSLoader.prototype.config = function(cfg) {
  * Example:
  *
  * SystemJS.packages = {
- *   jquery: {
+ *   jquery-practice: {
  *     basePath: 'lib', // optionally only use a subdirectory within the package
  *     main: 'index.js', // when not set, package name is requested directly
  *     format: 'amd',
@@ -1931,7 +1931,7 @@ SystemJSLoader.prototype.config = function(cfg) {
  *     map: {
  *        // map internal require('sizzle') to local require('./vendor/sizzle')
  *        sizzle: './vendor/sizzle.js',
- *        // map any internal or external require of 'jquery/vendor/another' to 'another/index.js'
+ *        // map any internal or external require of 'jquery-practice/vendor/another' to 'another/index.js'
  *        './vendor/another.js': './another/index.js',
  *        // test.js / test -> lib/test.js
  *        './test.js': './lib/test.js',
@@ -1953,10 +1953,10 @@ SystemJSLoader.prototype.config = function(cfg) {
  * };
  *
  * Then:
- *   import 'jquery'                       -> jquery/index.js
- *   import 'jquery/submodule'             -> jquery/submodule.js
- *   import 'jquery/submodule.ts'          -> jquery/submodule.ts loaded as typescript
- *   import 'jquery/vendor/another'        -> another/index.js
+ *   import 'jquery-practice'                       -> jquery-practice/index.js
+ *   import 'jquery-practice/submodule'             -> jquery-practice/submodule.js
+ *   import 'jquery-practice/submodule.ts'          -> jquery-practice/submodule.ts loaded as typescript
+ *   import 'jquery-practice/vendor/another'        -> another/index.js
  *
  * Detailed Behaviours
  * - main can have a leading "./" can be added optionally
@@ -4046,7 +4046,7 @@ hookConstructor(function(constructor) {
           // if we don't have any other defines, 
           // then let this be an anonymous define
           // this is just to support single modules of the form:
-          // define('jquery')
+          // define('jquery-practice')
           // still loading anonymously
           // because it is done widely enough to be useful
           // as soon as there is more than one define, this gets removed though
@@ -4352,7 +4352,7 @@ hookConstructor(function(constructor) {
  *
  *   Allows a condition module to alter the resolution of an import via syntax:
  *
- *     import $ from 'jquery/#{browser}';
+ *     import $ from 'jquery-practice/#{browser}';
  *
  *   Will first load the module 'browser' via `SystemJS.import('browser')` and 
  *   take the default export of that module.
@@ -4361,15 +4361,15 @@ hookConstructor(function(constructor) {
  *   We then substitute the string into the require to get the conditional resolution
  *   enabling environment-specific variations like:
  * 
- *     import $ from 'jquery/ie'
- *     import $ from 'jquery/firefox'
- *     import $ from 'jquery/chrome'
- *     import $ from 'jquery/safari'
+ *     import $ from 'jquery-practice/ie'
+ *     import $ from 'jquery-practice/firefox'
+ *     import $ from 'jquery-practice/chrome'
+ *     import $ from 'jquery-practice/safari'
  *
  *   It can be useful for a condition module to define multiple conditions.
  *   This can be done via the `|` modifier to specify an export member expression:
  *
- *     import 'jquery/#{./browser.js|grade.version}'
+ *     import 'jquery-practice/#{./browser.js|grade.version}'
  *
  *   Where the `grade` export `version` member in the `browser.js` module  is substituted.
  *
@@ -4542,7 +4542,7 @@ hookConstructor(function(constructor) {
  * Eg:
  *
  * loader.meta({
- *   'my/module': { deps: ['jquery'] }
+ *   'my/module': { deps: ['jquery-practice'] }
  *   'my/*': { format: 'amd' }
  * });
  *
@@ -4555,7 +4555,7 @@ hookConstructor(function(constructor) {
  *
  * my/module.js
  *   "format amd";
- *   "deps[] jquery";
+ *   "deps[] jquery-practice";
  *   "globals.some value"
  *   console.log('this is my/module');
  *
@@ -4685,10 +4685,10 @@ hookConstructor(function(constructor) {
   Allows a bundle module to be specified which will be dynamically 
   loaded before trying to load a given module.
 
-  For example:
-  SystemJS.bundles['mybundle'] = ['jquery', 'bootstrap/js/bootstrap']
+  For pic:
+  SystemJS.bundles['mybundle'] = ['jquery-practice', 'bootstrap/js/bootstrap']
 
-  Will result in a load to "mybundle" whenever a load to "jquery"
+  Will result in a load to "mybundle" whenever a load to "jquery-practice"
   or "bootstrap/js/bootstrap" is made.
 
   In this way, the bundle becomes the request that provides the module
@@ -4699,7 +4699,7 @@ hookConstructor(function(constructor) {
   // bundle name is module name of bundle itself
   // bundle is array of modules defined by the bundle
   // when a module in the bundle is requested, the bundle is loaded instead
-  // of the form SystemJS.bundles['mybundle'] = ['jquery', 'bootstrap/js/bootstrap']
+  // of the form SystemJS.bundles['mybundle'] = ['jquery-practice', 'bootstrap/js/bootstrap']
   hookConstructor(function(constructor) {
     return function() {
       constructor.call(this);
