@@ -1,3 +1,4 @@
+//TODO improve code & improve the documentation
 var rl = require('readline-sync');
 var fs = require('fs');
 
