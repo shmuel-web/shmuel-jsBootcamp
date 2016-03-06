@@ -1,17 +1,36 @@
 $(document).ready(function(){
-    //'pic/"+(i+1) +"-6ZzM1GGwaR.jpg'
-    var part = "<div class='part'></div>";
-    for (var i=0; i<9; i++){
-        part = '<div class="part" style="background-image: url(\'pic/'+ (i+1) +'-6ZzM1GGwaR.jpg\')"></div>';
-        $('.puzzle').append(part);
-    }
 
-    $(".part").mousedown(function(){
-        var clone = $('.part');
-        $(document).mousemove(function(e) {
-            clone.offset({ top: e.pageY, left: e.pageX });
-        }).click(function () {
-            $(this).unbind("mousemove");
-        });
-    });
+    function initPuzzle(){
+
+        function shuffle(array) {
+            var i = array.length,
+                j = 0,
+                temp;
+
+            while (i--) {
+
+                j = Math.floor(Math.random() * (i+1));
+
+                // swap randomly chosen element with current element
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+
+        for (var i=0; i<9; i++){
+            var tile = '<div class="tile bc-img-'+(i+1)+'"></div>';
+            $('.puzzle').append(tile);
+        }
+
+        function shufflePuzzle(){
+            var randomNums = shuffle([1,2,3,4,5,6,7,8,9]);
+            randomNums.forEach(function(num,index){
+
+            })
+
+        }
+    }
+    initPuzzle();
 });

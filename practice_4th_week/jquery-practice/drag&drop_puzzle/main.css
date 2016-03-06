@@ -4,17 +4,46 @@
     width: calc(450px * 0.922222);
     height:450px;
 }
-.part{
+.tile{
     float: left;
     width: 33.333%;
     height: 33.333%;
     background: no-repeat;
     background-size: cover;
 }
-div .part:hover{
+div .tile:hover{
     background-color: rgba(250, 0, 239, 0.5);
     opacity: 0.5;
 }
+
+.bc-img-1{
+    background-image: url("pic/1.jpg");
+}
+.bc-img-2{
+    background-image: url("pic/2.jpg");
+}
+.bc-img-3{
+    background-image: url("pic/3.jpg");
+}
+.bc-img-4{
+    background-image: url("pic/4.jpg");
+}
+.bc-img-5{
+    background-image: url("pic/5.jpg");
+}
+.bc-img-6{
+    background-image: url("pic/6.jpg");
+}
+.bc-img-7{
+    background-image: url("pic/7.jpg");
+}
+.bc-img-8{
+    background-image: url("pic/8.jpg");
+}
+.bc-img-9{
+     background-image: url("pic/9.jpg");
+}
+
 /*phone*/
 @media (max-width: 600px) {
     .container {

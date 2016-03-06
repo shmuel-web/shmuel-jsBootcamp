@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Book</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Phone Book</h1>
+            <form>
+                <input id="search" type="text" placeholder="Search..." required>
+                <input id="search-btn" type="submit" value="Search">
+            </form>
+        </div>
+    </header>
+    <div class="container">
+        <aside>
+            <h2>Groups Directory</h2>
+            <ol>
+                <li>phone Book</li>
+                <ol>
+                    <li>firends</li>
+                    <ol>
+                        <li>best-friends</li>
+                        <li>partners</li>
+                    </ol>
+                    <li>work</li>
+                    <ol>
+                        <li>co-workers</li>
+                    </ol>
+                </ol>
+            </ol>
+            <h3><a href="">Reset to defaults</a> </h3>
+
+        </aside>
+        <div class="main">
+            <h2 id="current-group-title">Phone Book</h2>
+            <nav>
+                <ul>
+                    <li  class="nav-btn" data-val="1">Show contacts</li>
+                    <li  class="nav-btn" data-val="2">create contact</li>
+                    <li  class="nav-btn" data-val="3">create group</li>
+                    <li  class="nav-btn" data-val="4">delete group</li>
+                </ul>
+            </nav>
+
+            <div class="panel" id="1" style="display: block";>
+                <h3>1</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium corporis facilis, in ipsum iusto laudantium libero minus officia praesentium quas, sapiente velit voluptatum. Cupiditate dolorem enim ex ipsum iusto.
+                </p>
+            </div>
+
+            <div class="panel" id="2">
+                <h3>Create Contact</h3>
+                <form>
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Last Name">
+                    <input type="text" placeholder="Phone Numbers">
+                </form>
+            </div>
+
+            <div class="panel" id="3">
+                <h3>Create Group</h3>
+                <form>
+                    <input type="text" placeholder="Group Name">
+                </form>
+            </div>
+
+            <div class="panel" id="4">
+                <h3>Delete Group</h3>
+                <p>
+                    are you sure?
+                </p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <footer>
+        all rights reserved to the greatest PhoneBook corporation ever.
+    </footer>
+
+
+    <script src="ui.js"></script>
+    <script src="phoneBook.js"></script>
+</body>
+</html>

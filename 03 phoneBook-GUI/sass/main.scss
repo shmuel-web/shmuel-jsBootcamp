@@ -1,0 +1,190 @@
+body{
+  margin: 0;
+  font-size: 1rem;
+}
+header{
+  border-bottom: burlywood 1px solid;
+  width: 100vw;
+  height: 10vh;
+}
+
+header h1{
+  font-size: 6vh;
+  margin: 2vh 0 2vh 0;
+  display: inline-block;
+  float: left;
+}
+
+header form{
+  float: right;
+}
+.container {
+  margin-left: 7vw;
+  margin-right: 7vw;
+
+}
+aside{
+  display: inline-block;
+  float: left;
+  width: 30%;
+  clear: both;
+}
+
+aside li{
+  list-style: none;
+}
+
+aside ol{
+  /*padding-left:26px;*/
+}
+
+.main {
+  width: 70%;
+}
+
+.main ul{
+  display: block;
+  list-style: none;
+  padding: 0;
+}
+
+.main ul li{
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+
+
+#search {
+  margin-top: 3vh;
+  margin-left: 7vh;
+  width: 30vh;
+  height: 32px;
+  padding-right: 50px;
+  -webkit-appearance: none;
+  border: burlywood 1px solid;
+}
+#search-btn{
+  margin-left: -50px;
+  height: 36px;
+  width: 50px;
+  background: burlywood;
+  color: white;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+.panel{
+  display: none;
+}
+
+
+div .panel .active {
+  display: inline-block;
+  width: 100%;
+}
+
+footer {
+  float: left;
+  width: 100vw;
+  height: 10vh;
+  padding: 3vh;
+  text-align: center;
+  vertical-align: middle;
+  border-top:1px burlywood solid;
+}
+
+/*phone*/
+@media (max-width: 700px) {
+
+  header h1 {
+    font-size: 6vh;
+    margin: 2vh 0 2vh 0;
+    display: inline-block;
+    float: left;
+  }
+
+  header form {
+    float: left;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .container {
+    margin-left: 1vw;
+    margin-right: 1vw;
+
+  }
+
+  aside {
+    float: right;
+    width: 100%;
+    min-height: 30vh;
+    border-bottom:burlywood 1px solid ;
+  }
+
+  .main {
+    /*margin-top: 7vh;*/
+    float: right;
+    width: 100%;
+    min-height: 0vh;
+    margin-left: 1rem;
+  }
+
+  .main ul {
+    list-style: none;
+    padding: 0;
+    list-style: none;
+  }
+
+  .main ul li {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  #search {
+    margin-top: 2vh;
+    margin-left: 1vh;
+    width: 80vw;
+    height: 32px;
+    padding-right: 50px;
+    -webkit-appearance: none;
+    border: burlywood 1px solid;
+
+  }
+
+
+  #search-btn {
+    margin-left: -50px;
+    height: 36px;
+    width: 50px;
+    background: burlywood;
+    color: white;
+    border: 0;
+    -webkit-appearance: none;
+  }
+
+  .panel {
+    display: none;
+  }
+
+  div .panel .active {
+    display: block;
+  }
+
+  footer {
+    float: left;
+    width: 100vw;
+    height: 10vh;
+    padding: 0.5vh;
+    text-align: center;
+    vertical-align: middle;
+    border-top:1px burlywood solid;
+  }
+}
+
+/*tablets*/
+@media
+(min-width: 600px) and (max-width: 1200px) {
+
+}

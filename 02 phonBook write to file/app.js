@@ -31,14 +31,7 @@ function printMenu() {
     console.log("8) Exit");
 }
 
-function run(){
-    while(true) {
-        printMenu();
 
-        var command = rl.question("Contact Book> ");
-        handleCommand(command);
-    }
-}
 
 function handleCommand(line) {
     var command = parseInt(line);
