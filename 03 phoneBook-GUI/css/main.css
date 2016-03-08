@@ -30,34 +30,40 @@ input#search-bar {
   width: 35px;
   height: 35px;
   top: -40px;
-  right: -40px;
+  right: -30px;
   color: saddlebrown; }
 
-.create-contact {
-  width: 100%;
-  height: 45px;
+.create-contact, .create-group {
+  width: 90%;
   display: inline-block;
   float: left;
-  margin: 2vh auto 0 auto; }
+  margin: 2vh auto 2vh auto; }
 
-.create-contact input {
+.create-contact input, .create-group input {
   margin: 0 auto;
   width: 100%;
   height: 45px;
   padding: 0 20px;
   font-size: 1rem;
-  border: 1px solid #D0CFCE;
+  border: 1px solid burlywood;
   outline: none; }
-  .create-contact input:focus {
-    border: 1px solid wheat;
+  .create-contact input:focus, .create-group input:focus {
+    border: 1px solid saddlebrown;
     transition: 0.35s ease;
     color: saddlebrown; }
-    .create-contact input:focus::-webkit-input-placeholder {
+    .create-contact input:focus::-webkit-input-placeholder, .create-group input:focus::-webkit-input-placeholder {
       transition: opacity 0.45s ease;
       opacity: 0; }
-    .create-contact input:focus::-moz-placeholder {
+    .create-contact input:focus::-moz-placeholder, .create-group input:focus::-moz-placeholder {
       transition: opacity 0.45s ease;
       opacity: 0; }
+
+.submit {
+  transition: all 0.3s ease;
+  background: burlywood;
+  color: saddlebrown; }
+  .submit:hover {
+    background: wheat; }
 
 body {
   margin: 0;

@@ -37,27 +37,23 @@ var viewLayer = (function(){
 
     function displayCurrentGroupContacts(){
         var currentGroup = modalLayer.currentGroup;
+        console.log(currentGroup);
         var table ="";
         if (currentGroup.items > 0){
             currentGroup.items.forEach(function(item){
                 if(item.firstName){
                     table = table + item.firstName, item.lastName, item.phoneNum ,item.id + "</br>";
                 }
-            })
+            });
             var tableContainer = document.getElementById("contacts");
-            tableContainer.innerHTML = table;
+            console.log(table);
+
         }
 
 
     }
 
-    function createGroupForm(){
 
-    }
-
-    function createContactForm (){
-
-    }
 
     function deleteGroupView(){
 
@@ -72,10 +68,9 @@ var viewLayer = (function(){
         displayDirectory:displayDirectory,//done
         displayCurrentGroup:displayCurrentGroup,//done
         displayCurrentGroupContacts:displayCurrentGroupContacts,
-        createGroupForm:createGroupForm,
-        createContactForm:createContactForm,
         deleteGroupView:deleteGroupView,
         displaySearchResults:displaySearchResults,
+
     }
 })();
 

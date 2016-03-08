@@ -25,20 +25,29 @@
             case '1':
                 viewLayer.displayCurrentGroupContacts();
                 break;
-            case 2:
+            case '2':
                 break;
-            case 3:
+            case '3':
                 break;
-            case 4:
+            case '4':
                 break;
 
         }
-
-
     }
 })();
 
-document.getElementById('1');
+(function formz(){
+    //adding event listenerz
+    var form = document.querySelector(".create-contact");
+    form.addEventListener('submit',function(e){
+        Controller.createContactFormHandler(e);
+    });
+    form = document.querySelector(".create-group");
+    form.addEventListener('submit',function(e){
+        Controller.createGroupFormHandler(e);
+    });
+})();
+
 
 
 

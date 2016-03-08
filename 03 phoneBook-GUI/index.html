@@ -41,10 +41,10 @@
             <h2 id="current-group-title">Phone Book</h2>
             <nav>
                 <ul>
-                    <li  class="nav-btn" data-val="1">Show contacts</li>
-                    <li  class="nav-btn" data-val="2">create contact</li>
-                    <li  class="nav-btn" data-val="3">create group</li>
-                    <li  class="nav-btn" data-val="4">delete group</li>
+                    <li  class="nav-btn" data-val="1">Contacts</li>
+                    <li  class="nav-btn" data-val="2">New Contact</li>
+                    <li  class="nav-btn" data-val="3">New group</li>
+                    <li  class="nav-btn" data-val="4">Delete</li>
                 </ul>
             </nav>
 
@@ -61,13 +61,15 @@
                     <input type="text" placeholder="First Name">
                     <input type="text" placeholder="Last Name">
                     <input type="text" placeholder="Phone Numbers">
+                    <input class="submit" type="submit" value="submit">
                 </form>
             </div>
 
             <div class="panel" id="3">
                 <h3>Create Group</h3>
-                <form>
+                <form class="create-group">
                     <input type="text" placeholder="Group Name">
+                    <input class="submit" type="submit" value="submit">
                 </form>
             </div>
 
@@ -91,7 +93,7 @@
     </footer>
     <script src="js/phoneBookModal.js"></script>
     <script src="js/phoneBookView.js"></script>
-    <script src="js/phoneBookControler.js"></script>
+    <script src="js/phoneBookController.js"></script>
     <script src="js/ui.js"></script>
 </body>
 </html>

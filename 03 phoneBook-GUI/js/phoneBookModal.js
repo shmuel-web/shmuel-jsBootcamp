@@ -10,9 +10,10 @@ var modalLayer = (function(){
 
     function addNewContact(firstName,lastName,phoneNumbers){
 
-        var contact = createContact(firstName, lastName, phoneNumbers);
-        addItem(contact);
+        var newContact = createContact(firstName, lastName, phoneNumbers);
+        addItem(newContact);
     }
+
 
     function addNewGroup(name){
         var group = createGroup(name);
@@ -239,8 +240,8 @@ var modalLayer = (function(){
     return {
         getAllItems:root,//done
         getCurrentGroupContacts:getCurrentGroupContacts,//done
-        createContact:createContact,//done
-        createGroup:createGroup,//done
+        createContact:addNewContact,//done
+        createGroup:addNewGroup,//done
         find:find,//done
         currentGroup:currentGroup,
         deleteItem:deleteItem,//done

@@ -6,6 +6,7 @@
   float: right;
   margin: 2vh auto 0 auto;
 
+
 }
 
 input#search-bar {
@@ -38,29 +39,28 @@ input#search-bar {
   width: 35px;
   height: 35px;
   top: -40px;
-  right: -40px;
+  right: -30px;
   color: saddlebrown;
 }
 
-.create-contact{
-  width: 100%;
-  height: 45px;
+.create-contact,.create-group{
+  width: 90%;
   display: inline-block;
   float: left;
-  margin: 2vh auto 0 auto;
+  margin: 2vh auto 2vh auto;
 
 }
 
-.create-contact input {
+.create-contact input,.create-group input {
   margin: 0 auto;
   width: 100%;
   height: 45px;
   padding: 0 20px;
   font-size: 1rem;
-  border: 1px solid #D0CFCE;
+  border: 1px solid burlywood;
   outline: none;
   &:focus{
-    border: 1px solid wheat;
+    border: 1px solid saddlebrown;
     transition: 0.35s ease;
     color: saddlebrown;
     &::-webkit-input-placeholder{
@@ -74,6 +74,16 @@ input#search-bar {
 
   }
 }
+.submit {
+  transition: all 0.3s ease;
+  background: burlywood;
+  color: saddlebrown;
+  &:hover{
+    background: wheat;
+  }
+}
+
+
 
 
 
