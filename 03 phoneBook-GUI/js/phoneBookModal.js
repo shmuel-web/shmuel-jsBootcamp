@@ -1,11 +1,12 @@
+/*
+* this layer is all about data manipulation
+* */
+
 var modalLayer = (function(){
 
     var root = createGroup("~");
     var currentGroup = root;
     var nextId = 0;
-
-
-
 
     function addNewContact(firstName,lastName,phoneNumbers){
 
@@ -35,7 +36,6 @@ var modalLayer = (function(){
             else {
                 currentGroup = subGroup;
             }
-
         }
     }
 
@@ -143,13 +143,7 @@ var modalLayer = (function(){
     function generateNextId(){
         return nextId++;
     }
-
-    function writeToFile(){
-        var phoneBookArrey = getPhoneBookItemsArray();
-        var jsonPhonebook = JSON.stringify(phoneBookArrey);
-        fs.writeFileSync('phonebook.json',jsonPhonebook,'utf8');
-        console.log(jsonPhonebook);//testing purpose
-    }
+    
 
     function findGroup(name){
         var subGroup = false;
@@ -161,20 +155,54 @@ var modalLayer = (function(){
         return subGroup;
     }
 
-    function readFile() {
-        var phonebook = fs.readFileSync('phonebook.json', 'utf8');
-        //console.log(phonebook);
-        phonebook = JSON.parse(phonebook);
-        phonebook.forEach(function(item,index,array){
-            load(item,index,array);
-        })
+    function phoneBookToArray(item, PhoneBookItemsArray ) {
+        var PhoneBookItems = PhoneBookItemsArray || [];
+
+        if (!item){
+            item = root;
+        }
+
+        if (item) {
+            var itemJson;
+            if (item.firstName) {
+                //this means it's a contact
+                itemJson = {
+                    "firstName": item.firstName,
+                    "lastName": item.lastName,
+                    "phoneNumbers": item.phoneNumbers,
+                    "items": 0
+                };
+                PhoneBookItems.push(itemJson);
+            }
+            else if (item.name) {
+                //this means it's a group
+                itemJson = {
+                    "name": item.name,
+                    "items": item.items.length
+                };
+                PhoneBookItems.push(itemJson);
+                item.items.forEach(function (childItem) {
+                    phoneBookToArray(childItem,PhoneBookItems);
+                });
+            }
+            return PhoneBookItems;
+        }
     }
+
     function writeToLocal(){
-    //    todo
+        //
+        var phoneBookArray = phoneBookToArray();
+        localStorage.setItem("phoneBookArray",phoneBookArray);
     }
 
     function readFromLocal(){
-    //    todo
+        //    todo
+        var phoneBookArray = localStorage.phoneBookArray ;
+        if (phoneBookArray){
+            phoneBookArray.forEach(function(item,index,array){
+                load(item,index,array);
+            })
+        }
     }
 
     function load (item,index,array){
@@ -217,75 +245,7 @@ var modalLayer = (function(){
         currentGroup:currentGroup,
         deleteItem:deleteItem,//done
         deleteGroup:deleteItem,//done
-        writeToLocal:writeToLocal,//todo
-        readFromLocal:readFromLocal//todo
-
-
+        writeToLocal:writeToLocal,//done
+        readFromLocal:readFromLocal//done
     }
 })();
-
-var viewLayer = (function(){
-
-    function displayDirectory(item){
-        var item = item || modalLayer.getAllItems;
-        if (item.name){
-            //display group name as li link in the directory
-            console.log(item);
-            if (item.items > 0){
-            //    open a ul in the doom
-                item.items.forEach(function(childItem){
-                    displayDirectory(childItem);
-                });
-            //    close the ul
-
-            }
-        }
-
-    }
-
-    function displayCurrentGroup(){
-        var title = document.querySelector("#current-group-title");
-        var currentGroup = modalLayer.currentGroup;
-        console.log(currentGroup.name);
-        if (currentGroup.name == '~'){
-            title.innerText = 'Phone Book';
-        }
-        else{
-            title.innerText = currentGroup.name ;
-        }
-
-    }
-
-    function displayCurrentGroupContacts(){
-
-    }
-
-    function createGroupForm(){
-
-    }
-
-    function createContactForm (){
-
-    }
-
-    function deleteGroupView(){
-
-    }
-
-    function displaySearchResults(){
-
-    }
-
-
-    return {
-        displayDirectory:displayDirectory,
-        displayCurrentGroup:displayCurrentGroup,//done
-        displayCurrentGroupContacts:displayCurrentGroupContacts,
-        createGroupForm:createGroupForm,
-        createContactForm:createContactForm,
-        deleteGroupView:deleteGroupView,
-        displaySearchResults:displaySearchResults,
-    }
-})();
-
-

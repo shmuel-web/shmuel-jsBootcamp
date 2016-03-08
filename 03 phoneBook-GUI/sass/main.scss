@@ -4,7 +4,7 @@ body{
   font-family:Arial,sans-serif;
   width: 100%;
   li{
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     font-weight:bold;
     &:hover, &:focus, &:active{
       color: saddlebrown;
@@ -22,12 +22,13 @@ body{
 header {
   display: block;
   width: 100vw;
-  background: burlywood;
+  background: saddlebrown;
 
   h1{
     display: inline-block;
     font-size: 2rem;
-    color: saddlebrown;
+
+    color: wheat;
   }
 
 }
@@ -58,6 +59,7 @@ aside{
       }
     }
   .panel{
+    min-height: 30vh;
     display: none;
   }
 
@@ -88,14 +90,36 @@ footer{
     min-height:0;
   }
 
+  aside{
+    border-bottom: 1px solid wheat;
+  }
+
   .search-container{
-    width: 100%;
+    width: 76vw;
     height: 45px;
     display: inline-block;
-    float: right;
-    margin: 2vh;
+    float: left;
+  }
+
+  input#search-bar{
 
 
+    border: 1px solid wheat;
+    outline: none;
+    &:focus{
+      border: 1px solid saddlebrown;
+      transition: 0.35s ease;
+      color: saddlebrown;
+      &::-webkit-input-placeholder{
+        transition: opacity 0.45s ease;
+        opacity: 0;
+      }
+      &::-moz-placeholder {
+        transition: opacity 0.45s ease;
+        opacity: 0;
+      }
+
+    }
   }
   footer{
     float: left;

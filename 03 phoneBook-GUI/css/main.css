@@ -14,7 +14,7 @@ input#search-bar {
   border: 1px solid #D0CFCE;
   outline: none; }
   input#search-bar:focus {
-    border: 1px solid saddlebrown;
+    border: 1px solid wheat;
     transition: 0.35s ease;
     color: saddlebrown; }
     input#search-bar:focus::-webkit-input-placeholder {
@@ -38,7 +38,7 @@ body {
   font-family: Arial,sans-serif;
   width: 100%; }
   body li {
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     font-weight: bold; }
     body li:hover, body li:focus, body li:active {
       color: saddlebrown; }
@@ -51,11 +51,11 @@ body {
 header {
   display: block;
   width: 100vw;
-  background: burlywood; }
+  background: saddlebrown; }
   header h1 {
     display: inline-block;
     font-size: 2rem;
-    color: saddlebrown; }
+    color: wheat; }
 
 aside {
   display: inline-block;
@@ -78,6 +78,7 @@ aside {
       display: inline-block;
       padding-right: 10px; }
   .main .panel {
+    min-height: 30vh;
     display: none; }
 
 footer {
@@ -100,12 +101,26 @@ footer {
     display: block;
     width: 100%;
     min-height: 0; }
+  aside {
+    border-bottom: 1px solid wheat; }
   .search-container {
-    width: 100%;
+    width: 76vw;
     height: 45px;
     display: inline-block;
-    float: right;
-    margin: 2vh; }
+    float: left; }
+  input#search-bar {
+    border: 1px solid wheat;
+    outline: none; }
+    input#search-bar:focus {
+      border: 1px solid saddlebrown;
+      transition: 0.35s ease;
+      color: saddlebrown; }
+      input#search-bar:focus::-webkit-input-placeholder {
+        transition: opacity 0.45s ease;
+        opacity: 0; }
+      input#search-bar:focus::-moz-placeholder {
+        transition: opacity 0.45s ease;
+        opacity: 0; }
   footer {
     float: left;
     display: block;
