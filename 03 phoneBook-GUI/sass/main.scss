@@ -1,4 +1,4 @@
-@import "search";
+@import "forms";
 body{
   margin: 0;
   font-family:Arial,sans-serif;
@@ -13,6 +13,7 @@ body{
   }
 
 }
+
 
 .container{
   margin-right:7vw;
@@ -58,7 +59,7 @@ aside{
       padding-right:10px;
       }
     }
-  .panel{
+  .panel {
     min-height: 30vh;
     display: none;
   }

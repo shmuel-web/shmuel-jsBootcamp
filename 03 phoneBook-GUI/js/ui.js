@@ -8,7 +8,6 @@
 
 
     navArray.forEach(function(panel){
-        console.log(panel);
         panel.addEventListener('click',showPanel);
     });
 
@@ -22,8 +21,25 @@
         });
         //making the clicked on tab visible
         panel.setAttribute('style',' display: block');
+        switch(data){
+            case '1':
+                viewLayer.displayCurrentGroupContacts();
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+
+        }
+
+
     }
 })();
+
+document.getElementById('1');
+
 
 
 

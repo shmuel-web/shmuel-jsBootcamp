@@ -36,6 +36,18 @@ var viewLayer = (function(){
     }
 
     function displayCurrentGroupContacts(){
+        var currentGroup = modalLayer.currentGroup;
+        var table ="";
+        if (currentGroup.items > 0){
+            currentGroup.items.forEach(function(item){
+                if(item.firstName){
+                    table = table + item.firstName, item.lastName, item.phoneNum ,item.id + "</br>";
+                }
+            })
+            var tableContainer = document.getElementById("contacts");
+            tableContainer.innerHTML = table;
+        }
+
 
     }
 
@@ -57,7 +69,7 @@ var viewLayer = (function(){
 
 
     return {
-        displayDirectory:displayDirectory,
+        displayDirectory:displayDirectory,//done
         displayCurrentGroup:displayCurrentGroup,//done
         displayCurrentGroupContacts:displayCurrentGroupContacts,
         createGroupForm:createGroupForm,
