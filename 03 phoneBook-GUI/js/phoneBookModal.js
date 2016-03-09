@@ -1,13 +1,13 @@
 /*
 * this layer is all about data manipulation
 * */
-
+var currentGroup;
 var modalLayer = (function(){
 
     var root = createGroup("~");
-    var currentGroup = root;
-    var nextId = 0;
 
+    var nextId = 0;
+    currentGroup = root;
     function addNewContact(firstName,lastName,phoneNumbers){
 
         var newContact = createContact(firstName, lastName, phoneNumbers);
@@ -21,23 +21,10 @@ var modalLayer = (function(){
     }
 
     function changeCurrentGroupByName(name) {
+        var group = findGroupByName(name)
+        console.log(group);
+        currentGroup = group;
 
-        if (name == "..") {
-            if (!currentGroup.parent) {
-                return;
-            }
-
-            currentGroup = currentGroup.parent;
-        }
-        else {
-            var subGroup = findGroup(name);
-            if (!subGroup) {
-                //console.log("Group with name " + name + " was not found")
-            }
-            else {
-                currentGroup = subGroup;
-            }
-        }
     }
 
     function getCurrentGroupContacts() {
@@ -81,13 +68,29 @@ var modalLayer = (function(){
         return foundItems;
     }
 
+    function findGroupByName(name,phonbookItem){
+        var item = phonbookItem || root;
+        if (item.name == name) {
+            return item;
+        }
+        else if (item.items) {
+            var result = null;
+            for (var i=0; result == null && i < item.items.length; i++){
+                result = findGroupByName(name,item.items[i]);
+            }
+            return result;
+        }
+        return null;
+    }
+
     function findItemById(id ,phonbookItem,foundItem){
         foundItem = foundItem || false;
         var item = phonbookItem || root;
 
         if (item.id == id){
             foundItem = item;
-        }else if(item.items && item.items.length > 0 && !foundItem){
+        }
+        else if(item.items && item.items.length > 0 && !foundItem){
             item.items.forEach(function(childItem){
                 foundItem = findItemById(id ,childItem, foundItem);
             });
@@ -124,10 +127,23 @@ var modalLayer = (function(){
     }
 
     function createGroup(name) {
-        return {
-            id: generateNextId(),
-            name: name,
-            items: []
+        if (name != '~'){
+            var groupWithSameNameExists = findGroupByName(name);
+        }
+        else{
+            groupWithSameNameExists = false;
+        }
+
+        if (groupWithSameNameExists){
+        //todo    throw err
+            console.log('group name is already used');
+        }
+        else{
+            return {
+                id: generateNextId(),
+                name: name,
+                items: []
+            }
         }
     }
 
@@ -210,32 +226,35 @@ var modalLayer = (function(){
     }
 
     function load (item,index,array){
-        if (item.firstName){
-            var contact = createContact(item.firstName,item.lastName,item.phoneNumbers);
-            addItem(contact);
-        }
-        else if(item.name && item.name !== "~"){
-            var group = createGroup(item.name);
-            addItem(group);
 
-            if (item.items > 0){
-                currentGroup = group;
-
-                for (var i = ++index; i < index + item.items; i++){ //iterating over his children & inserting them
-                    load(array[i],i,array);//recurse
-                }
-                array.splice(index,item.items);//removing the added items so that the for each loop cold continue properly
-                currentGroup = group.parent;
+        if (item) {
+            if (item.firstName) {
+                var contact = createContact(item.firstName, item.lastName, item.phoneNumbers);
+                addItem(contact);
             }
-        }
-        else if (item.name == "~"){
-            if (item.items > 0){
+            else if (item.name && item.name !== "~") {
+                var group = createGroup(item.name);
+                addItem(group);
 
-                for (var i = ++index; i < index + item.items; i++){
-                    load(array[i],i,array);
+                if (item.items > 0) {
+                    currentGroup = group;
+
+                    for (var i = ++index; i < index + item.items; i++) { //iterating over his children & inserting them
+                        load(array[i], i, array);//recurse
+                    }
+                    array.splice(index, item.items);//removing the added items so that the for each loop cold continue properly
+                    currentGroup = group.parent;
                 }
-                array.splice(index,item.items);
-                currentGroup = root;
+            }
+            else if (item.name == "~") {
+                if (item.items > 0) {
+
+                    for (var i = ++index; i < index + item.items; i++) {
+                        load(array[i], i, array);
+                    }
+                    array.splice(index, item.items);
+                    currentGroup = root;
+                }
             }
         }
     }
@@ -246,10 +265,10 @@ var modalLayer = (function(){
         createContact:addNewContact,//done
         createGroup:addNewGroup,//done
         find:find,//done
-        currentGroup:currentGroup,
         deleteItem:deleteItem,//done
         deleteGroup:deleteItem,//done
         writeToLocalStorage:writeToLocal,//done
-        readFromLocalStorage:readFromLocal//done
+        readFromLocalStorage:readFromLocal,//done
+        changeCurrentGroupByName:changeCurrentGroupByName,
     }
 })();

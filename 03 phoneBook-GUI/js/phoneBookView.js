@@ -28,7 +28,7 @@ var viewLayer = (function(){
 
     function displayCurrentGroup(){
         var title = document.querySelector("#current-group-title");
-        var currentGroup = modalLayer.currentGroup;
+
         console.log(currentGroup.name);
         if (currentGroup.name == '~'){
             title.innerText = 'Phone Book';
@@ -40,7 +40,6 @@ var viewLayer = (function(){
     }
 
     function displayCurrentGroupContacts(){
-        var currentGroup = modalLayer.currentGroup;
         console.log(currentGroup);
         var table ="";
         if (currentGroup.items > 0){

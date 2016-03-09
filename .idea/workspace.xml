@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9755de8-3a06-459f-b357-a33b485849bf" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/03 phoneBook-GUI/js/ui.js" afterPath="$PROJECT_DIR$/03 phoneBook-GUI/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/03 phoneBook-GUI/css/main.css" afterPath="$PROJECT_DIR$/03 phoneBook-GUI/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/03 phoneBook-GUI/index.html" afterPath="$PROJECT_DIR$/03 phoneBook-GUI/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookController.js" afterPath="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/03 phoneBook-GUI/js/main.js" afterPath="$PROJECT_DIR$/03 phoneBook-GUI/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookModal.js" afterPath="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookModal.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookView.js" afterPath="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/03 phoneBook-GUI/sass/main.scss" afterPath="$PROJECT_DIR$/03 phoneBook-GUI/sass/main.scss" />
     </list>
     <ignored path="shmuel-jsBootcamp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,11 +49,21 @@
       <file leaf-file-name="phoneBookModal.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37333333">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.82666665">
+              <caret line="258" column="9" selection-start-line="258" selection-start-column="9" selection-end-line="258" selection-end-column="9" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phoneBook.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/01 phoneBook/phoneBook.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookView.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -98,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="40" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+              <caret line="60" column="43" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="43" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -171,8 +177,8 @@
         <option value="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookController.js" />
         <option value="$PROJECT_DIR$/03 phoneBook-GUI/index.html" />
         <option value="$PROJECT_DIR$/03 phoneBook-GUI/js/ui.js" />
-        <option value="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookView.js" />
         <option value="$PROJECT_DIR$/03 phoneBook-GUI/js/main.js" />
+        <option value="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookView.js" />
         <option value="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookModal.js" />
       </list>
     </option>
@@ -183,7 +189,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
+    <option name="x" value="1" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="793" />
@@ -300,20 +306,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="shmuel-jsBootcamp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="02 phonBook write to file">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -478,7 +470,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="23" width="1440" height="793" extended-state="0" />
+    <frame x="1" y="23" width="1440" height="793" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.4319149" order="0" side_tool="false" content_ui="tabs" />
@@ -507,7 +499,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.4947146" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32716927" sideWeight="0.40521494" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32716927" sideWeight="0.40521494" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.4319149" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38549075" sideWeight="0.47498238" order="1" side_tool="false" content_ui="tabs" />
@@ -546,29 +538,12 @@
           <line>200</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookModal.js</url>
-          <line>195</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookModal.js</url>
-          <line>205</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="79" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/practice/css 2 practice/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6226415">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/02 phonBook write to file/node_modules/fs/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.39694658">
@@ -904,14 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02 phonBook write to file/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="262" column="9" selection-start-line="262" selection-start-column="9" selection-end-line="262" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-29.333334">
@@ -936,30 +903,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookView.js">
+    <entry file="file://$PROJECT_DIR$/02 phonBook write to file/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <caret line="262" column="9" selection-start-line="262" selection-start-column="9" selection-end-line="262" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="40" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+          <caret line="60" column="43" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="43" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01 phoneBook/phoneBook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37333333">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.82666665">
+          <caret line="258" column="9" selection-start-line="258" selection-start-column="9" selection-end-line="258" selection-end-column="9" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

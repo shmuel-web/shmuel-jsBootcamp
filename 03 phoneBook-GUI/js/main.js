@@ -58,7 +58,7 @@
     function directoryClick (e){
         //todo
         var groupName = e.srcElement.innerText;
-        modalLayer.changeCurrentGroup(groupName);
+        modalLayer.changeCurrentGroupByName(groupName);
         viewLayer.displayCurrentGroup();
     }
 
