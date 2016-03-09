@@ -3,25 +3,29 @@
 * */
 
 var viewLayer = (function(){
+
     var directory = document.getElementById('directory');
     function displayDirectory(item){
         var item = item || modalLayer.getAllItems;
 
         if (item.name){
-            directory.innerHTML('<li>'+item.name+'</li>');
-            directory = directory.firstElementChild;
-            if (item.items > 0){
-                directory.innerHTML='<ul>';
-                directory = directory.firstElementChild;
+
+            var li = document.createElement('li');
+            li.innerHTML = item.name;
+            directory.appendChild(li);
+            if (item.items.length > 0){
+                var ul = document.createElement('ul');
+                directory = directory.appendChild(ul);
                 item.items.forEach(function(childItem){
                     displayDirectory(childItem);
                 });
-            directory.innerHTML='</ul>';
-            directory = directory.firstElementChild;
-
+                directory = directory.parentNode;
             }
+
         }
     }
+
+
     function displayCurrentGroup(){
         var title = document.querySelector("#current-group-title");
         var currentGroup = modalLayer.currentGroup;
@@ -53,6 +57,12 @@ var viewLayer = (function(){
 
     }
 
+    function reDisplayDirectory (){
+        var directory = document.getElementById('directory');
+        directory.innerHTML = "";
+        displayDirectory();
+    }
+
 
 
     function deleteGroupView(){
@@ -66,6 +76,7 @@ var viewLayer = (function(){
 
     return {
         displayDirectory:displayDirectory,//done
+        reDisplayDirectory:reDisplayDirectory,
         displayCurrentGroup:displayCurrentGroup,//done
         displayCurrentGroupContacts:displayCurrentGroupContacts,
         deleteGroupView:deleteGroupView,

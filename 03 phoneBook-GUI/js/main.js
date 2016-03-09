@@ -1,5 +1,7 @@
-
-(function tabz(){
+/*
+* this file contains all the UI functionality
+* */
+(function tabzNavigation(){
     var navList = document.querySelectorAll('nav li'); //gets a node list
     var navArray = Array.prototype.slice.call(navList); // converts NodeList to Array
 
@@ -25,15 +27,18 @@
             case '1':
                 viewLayer.displayCurrentGroupContacts();
                 break;
-            case '2':
-                break;
-            case '3':
-                break;
             case '4':
+                Controller.deleteGroup();
                 break;
 
         }
     }
+
+    (function panel1Init (){
+        var panel = document.getElementById("1");
+        panel.setAttribute('style',' display: block');
+        viewLayer.displayCurrentGroupContacts();
+    })();
 })();
 
 (function formz(){
@@ -47,6 +52,32 @@
         Controller.createGroupFormHandler(e);
     });
 })();
+
+(function directory(){
+    var directory = document.getElementById('directory');
+    function directoryClick (e){
+        //todo
+        var groupName = e.srcElement.innerText;
+        modalLayer.changeCurrentGroup(groupName);
+        viewLayer.displayCurrentGroup();
+    }
+
+    directory.addEventListener('click',function(e){
+        directoryClick(e)
+    });
+})();
+
+(function init(){
+    window.onload = function() {
+        modalLayer.readFromLocalStorage();
+        viewLayer.displayDirectory();
+        viewLayer.displayCurrentGroup();
+    }
+})();
+
+
+
+
 
 
 

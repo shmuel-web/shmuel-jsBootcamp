@@ -38,9 +38,12 @@ aside{
   float: left;
   width: 33%;
   min-height: 80vh;
-  ol{
+  ul{
     list-style: none;
     padding-left: 1.5rem;
+    li{
+      list-style: none;
+    }
   }
 
 }

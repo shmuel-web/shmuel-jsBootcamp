@@ -20,7 +20,7 @@ var modalLayer = (function(){
         addItem(group);
     }
 
-    function changeCurrentGroup(name) {
+    function changeCurrentGroupByName(name) {
 
         if (name == "..") {
             if (!currentGroup.parent) {
@@ -193,12 +193,15 @@ var modalLayer = (function(){
     function writeToLocal(){
         //
         var phoneBookArray = phoneBookToArray();
-        localStorage.setItem("phoneBookArray",phoneBookArray);
+        console.log(phoneBookArray);
+        localStorage.setItem("phoneBookArray",JSON.stringify(phoneBookArray));
     }
 
     function readFromLocal(){
+
         //    todo
-        var phoneBookArray = localStorage.phoneBookArray ;
+        var phoneBookArray = JSON.parse(localStorage.getItem("phoneBookArray"));
+        console.log(phoneBookArray);
         if (phoneBookArray){
             phoneBookArray.forEach(function(item,index,array){
                 load(item,index,array);
@@ -246,7 +249,7 @@ var modalLayer = (function(){
         currentGroup:currentGroup,
         deleteItem:deleteItem,//done
         deleteGroup:deleteItem,//done
-        writeToLocal:writeToLocal,//done
-        readFromLocal:readFromLocal//done
+        writeToLocalStorage:writeToLocal,//done
+        readFromLocalStorage:readFromLocal//done
     }
 })();

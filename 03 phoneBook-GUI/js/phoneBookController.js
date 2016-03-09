@@ -12,6 +12,7 @@ var Controller = (function(){
         modalLayer.createContact(fName, lName, phoneNums);
         //clean up the form
         e.target.reset();
+        modalLayer.writeToLocalStorage();
     }
 
     function createGroupFormHandler (e){
@@ -22,11 +23,20 @@ var Controller = (function(){
         modalLayer.createGroup(name);
         //clean up the form
         e.target.reset();
+        modalLayer.writeToLocalStorage();
+        viewLayer.reDisplayDirectory();
+    }
+
+    function deleteGroup(){
+    //    todo remove group in modal
+    //    refresh the ui
+        modalLayer.writeToLocalStorage();
     }
 
     return {
         createContactFormHandler:createContactFormHandler,
         createGroupFormHandler:createGroupFormHandler,
+        deleteGroup:deleteGroup,
     };
 })();
 
