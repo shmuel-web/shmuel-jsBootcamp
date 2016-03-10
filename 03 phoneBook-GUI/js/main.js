@@ -1,6 +1,10 @@
 /*
 * this file contains all the UI functionality
 * */
+
+
+//todo search result view
+//todo show multipale phone numberz
 (function tabzNavigation(){
     var navList = document.querySelectorAll('nav li'); //gets a node list
     var navArray = Array.prototype.slice.call(navList); // converts NodeList to Array
@@ -34,20 +38,31 @@
 
 (function formz(){
     //adding event listenerz
-    var form = document.querySelector(".create-contact");
+    var form = document.querySelector(".create-contact")
+    function showContacts(){
+        document.getElementById('contacts-btn').click();
+    }
     form.addEventListener('submit',function(e){
-        Controller.createContactFormHandler(e);
+        controller.createContactFormHandler(e);
+        showContacts();
     });
 
     form = document.querySelector(".create-group");
     form.addEventListener('submit',function(e){
-        Controller.createGroupFormHandler(e);
+        controller.createGroupFormHandler(e);
+        showContacts();
     });
 
     form = document.querySelector("#delete-group");
     form.addEventListener('submit',function(e){
-        Controller.deleteGroupFormHandler(e);
+        controller.deleteGroupFormHandler(e);
+        showContacts();
     });
+
+    var addPhoneNumbers = document.getElementById('add-Phone-num');
+    addPhoneNumbers.addEventListener('click',function(e){
+        controller.addPhoneNumber(e);
+    })
 })();
 
 (function directory(){
@@ -55,7 +70,7 @@
 
 
     directory.addEventListener('click',function(e){
-        Controller.directoryClick(e);
+        controller.directoryClick(e);
     });
 
     var resetBtn = document.querySelector('#reset');
@@ -67,6 +82,13 @@
         viewLayer.displayCurrentGroupContacts();
 
     })
+})();
+
+(function contactsPanel(){
+    var table = document.getElementById('contacts-table');
+    table.addEventListener('click',function (e){
+        controller.tableClick(e);
+    });
 })();
 
 (function init(){

@@ -271,7 +271,7 @@ var modalLayer = (function(){
         createContact:addNewContact,//done
         createGroup:addNewGroup,//done
         find:find,//done
-        deleteItem:deleteItem,//done
+        deleteContact:deleteItem,//done
         deleteGroup:deleteItem,//done
         writeToLocalStorage:writeToLocal,//done
         readFromLocalStorage:readFromLocal,//done

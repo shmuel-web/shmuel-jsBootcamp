@@ -46,7 +46,7 @@ var viewLayer = (function(){
 
         //todo add new table to dom
 //      adding the table head
-        table.innerHTML = "<tr> <th>First name</th> <th>Last name</th> <th>Phone number</th> </tr>";
+        table.innerHTML = "<tr> <th>First name</th> <th>Last name</th> <th>Phone number</th> <th>delete</th> </tr>";
 
         var td = document.createElement('td');
 
@@ -62,6 +62,11 @@ var viewLayer = (function(){
                     newRow.appendChild(td);
                     td = document.createElement('td');
                     td.innerHTML = item.phoneNumbers;
+                    newRow.appendChild(td);
+                    td = document.createElement('td');
+                    td.innerHTML = "delete";
+                    td.setAttribute('item-id',item.id);
+                    td.setAttribute('class','delete-contact-btn pointer')
                     newRow.appendChild(td);
                     table.appendChild(newRow);
 

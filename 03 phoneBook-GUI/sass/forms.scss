@@ -74,12 +74,13 @@ input#search-bar {
 
   }
 }
-.submit {
+.submit ,.form-btn{
   transition: all 0.3s ease;
-  background: burlywood;
+  background:wheat;
+  border: burlywood 2px solid;
   color: saddlebrown;
   &:hover{
-    background: wheat;
+    background: white;
   }
 }
 

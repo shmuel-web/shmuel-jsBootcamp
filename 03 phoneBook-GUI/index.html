@@ -29,10 +29,10 @@
             <h2 id="current-group-title">Phone Book</h2>
             <nav>
                 <ul>
-                    <li  class="nav-btn" data-val="1" id="contacts-btn">Contacts</li>
-                    <li  class="nav-btn" data-val="2">New Contact</li>
-                    <li  class="nav-btn" data-val="3">New group</li>
-                    <li  class="nav-btn" data-val="4">Delete</li>
+                    <li  class="nav-btn pointer" data-val="1" id="contacts-btn">Contacts</li>
+                    <li  class="nav-btn pointer" data-val="2">New Contact</li>
+                    <li  class="nav-btn pointer" data-val="3">New group</li>
+                    <li  class="nav-btn pointer" data-val="4">Delete</li>
                 </ul>
             </nav>
 
@@ -55,9 +55,12 @@
             <div class="panel" id="2">
                 <h3>Create Contact</h3>
                 <form class="create-contact">
-                    <input type="text" placeholder="First Name">
-                    <input type="text" placeholder="Last Name">
-                    <input type="text" placeholder="Phone Numbers">
+                    <div class="input-field-container">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                        <input type="text" placeholder="Phone Numbers" id='input-phone-number'>
+                    </div>
+                    <input class="form-btn" id="add-Phone-num" type="button" value="add an extra phone number">
                     <input class="submit" type="submit" value="submit">
                 </form>
             </div>

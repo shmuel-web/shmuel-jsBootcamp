@@ -1,4 +1,6 @@
 @import "forms";
+@import "table";
+
 body{
   margin: 0;
   font-family:Arial,sans-serif;
@@ -15,6 +17,9 @@ body{
 
 }
 
+.pointer:hover, #directory:hover{
+  cursor: pointer;
+}
 
 .container{
   margin-right:7vw;

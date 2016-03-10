@@ -58,12 +58,24 @@ input#search-bar {
       transition: opacity 0.45s ease;
       opacity: 0; }
 
-.submit {
+.submit, .form-btn {
   transition: all 0.3s ease;
-  background: burlywood;
+  background: wheat;
+  border: burlywood 2px solid;
   color: saddlebrown; }
-  .submit:hover {
-    background: wheat; }
+  .submit:hover, .form-btn:hover {
+    background: white; }
+
+th {
+  border-bottom: saddlebrown 3px solid;
+  min-width: 8rem; }
+
+td {
+  text-align: center;
+  border-bottom: burlywood 2px solid; }
+
+.delete-contact-btn {
+  color: red; }
 
 body {
   margin: 0;
@@ -75,6 +87,9 @@ body {
     color: saddlebrown; }
     body li:hover, body li:focus, body li:active {
       color: burlywood; }
+
+.pointer:hover, #directory:hover {
+  cursor: pointer; }
 
 .container {
   margin-right: 7vw;
