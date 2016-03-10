@@ -43,7 +43,7 @@ input#search-bar {
   color: saddlebrown;
 }
 
-.create-contact,.create-group{
+.create-contact,.create-group, #delete-group{
   width: 90%;
   display: inline-block;
   float: left;
@@ -51,7 +51,7 @@ input#search-bar {
 
 }
 
-.create-contact input,.create-group input {
+.create-contact input,.create-group input ,#delete-group input{
   margin: 0 auto;
   width: 100%;
   height: 45px;

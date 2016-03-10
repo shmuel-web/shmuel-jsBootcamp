@@ -27,10 +27,6 @@
             case '1':
                 viewLayer.displayCurrentGroupContacts();
                 break;
-            case '4':
-                Controller.deleteGroup();
-                break;
-
         }
     }
 
@@ -47,9 +43,15 @@
     form.addEventListener('submit',function(e){
         Controller.createContactFormHandler(e);
     });
+
     form = document.querySelector(".create-group");
     form.addEventListener('submit',function(e){
         Controller.createGroupFormHandler(e);
+    });
+
+    form = document.querySelector("#delete-group");
+    form.addEventListener('submit',function(e){
+        Controller.deleteGroupFormHandler(e);
     });
 })();
 

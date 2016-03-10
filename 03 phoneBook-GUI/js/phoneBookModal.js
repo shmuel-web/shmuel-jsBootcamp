@@ -102,9 +102,8 @@ var modalLayer = (function(){
      * gets id num
      * and delete the item
      * */
-    function deleteItem(){
-//    todo
-        var id = readNonEmptyString('please type the id of the item you wish to delete :');
+    function deleteItem(id){
+
         if (!isNaN(id)){
             var item = findItemById(id);
             item.parent.items.forEach(function(childItem,index,array){

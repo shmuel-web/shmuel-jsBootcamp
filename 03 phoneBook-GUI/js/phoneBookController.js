@@ -27,16 +27,16 @@ var Controller = (function(){
         viewLayer.reDisplayDirectory();
     }
 
-    function deleteGroup(){
-    //    todo remove group in modal
-    //    refresh the ui
+    function deleteGroupFormHandler(){
+        modalLayer.deleteGroup(currentGroup.id);
+        viewLayer.reDisplayDirectory();
         modalLayer.writeToLocalStorage();
     }
 
     return {
         createContactFormHandler:createContactFormHandler,
         createGroupFormHandler:createGroupFormHandler,
-        deleteGroup:deleteGroup,
+        deleteGroupFormHandler:deleteGroupFormHandler,
     };
 })();
 
