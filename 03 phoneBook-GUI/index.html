@@ -22,14 +22,14 @@
             <ul id="directory">
             </ul>
 
-            <h3><a href="">Reset to defaults</a> </h3>
+            <h3><a id="reset">Reset to defaults</a> </h3>
 
         </aside>
         <div class="main">
             <h2 id="current-group-title">Phone Book</h2>
             <nav>
                 <ul>
-                    <li  class="nav-btn" data-val="1">Contacts</li>
+                    <li  class="nav-btn" data-val="1" id="contacts-btn">Contacts</li>
                     <li  class="nav-btn" data-val="2">New Contact</li>
                     <li  class="nav-btn" data-val="3">New group</li>
                     <li  class="nav-btn" data-val="4">Delete</li>
@@ -39,6 +39,15 @@
             <div class="panel" id="1">
                 <h3>Show contacts</h3>
                 <div id="contacts">
+                    <!--todo-->
+                    <table id="contacts-table">
+                        <tr>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Phone number</th>
+                        </tr>
+
+                    </table>
 
                 </div>
             </div>
@@ -64,7 +73,7 @@
             <div class="panel" id="4">
                 <h3>Delete Group</h3>
                 <form id="delete-group">
-                    <h4>delete this group & all of its content?</h4>
+                    <p>delete this group & all of its content?</p>
                     <input type="submit" class="submit" value="yes">
                 </form>
             </div>

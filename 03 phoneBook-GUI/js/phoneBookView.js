@@ -39,17 +39,35 @@ var viewLayer = (function(){
 
     }
 
-    function displayCurrentGroupContacts(){
-        console.log(currentGroup);
-        var table ="";
-        if (currentGroup.items > 0){
+    function reDrawTable(){
+        //todo remove current table from dom
+        var table = document.getElementById('contacts-table');
+        table.innerHTML = "";
+
+        //todo add new table to dom
+//      adding the table head
+        table.innerHTML = "<tr> <th>First name</th> <th>Last name</th> <th>Phone number</th> </tr>";
+
+        var td = document.createElement('td');
+
+        if (currentGroup.items.length > 0){
             currentGroup.items.forEach(function(item){
                 if(item.firstName){
-                    table = table + item.firstName, item.lastName, item.phoneNum ,item.id + "</br>";
+                    var newRow = document.createElement('tr');
+                    td = document.createElement('td');
+                    td.innerHTML = item.firstName;
+                    newRow.appendChild(td);
+                    td = document.createElement('td');
+                    td.innerHTML = item.lastName;
+                    newRow.appendChild(td);
+                    td = document.createElement('td');
+                    td.innerHTML = item.phoneNumbers;
+                    newRow.appendChild(td);
+                    table.appendChild(newRow);
+
                 }
             });
-            var tableContainer = document.getElementById("contacts");
-            console.log(table);
+
 
         }
 
@@ -77,7 +95,7 @@ var viewLayer = (function(){
         displayDirectory:displayDirectory,//done
         reDisplayDirectory:reDisplayDirectory,
         displayCurrentGroup:displayCurrentGroup,//done
-        displayCurrentGroupContacts:displayCurrentGroupContacts,
+        displayCurrentGroupContacts:reDrawTable,
         deleteGroupView:deleteGroupView,
         displaySearchResults:displaySearchResults,
 

@@ -23,18 +23,13 @@
         });
         //making the clicked on tab visible
         panel.setAttribute('style',' display: block');
-        switch(data){
-            case '1':
-                viewLayer.displayCurrentGroupContacts();
-                break;
+        //
+        if (data == '1'){//this means a click event on the firs tab
+            viewLayer.displayCurrentGroupContacts();//which trirgers a re draw of the current group contacts table
         }
     }
 
-    (function panel1Init (){
-        var panel = document.getElementById("1");
-        panel.setAttribute('style',' display: block');
-        viewLayer.displayCurrentGroupContacts();
-    })();
+
 })();
 
 (function formz(){
@@ -57,16 +52,21 @@
 
 (function directory(){
     var directory = document.getElementById('directory');
-    function directoryClick (e){
-        //todo
-        var groupName = e.srcElement.innerText;
-        modalLayer.changeCurrentGroupByName(groupName);
-        viewLayer.displayCurrentGroup();
-    }
+
 
     directory.addEventListener('click',function(e){
-        directoryClick(e)
+        Controller.directoryClick(e);
     });
+
+    var resetBtn = document.querySelector('#reset');
+    resetBtn.addEventListener('click',function(){
+        modalLayer.resetData();
+        modalLayer.readFromLocalStorage();
+        viewLayer.reDisplayDirectory();
+        viewLayer.displayCurrentGroup();
+        viewLayer.displayCurrentGroupContacts();
+
+    })
 })();
 
 (function init(){
@@ -74,6 +74,11 @@
         modalLayer.readFromLocalStorage();
         viewLayer.displayDirectory();
         viewLayer.displayCurrentGroup();
+        (function panel1Init (){
+            var panel = document.getElementById("1");
+            panel.setAttribute('style',' display: block');
+            viewLayer.displayCurrentGroupContacts();
+        })();
     }
 })();
 

@@ -6,8 +6,9 @@ body{
   li{
     transition: all 0.3s ease;
     font-weight:bold;
+    color: saddlebrown;
     &:hover, &:focus, &:active{
-      color: saddlebrown;
+      color: burlywood;
     }
 
   }
@@ -40,7 +41,7 @@ aside{
   min-height: 80vh;
   ul{
     list-style: none;
-    padding-left: 1.5rem;
+    padding-left: 1rem;
     li{
       list-style: none;
     }
@@ -131,4 +132,8 @@ footer{
     position: static;
   }
 
+}
+
+#delete-group{
+  margin-top:-20px;
 }

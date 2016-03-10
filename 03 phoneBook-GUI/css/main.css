@@ -71,9 +71,10 @@ body {
   width: 100%; }
   body li {
     transition: all 0.3s ease;
-    font-weight: bold; }
+    font-weight: bold;
+    color: saddlebrown; }
     body li:hover, body li:focus, body li:active {
-      color: saddlebrown; }
+      color: burlywood; }
 
 .container {
   margin-right: 7vw;
@@ -96,7 +97,7 @@ aside {
   min-height: 80vh; }
   aside ul {
     list-style: none;
-    padding-left: 1.5rem; }
+    padding-left: 1rem; }
     aside ul li {
       list-style: none; }
 
@@ -159,3 +160,6 @@ footer {
     float: left;
     display: block;
     position: static; } }
+
+#delete-group {
+  margin-top: -20px; }

@@ -33,10 +33,19 @@ var Controller = (function(){
         modalLayer.writeToLocalStorage();
     }
 
+    function directoryClick (e){
+        //todo
+        var groupName = e.srcElement.innerText;
+        modalLayer.changeCurrentGroupByName(groupName);
+        viewLayer.displayCurrentGroup();
+        viewLayer.displayCurrentGroupContacts();
+    }
+
     return {
         createContactFormHandler:createContactFormHandler,
         createGroupFormHandler:createGroupFormHandler,
         deleteGroupFormHandler:deleteGroupFormHandler,
+        directoryClick:directoryClick,
     };
 })();
 

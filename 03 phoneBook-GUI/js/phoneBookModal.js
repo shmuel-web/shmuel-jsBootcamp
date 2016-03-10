@@ -258,6 +258,13 @@ var modalLayer = (function(){
         }
     }
 
+    function resetData (){
+        //todo add 2 fake contacts
+        localStorage.phoneBookArray = '[{"name":"~","items":4},{"name":"family","items":0},{"name":"friends","items":1},{"name":"best","items":0},{"name":"work","items":0},{"name":"milueim","items":0}]';
+        root.items = [];
+        currentGroup = root;
+    }
+
     return {
         getAllItems:root,//done
         getCurrentGroupContacts:getCurrentGroupContacts,//done
@@ -269,5 +276,6 @@ var modalLayer = (function(){
         writeToLocalStorage:writeToLocal,//done
         readFromLocalStorage:readFromLocal,//done
         changeCurrentGroupByName:changeCurrentGroupByName,
+        resetData:resetData,
     }
 })();
