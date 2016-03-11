@@ -39,9 +39,12 @@ var viewLayer = (function(){
 
     }
 
-    function reDrawTable(){
+    function reDrawTable(tableLocatinID,contactsArry){
+        //seting the default location to the contact table and the current group contacts
+        var tableLocatinID = tableLocatinID || 'contacts-table';
+        var contactsArry =contactsArry || currentGroup.items;
         //todo remove current table from dom
-        var table = document.getElementById('contacts-table');
+        var table = document.getElementById(tableLocatinID);
         table.innerHTML = "";
 
         //todo add new table to dom
@@ -50,8 +53,8 @@ var viewLayer = (function(){
 
         var td = document.createElement('td');
 
-        if (currentGroup.items.length > 0){
-            currentGroup.items.forEach(function(item){
+        if (contactsArry.length > 0){
+            contactsArry.forEach(function(item){
                 if(item.firstName){
                     var newRow = document.createElement('tr');
                     td = document.createElement('td');
@@ -91,8 +94,28 @@ var viewLayer = (function(){
 
     }
 
-    function displaySearchResults(){
+    function toggleSearchResultPanel(){
+        var resultPanel = document.querySelector('.search-result');
+        var searchBtn = document.querySelector('#search-icon');
+        var resultPanelState = resultPanel.getAttribute('style');
+        if (resultPanelState == 'display: block'){
+            resultPanel.setAttribute('style','display: none');
+            searchBtn.setAttribute('src','Icon-search.svg');
+        }
+        else{
+            resultPanel.setAttribute('style','display: block');
+            searchBtn.setAttribute('src','Icon-x-circle.svg');
+        }
 
+    }
+
+    function hideResultPanel(){
+        var resultPanel = document.querySelector('.search-result');
+        resultPanel.setAttribute('style',' display: none');
+    }
+
+    function showContactsPanel(){
+        document.getElementById('contacts-btn').click();
     }
 
 
@@ -101,8 +124,12 @@ var viewLayer = (function(){
         reDisplayDirectory:reDisplayDirectory,
         displayCurrentGroup:displayCurrentGroup,//done
         displayCurrentGroupContacts:reDrawTable,
+        displaySearchResultTable:reDrawTable,
         deleteGroupView:deleteGroupView,
-        displaySearchResults:displaySearchResults,
+        toggleSearchResultPanel:toggleSearchResultPanel,
+        showContactsPanel:showContactsPanel,
+        hideResultPanel:hideResultPanel,
+
 
     }
 })();

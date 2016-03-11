@@ -12,7 +12,17 @@
             <h1>Phone Book</h1>
             <form class="search-container">
                 <input type="text" id="search-bar" placeholder="Search">
-                <a href="#"><img class="search-icon" src="Icon-search.svg"></a>
+                <a ><img id="search-icon" src="Icon-search.svg"></a>
+                <div class="search-result">
+                    <table id="result-table">
+                        <tr>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Phone number</th>
+                        </tr>
+
+                    </table>
+                </div>
             </form>
         </div>
     </header>
@@ -22,7 +32,7 @@
             <ul id="directory">
             </ul>
 
-            <h3><a id="reset">Reset to defaults</a> </h3>
+            <h3><a id="reset" class="pointer">Reset to defaults</a> </h3>
 
         </aside>
         <div class="main">
@@ -32,7 +42,7 @@
                     <li  class="nav-btn pointer" data-val="1" id="contacts-btn">Contacts</li>
                     <li  class="nav-btn pointer" data-val="2">New Contact</li>
                     <li  class="nav-btn pointer" data-val="3">New group</li>
-                    <li  class="nav-btn pointer" data-val="4">Delete</li>
+                    <li  class="nav-btn pointer delete-tab" data-val="4">Delete</li>
                 </ul>
             </nav>
 
@@ -77,7 +87,7 @@
                 <h3>Delete Group</h3>
                 <form id="delete-group">
                     <p>delete this group & all of its content?</p>
-                    <input type="submit" class="submit" value="yes">
+                    <input type="submit" class="submit delete-btn" value="yes">
                 </form>
             </div>
         </div>

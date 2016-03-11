@@ -42,6 +42,7 @@ var controller = (function(){
         modalLayer.changeCurrentGroupByName(groupName);
         viewLayer.displayCurrentGroup();
         viewLayer.displayCurrentGroupContacts();
+        viewLayer.showContactsPanel();
     }
 
     function tableClick(e){
@@ -53,19 +54,25 @@ var controller = (function(){
         }
     }
 
-    function addPhoneNumber(e){
+    function addPhoneNumber(){
 //        todo
         var input = document.createElement('input');
         input.setAttribute('placeholder',"Phone Numbers");
         var inputContainer = document.querySelector(".input-field-container");
         inputContainer.appendChild(input);
 
-        /*        form = document.querySelector(".create-contact");
-                var btn = e.targete
-                var input = document.createElement('input');
-                input.setAttribute('placeholder',"Phone Numbers");
-                var inputPhoneNumber = document.getElementById('input-phone-number');
-                form.insertBefore(inputPhoneNumber,btn);*/
+    }
+
+    function searchContact (e){
+        //    geting the search param from the DOM
+        var searchParam = e.target.parentNode.previousSibling.previousSibling.value;
+        //    geting the results from the modal
+        var foundItems = modalLayer.find(searchParam);
+        //    printing the results table
+        console.log(searchParam,foundItems);
+        viewLayer.displaySearchResultTable('result-table',foundItems);
+    //    displaying the results
+        viewLayer.toggleSearchResultPanel();
     }
 
     return {
@@ -75,6 +82,7 @@ var controller = (function(){
         directoryClick:directoryClick,
         tableClick:tableClick,
         addPhoneNumber:addPhoneNumber,
+        searchContact:searchContact,
     };
 })();
 

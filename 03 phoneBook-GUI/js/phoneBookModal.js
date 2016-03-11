@@ -43,8 +43,8 @@ var modalLayer = (function(){
      * gets a search parameter
      * returns every item the string is in
      * */
-    function find(searchParam, item) {
-        var foundItems = [];
+    function find(searchParam, item ,foundItems) {
+        var foundItems = foundItems || [];
         var sParam = searchParam.toUpperCase();
         if (!item){
             item = root;
@@ -61,7 +61,7 @@ var modalLayer = (function(){
             }
             if (item.items.length > 0) {
                 item.items.forEach(function (childItem) {
-                    find(sParam, childItem);
+                    find(sParam, childItem ,foundItems);
                 });
             }
         }

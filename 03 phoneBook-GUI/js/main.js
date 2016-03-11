@@ -39,24 +39,22 @@
 (function formz(){
     //adding event listenerz
     var form = document.querySelector(".create-contact")
-    function showContacts(){
-        document.getElementById('contacts-btn').click();
-    }
+
     form.addEventListener('submit',function(e){
         controller.createContactFormHandler(e);
-        showContacts();
+        viewLayer.showContactsPanel();
     });
 
     form = document.querySelector(".create-group");
     form.addEventListener('submit',function(e){
         controller.createGroupFormHandler(e);
-        showContacts();
+        viewLayer.showContacts();
     });
 
     form = document.querySelector("#delete-group");
     form.addEventListener('submit',function(e){
         controller.deleteGroupFormHandler(e);
-        showContacts();
+        viewLayer.showContacts();
     });
 
     var addPhoneNumbers = document.getElementById('add-Phone-num');
@@ -104,6 +102,13 @@
     }
 })();
 
+(function search() {
+    var searchBtn = document.querySelector('#search-icon');
+    searchBtn.addEventListener('click',function(e){
+
+        controller.searchContact(e);
+    })
+})();
 
 
 

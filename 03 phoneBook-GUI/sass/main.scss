@@ -1,5 +1,8 @@
 @import "forms";
 @import "table";
+@import "search";
+
+
 
 body{
   margin: 0;
@@ -39,19 +42,27 @@ header {
   }
 
 }
-aside{
+aside {
   display: inline-block;
   float: left;
   width: 33%;
   min-height: 80vh;
-  ul{
+  ul {
     list-style: none;
     padding-left: 1rem;
-    li{
+    li {
       list-style: none;
     }
   }
+}
 
+
+#reset{
+  transition: all 0.3s ease;
+  color: saddlebrown;
+  &:hover{
+    color: red;
+  }
 }
 
 
@@ -60,12 +71,17 @@ aside{
   float: left;
   width: 67%;
   min-height: 80vh;
+
   ul {
     list-style: none;
     padding: 0;
+    border-bottom: burlywood 1px solid;
     li{
+      margin: 0;
       display: inline-block;
-      padding-right:10px;
+      padding:10px 10px 10px 0;
+      border-top: 1px solid burlywood;
+      border-right: 1px solid burlywood;
       }
     }
   .panel {
@@ -104,33 +120,7 @@ footer{
     border-bottom: 1px solid wheat;
   }
 
-  .search-container{
-    width: 76vw;
-    height: 45px;
-    display: inline-block;
-    float: left;
-  }
 
-  input#search-bar{
-
-
-    border: 1px solid wheat;
-    outline: none;
-    &:focus{
-      border: 1px solid saddlebrown;
-      transition: 0.35s ease;
-      color: saddlebrown;
-      &::-webkit-input-placeholder{
-        transition: opacity 0.45s ease;
-        opacity: 0;
-      }
-      &::-moz-placeholder {
-        transition: opacity 0.45s ease;
-        opacity: 0;
-      }
-
-    }
-  }
   footer{
     float: left;
     display: block;
