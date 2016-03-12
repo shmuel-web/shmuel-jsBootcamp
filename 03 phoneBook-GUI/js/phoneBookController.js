@@ -7,12 +7,12 @@ var controller = (function(){
         var inputs = document.querySelectorAll('.create-contact input');
         var fName = inputs[0].value;
         var lName = inputs[1].value;
-        var phoneNums = [];
+        var phoneNumbers = [];
         for(var i = 2; i < inputs.length - 2; i++){
-            phoneNums.push(inputs[i].value);
+            phoneNumbers.push(inputs[i].value);
         }
         //create new contact
-        modalLayer.createContact(fName, lName, phoneNums);
+        modalLayer.createContact(fName, lName, phoneNumbers);
         //clean up the form
         e.target.reset();
         modalLayer.writeToLocalStorage();
@@ -38,7 +38,7 @@ var controller = (function(){
     }
 
     function directoryClick (e){
-        //todo
+        //geting the name of the group the user clicked on
         var groupName = e.srcElement.innerText;
         modalLayer.changeCurrentGroupByName(groupName);
         viewLayer.displayCurrentGroup();
@@ -47,21 +47,24 @@ var controller = (function(){
     }
 
     function tableClick(e){
+        //geting the id of the contact the user wish to delete
         var itemId = e.srcElement.getAttribute('item-id');
         if (itemId){
             modalLayer.deleteContact(itemId);
+            //saving changes
             modalLayer.writeToLocalStorage();
+            //reflecting chnges to the user
             viewLayer.displayCurrentGroupContacts();
         }
     }
 
+    //this function adds another phone number input field to the create contact form
+
     function addPhoneNumber(){
-//        todo
         var input = document.createElement('input');
         input.setAttribute('placeholder',"Phone Numbers");
         var inputContainer = document.querySelector(".input-field-container");
         inputContainer.appendChild(input);
-
     }
 
     function searchContact (e){
@@ -70,9 +73,8 @@ var controller = (function(){
         //    geting the results from the modal
         var foundItems = modalLayer.find(searchParam);
         //    printing the results table
-        console.log(searchParam,foundItems);
         viewLayer.displaySearchResultTable('result-table',foundItems);
-    //    displaying the results
+        //    displaying the results
         viewLayer.toggleSearchResultPanel();
     }
 

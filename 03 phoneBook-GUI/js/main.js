@@ -1,10 +1,7 @@
 /*
-* this file contains all the UI functionality
+* this file contains all the UI event listeners
 * */
 
-
-//todo search result view
-//todo show multipale phone numberz
 (function tabzNavigation(){
     var navList = document.querySelectorAll('nav li'); //gets a node list
     var navArray = Array.prototype.slice.call(navList); // converts NodeList to Array
@@ -48,7 +45,7 @@
     form = document.querySelector(".create-group");
     form.addEventListener('submit',function(e){
         controller.createGroupFormHandler(e);
-        viewLayer.showContacts();
+        viewLayer.showContactsPanel();
     });
 
     form = document.querySelector("#delete-group");
@@ -63,7 +60,7 @@
     })
 })();
 
-(function directory(){
+(function groupsDirectory(){
     var directory = document.getElementById('directory');
 
 
@@ -95,6 +92,13 @@
     });
 })();
 
+(function search() {
+    var searchBtn = document.querySelector('#search-icon');
+    searchBtn.addEventListener('click',function(e){
+        controller.searchContact(e);
+    })
+})();
+
 (function init(){
     window.onload = function() {
         modalLayer.readFromLocalStorage();
@@ -108,12 +112,7 @@
     }
 })();
 
-(function search() {
-    var searchBtn = document.querySelector('#search-icon');
-    searchBtn.addEventListener('click',function(e){
-        controller.searchContact(e);
-    })
-})();
+
 
 
 

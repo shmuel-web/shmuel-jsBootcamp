@@ -1,5 +1,5 @@
 /*
-* this layer is all about talking to the DOM
+* this layer is all about writing to the DOM
 * */
 
 var viewLayer = (function(){
@@ -9,7 +9,6 @@ var viewLayer = (function(){
         var item = item || modalLayer.getAllItems;
 
         if (item.name){
-
             var li = document.createElement('li');
             li.innerHTML = item.name;
             directory.appendChild(li);
@@ -21,41 +20,34 @@ var viewLayer = (function(){
                 });
                 directory = directory.parentNode;
             }
-
         }
     }
 
-
-    function displayCurrentGroup(){
+    function displayCurrentGroupName(){
         var title = document.querySelector("#current-group-title");
-
-        console.log(currentGroup.name);
         if (currentGroup.name == '~'){
             title.innerText = 'Phone Book';
         }
         else{
             title.innerText = currentGroup.name ;
         }
-
     }
 
     function reDrawTable(tableLocatinID,contactsArry){
-        //seting the default location to draw the table and defult array of contacts to work on
+        //seting the default location to draw the table and default array of contacts to work on
         var tableLocatinID = tableLocatinID || 'contacts-table';
         var contactsArry = contactsArry ||
-            currentGroup.items.filter(function(item){
+            currentGroup.items.filter(function(item){//filtering the array for contacts only
                 if (item.firstName){
                     return item;
                 }
             });
-        //todo remove current table from dom
+
         var table = document.getElementById(tableLocatinID);
+        //remove current table from the DOM
         table.innerHTML = "";
 
-
-
         var td = document.createElement('td');
-
         if (contactsArry.length > 0){
             //adding the table head
             table.innerHTML = "<tr> <th>First name</th> <th>Last name</th> <th>Phone number</th> <th>delete</th> </tr>";
@@ -80,8 +72,6 @@ var viewLayer = (function(){
                 table.appendChild(newRow);
 
             });
-
-
         }
         else if (tableLocatinID == 'result-table'){
             table.innerHTML = "<tr> <th>No contacts found</th> </tr>";
@@ -97,12 +87,6 @@ var viewLayer = (function(){
         displayDirectory();
     }
 
-
-
-    function deleteGroupView(){
-
-    }
-
     function toggleSearchResultPanel(){
         var resultPanel = document.querySelector('.search-result');
         var searchBtn = document.querySelector('#search-icon');
@@ -110,12 +94,12 @@ var viewLayer = (function(){
         if (resultPanelState == 'display: block'){
             resultPanel.setAttribute('style','display: none');
             searchBtn.setAttribute('src','Icon-search.svg');
+            document.getElementById('search-bar').value = "";
         }
         else{
             resultPanel.setAttribute('style','display: block');
             searchBtn.setAttribute('src','Icon-x-circle.svg');
         }
-
     }
 
     function hideResultPanel(){
@@ -126,15 +110,13 @@ var viewLayer = (function(){
     function showContactsPanel(){
         document.getElementById('contacts-btn').click();
     }
-
-
+    
     return {
         displayDirectory:displayDirectory,//done
         reDisplayDirectory:reDisplayDirectory,
-        displayCurrentGroup:displayCurrentGroup,//done
+        displayCurrentGroup:displayCurrentGroupName,//done
         displayCurrentGroupContacts:reDrawTable,
         displaySearchResultTable:reDrawTable,
-        deleteGroupView:deleteGroupView,
         toggleSearchResultPanel:toggleSearchResultPanel,
         showContactsPanel:showContactsPanel,
         hideResultPanel:hideResultPanel,

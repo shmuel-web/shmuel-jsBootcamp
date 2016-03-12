@@ -2,14 +2,16 @@
 * this layer is all about data manipulation
 * */
 var currentGroup;
+
 var modalLayer = (function(){
 
     var root = createGroup("~");
 
     var nextId = 0;
-    currentGroup = root;
-    function addNewContact(firstName,lastName,phoneNumbers){
 
+    currentGroup = root;
+
+    function addNewContact(firstName,lastName,phoneNumbers){
         var newContact = createContact(firstName, lastName, phoneNumbers);
         addItem(newContact);
     }
@@ -21,15 +23,13 @@ var modalLayer = (function(){
     }
 
     function changeCurrentGroupByName(name) {
-        var group = findGroupByName(name)
+        var group = findGroupByName(name);
         console.log(group);
         currentGroup = group;
-
     }
 
     function getCurrentGroupContacts() {
         var currentContacts = [];
-
         currentGroup.items.forEach(function(childItem){
             if (childItem.firstName){
                 currentContacts.push(childItem);
@@ -39,10 +39,7 @@ var modalLayer = (function(){
         return currentContacts;
     }
 
-    /*
-     * gets a search parameter
-     * returns every item the string is in
-     * */
+    //gets a search parameter returns every item the string is in
     function find(searchParam, item ,foundItems) {
         var foundItems = foundItems || [];
         var sParam = searchParam.toUpperCase();
@@ -98,10 +95,7 @@ var modalLayer = (function(){
         return foundItem;
     }
 
-    /*
-     * gets id num
-     * and delete the item
-     * */
+    //gets id num and deletes the item
     function deleteItem(id){
 
         if (!isNaN(id)){
@@ -113,9 +107,7 @@ var modalLayer = (function(){
             })
         }
         currentGroup = item.parent;
-
     }
-
 
     function createContact(firstName, lastName, phoneNumbers) {
         return {
@@ -135,8 +127,7 @@ var modalLayer = (function(){
         }
 
         if (groupWithSameNameExists){
-        //todo    throw err
-            console.log('group name is already used');
+            throw 'group name is already used';
         }
         else{
             return {
@@ -151,16 +142,13 @@ var modalLayer = (function(){
         if (currentGroup.item) {
             throw Error("Item with id " + item.id + " was already added to group: " + item.currentGroup.id);
         }
-
         currentGroup.items.push(item);
-
         item.parent = currentGroup;
     }
 
     function generateNextId(){
         return nextId++;
     }
-    
 
     function findGroup(name){
         var subGroup = false;
@@ -171,7 +159,9 @@ var modalLayer = (function(){
         });
         return subGroup;
     }
-
+    //this function takes all the phone book and turns it into an array of JSON objects
+    //and saves the tree structure relationships between the objects
+    //in every object the 'items' property saves the number of child nodes he has and they wil be the next items in the array
     function phoneBookToArray(item, PhoneBookItemsArray ) {
         var PhoneBookItems = PhoneBookItemsArray || [];
 
@@ -206,16 +196,15 @@ var modalLayer = (function(){
         }
     }
 
+    //saves the current phone book items to local storage
     function writeToLocal(){
-        //
         var phoneBookArray = phoneBookToArray();
         console.log(phoneBookArray);
         localStorage.setItem("phoneBookArray",JSON.stringify(phoneBookArray));
     }
 
+    //reads the phone bok items from local storage
     function readFromLocal(){
-
-        //    todo
         var phoneBookArray = JSON.parse(localStorage.getItem("phoneBookArray"));
         console.log(phoneBookArray);
         if (phoneBookArray){
@@ -225,8 +214,8 @@ var modalLayer = (function(){
         }
     }
 
+    //this function loads every phone book item from the array in to the program
     function load (item,index,array){
-
         if (item) {
             if (item.firstName) {
                 var contact = createContact(item.firstName, item.lastName, item.phoneNumbers);
@@ -238,7 +227,6 @@ var modalLayer = (function(){
 
                 if (item.items > 0) {
                     currentGroup = group;
-
                     for (var i = ++index; i < index + item.items; i++) { //iterating over his children & inserting them
                         load(array[i], i, array);//recurse
                     }
@@ -259,10 +247,10 @@ var modalLayer = (function(){
         }
     }
 
+    //this function restores the program to a default condition
     function resetData (){
-        //todo add 2 fake contacts
-        localStorage.phoneBookArray = '[{"name":"~","items":4},{"name":"family","items":0},{"name":"friends","items":1},{"name":"best","items":0},{"name":"work","items":0},{"name":"milueim","items":0}]';
-        root.items = [];
+        localStorage.phoneBookArray =
+            '[{"name":"~","items":6},{"name":"family","items":0},{"name":"friends","items":1},{"name":"best-friends","items":0},{"name":"work","items":0},{"name":"milueim","items":0},{"firstName":"jhon ","lastName":"doe","phoneNumbers":["04-8759918"],"items":0},{"firstName":"jane","lastName":"doe","phoneNumbers":["04-8759918"],"items":0}]';        root.items = [];
         currentGroup = root;
     }
 
