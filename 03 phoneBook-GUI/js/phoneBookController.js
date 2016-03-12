@@ -33,6 +33,7 @@ var controller = (function(){
     function deleteGroupFormHandler(){
         modalLayer.deleteGroup(currentGroup.id);
         viewLayer.reDisplayDirectory();
+        viewLayer.displayCurrentGroup();
         modalLayer.writeToLocalStorage();
     }
 
@@ -75,6 +76,17 @@ var controller = (function(){
         viewLayer.toggleSearchResultPanel();
     }
 
+    function deleteContactFromSearchBar(){
+        //    geting the search param from the DOM
+        var searchParam = document.getElementById('search-bar').value;
+        //    geting the results from the modal
+        var foundItems = modalLayer.find(searchParam);
+        //    printing the results table
+        console.log(searchParam,foundItems);
+        viewLayer.displaySearchResultTable('result-table',foundItems);
+
+    }
+
     return {
         createContactFormHandler:createContactFormHandler,
         createGroupFormHandler:createGroupFormHandler,
@@ -83,6 +95,7 @@ var controller = (function(){
         tableClick:tableClick,
         addPhoneNumber:addPhoneNumber,
         searchContact:searchContact,
+        deleteContactFromSearchBar:deleteContactFromSearchBar,
     };
 })();
 

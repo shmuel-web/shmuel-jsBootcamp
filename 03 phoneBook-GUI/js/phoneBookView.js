@@ -40,46 +40,55 @@ var viewLayer = (function(){
     }
 
     function reDrawTable(tableLocatinID,contactsArry){
-        //seting the default location to the contact table and the current group contacts
+        //seting the default location to draw the table and defult array of contacts to work on
         var tableLocatinID = tableLocatinID || 'contacts-table';
-        var contactsArry =contactsArry || currentGroup.items;
+        var contactsArry = contactsArry ||
+            currentGroup.items.filter(function(item){
+                if (item.firstName){
+                    return item;
+                }
+            });
         //todo remove current table from dom
         var table = document.getElementById(tableLocatinID);
         table.innerHTML = "";
 
-        //todo add new table to dom
-//      adding the table head
-        table.innerHTML = "<tr> <th>First name</th> <th>Last name</th> <th>Phone number</th> <th>delete</th> </tr>";
+
 
         var td = document.createElement('td');
 
         if (contactsArry.length > 0){
+            //adding the table head
+            table.innerHTML = "<tr> <th>First name</th> <th>Last name</th> <th>Phone number</th> <th>delete</th> </tr>";
+            //adding table row per contact
             contactsArry.forEach(function(item){
-                if(item.firstName){
-                    var newRow = document.createElement('tr');
-                    td = document.createElement('td');
-                    td.innerHTML = item.firstName;
-                    newRow.appendChild(td);
-                    td = document.createElement('td');
-                    td.innerHTML = item.lastName;
-                    newRow.appendChild(td);
-                    td = document.createElement('td');
-                    td.innerHTML = item.phoneNumbers;
-                    newRow.appendChild(td);
-                    td = document.createElement('td');
-                    td.innerHTML = "delete";
-                    td.setAttribute('item-id',item.id);
-                    td.setAttribute('class','delete-contact-btn pointer')
-                    newRow.appendChild(td);
-                    table.appendChild(newRow);
 
-                }
+                var newRow = document.createElement('tr');
+                td = document.createElement('td');
+                td.innerHTML = item.firstName;
+                newRow.appendChild(td);
+                td = document.createElement('td');
+                td.innerHTML = item.lastName;
+                newRow.appendChild(td);
+                td = document.createElement('td');
+                td.innerHTML = item.phoneNumbers;
+                newRow.appendChild(td);
+                td = document.createElement('td');
+                td.innerHTML = "delete";
+                td.setAttribute('item-id',item.id);
+                td.setAttribute('class','delete-contact-btn pointer')
+                newRow.appendChild(td);
+                table.appendChild(newRow);
+
             });
 
 
         }
-
-
+        else if (tableLocatinID == 'result-table'){
+            table.innerHTML = "<tr> <th>No contacts found</th> </tr>";
+        }
+        else {
+            table.innerHTML = "<tr> <th>No contacts available </th> </tr>";
+        }
     }
 
     function reDisplayDirectory (){

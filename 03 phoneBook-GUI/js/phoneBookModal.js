@@ -112,6 +112,7 @@ var modalLayer = (function(){
                 }
             })
         }
+        currentGroup = item.parent;
 
     }
 
