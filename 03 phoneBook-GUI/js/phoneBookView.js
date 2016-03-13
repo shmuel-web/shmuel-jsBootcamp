@@ -28,9 +28,11 @@ var viewLayer = (function () {
         var title = document.querySelector("#current-group-title");
         if (currentGroup.name == '~') {
             title.innerText = 'Phone Book';
+            toggleDeleteGroupBtn();//removes the delete group btn because root cant be deleted
         }
         else {
             title.innerText = currentGroup.name;
+            toggleDeleteGroupBtn();//displays the delete group btn for all the groups
         }
     }
 
@@ -127,6 +129,17 @@ var viewLayer = (function () {
         //
         if (data == '1') {//this means a click event on the firs tab
             viewLayer.displayCurrentGroupContacts();//which trirgers a re draw of the current group contacts table
+        }
+    }
+
+    function toggleDeleteGroupBtn(){
+        var deleteTab = document.querySelector('.delete-tab');
+        var deleteTabState = deleteTab.getAttribute('style');
+        if (deleteTabState == 'display:none' && currentGroup.name != '~'){
+            deleteTab.setAttribute('style','display:inline-block');
+        }
+        else if (currentGroup.name == '~'){
+            deleteTab.setAttribute('style','display:none');
         }
     }
 

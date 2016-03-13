@@ -24,8 +24,8 @@ var modalLayer = (function () {
 
     function changeCurrentGroupByName(name) {
         var group = findGroupByName(name);
-        console.log(group);
         currentGroup = group;
+
     }
 
     function getCurrentGroupContacts() {

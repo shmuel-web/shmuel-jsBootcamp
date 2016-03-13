@@ -4,6 +4,10 @@
   float: left;
   margin: 2vh auto 2vh auto; }
 
+body{
+  visibility: visible;
+}
+
 .create-contact input, .create-group input, #delete-group input {
   margin: 0 auto;
   width: 100%;
