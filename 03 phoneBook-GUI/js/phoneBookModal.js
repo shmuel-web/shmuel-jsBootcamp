@@ -1,9 +1,9 @@
 /*
-* this layer is all about data manipulation
-* */
+ * this layer is all about data manipulation
+ * */
 var currentGroup;
 
-var modalLayer = (function(){
+var modalLayer = (function () {
 
     var root = createGroup("~");
 
@@ -11,13 +11,13 @@ var modalLayer = (function(){
 
     currentGroup = root;
 
-    function addNewContact(firstName,lastName,phoneNumbers){
+    function addNewContact(firstName, lastName, phoneNumbers) {
         var newContact = createContact(firstName, lastName, phoneNumbers);
         addItem(newContact);
     }
 
 
-    function addNewGroup(name){
+    function addNewGroup(name) {
         var group = createGroup(name);
         addItem(group);
     }
@@ -30,8 +30,8 @@ var modalLayer = (function(){
 
     function getCurrentGroupContacts() {
         var currentContacts = [];
-        currentGroup.items.forEach(function(childItem){
-            if (childItem.firstName){
+        currentGroup.items.forEach(function (childItem) {
+            if (childItem.firstName) {
                 currentContacts.push(childItem);
             }
         });
@@ -40,10 +40,10 @@ var modalLayer = (function(){
     }
 
     //gets a search parameter returns every item the string is in
-    function find(searchParam, item ,foundItems) {
+    function find(searchParam, item, foundItems) {
         var foundItems = foundItems || [];
         var sParam = searchParam.toUpperCase();
-        if (!item){
+        if (!item) {
             item = root;
         }
 
@@ -58,55 +58,56 @@ var modalLayer = (function(){
             }
             if (item.items.length > 0) {
                 item.items.forEach(function (childItem) {
-                    find(sParam, childItem ,foundItems);
+                    find(sParam, childItem, foundItems);
                 });
             }
         }
         return foundItems;
     }
 
-    function findGroupByName(name,phonbookItem){
+    function findGroupByName(name, phonbookItem) {
         var item = phonbookItem || root;
         if (item.name == name) {
             return item;
         }
         else if (item.items) {
             var result = null;
-            for (var i=0; result == null && i < item.items.length; i++){
-                result = findGroupByName(name,item.items[i]);
+            for (var i = 0; result == null && i < item.items.length; i++) {
+                result = findGroupByName(name, item.items[i]);
             }
             return result;
         }
         return null;
     }
 
-    function findItemById(id ,phonbookItem,foundItem){
+    function findItemById(id, phonbookItem, foundItem) {
         foundItem = foundItem || false;
         var item = phonbookItem || root;
 
-        if (item.id == id){
+        if (item.id == id) {
             foundItem = item;
         }
-        else if(item.items && item.items.length > 0 && !foundItem){
-            item.items.forEach(function(childItem){
-                foundItem = findItemById(id ,childItem, foundItem);
+        else if (item.items && item.items.length > 0 && !foundItem) {
+            item.items.forEach(function (childItem) {
+                foundItem = findItemById(id, childItem, foundItem);
             });
         }
         return foundItem;
     }
 
     //gets id num and deletes the item
-    function deleteItem(id){
+    function deleteItem(id) {
 
-        if (!isNaN(id)){
+        if (!isNaN(id)) {
             var item = findItemById(id);
-            item.parent.items.forEach(function(childItem,index,array){
-                if (childItem.id == id){
-                    array.splice(index,1);
+            item.parent.items.forEach(function (childItem, index, array) {
+                if (childItem.id == id) {
+                    array.splice(index, 1);
                 }
-            })
+            });
+            currentGroup = item.parent;
         }
-        currentGroup = item.parent;
+
     }
 
     function createContact(firstName, lastName, phoneNumbers) {
@@ -119,17 +120,17 @@ var modalLayer = (function(){
     }
 
     function createGroup(name) {
-        if (name != '~'){
+        if (name != '~') {
             var groupWithSameNameExists = findGroupByName(name);
         }
-        else{
+        else {
             groupWithSameNameExists = false;
         }
 
-        if (groupWithSameNameExists){
+        if (groupWithSameNameExists) {
             throw 'group name is already used';
         }
-        else{
+        else {
             return {
                 id: generateNextId(),
                 name: name,
@@ -138,7 +139,7 @@ var modalLayer = (function(){
         }
     }
 
-    function addItem (item) {
+    function addItem(item) {
         if (currentGroup.item) {
             throw Error("Item with id " + item.id + " was already added to group: " + item.currentGroup.id);
         }
@@ -146,26 +147,27 @@ var modalLayer = (function(){
         item.parent = currentGroup;
     }
 
-    function generateNextId(){
+    function generateNextId() {
         return nextId++;
     }
 
-    function findGroup(name){
+    function findGroup(name) {
         var subGroup = false;
-        currentGroup.items.forEach(function (item){
-            if (item.name == name){
+        currentGroup.items.forEach(function (item) {
+            if (item.name == name) {
                 subGroup = item;
             }
         });
         return subGroup;
     }
+
     //this function takes all the phone book and turns it into an array of JSON objects
     //and saves the tree structure relationships between the objects
     //in every object the 'items' property saves the number of child nodes he has and they wil be the next items in the array
-    function phoneBookToArray(item, PhoneBookItemsArray ) {
+    function phoneBookToArray(item, PhoneBookItemsArray) {
         var PhoneBookItems = PhoneBookItemsArray || [];
 
-        if (!item){
+        if (!item) {
             item = root;
         }
 
@@ -189,7 +191,7 @@ var modalLayer = (function(){
                 };
                 PhoneBookItems.push(itemJson);
                 item.items.forEach(function (childItem) {
-                    phoneBookToArray(childItem,PhoneBookItems);
+                    phoneBookToArray(childItem, PhoneBookItems);
                 });
             }
             return PhoneBookItems;
@@ -197,25 +199,23 @@ var modalLayer = (function(){
     }
 
     //saves the current phone book items to local storage
-    function writeToLocal(){
+    function writeToLocal() {
         var phoneBookArray = phoneBookToArray();
-        console.log(phoneBookArray);
-        localStorage.setItem("phoneBookArray",JSON.stringify(phoneBookArray));
+        localStorage.setItem("phoneBookArray", JSON.stringify(phoneBookArray));
     }
 
     //reads the phone bok items from local storage
-    function readFromLocal(){
+    function readFromLocal() {
         var phoneBookArray = JSON.parse(localStorage.getItem("phoneBookArray"));
-        console.log(phoneBookArray);
-        if (phoneBookArray){
-            phoneBookArray.forEach(function(item,index,array){
-                load(item,index,array);
+        if (phoneBookArray) {
+            phoneBookArray.forEach(function (item, index, array) {
+                load(item, index, array);
             })
         }
     }
 
     //this function loads every phone book item from the array in to the program
-    function load (item,index,array){
+    function load(item, index, array) {
         if (item) {
             if (item.firstName) {
                 var contact = createContact(item.firstName, item.lastName, item.phoneNumbers);
@@ -248,23 +248,24 @@ var modalLayer = (function(){
     }
 
     //this function restores the program to a default condition
-    function resetData (){
+    function resetData() {
         localStorage.phoneBookArray =
-            '[{"name":"~","items":6},{"name":"family","items":0},{"name":"friends","items":1},{"name":"best-friends","items":0},{"name":"work","items":0},{"name":"milueim","items":0},{"firstName":"jhon ","lastName":"doe","phoneNumbers":["04-8759918"],"items":0},{"firstName":"jane","lastName":"doe","phoneNumbers":["04-8759918"],"items":0}]';        root.items = [];
+            '[{"name":"~","items":6},{"name":"family","items":0},{"name":"friends","items":1},{"name":"best-friends","items":0},{"name":"work","items":0},{"name":"milueim","items":0},{"firstName":"jhon ","lastName":"doe","phoneNumbers":["04-8759918"],"items":0},{"firstName":"jane","lastName":"doe","phoneNumbers":["04-8759918"],"items":0}]';
+        root.items = [];
         currentGroup = root;
     }
 
     return {
-        getAllItems:root,//done
-        getCurrentGroupContacts:getCurrentGroupContacts,//done
-        createContact:addNewContact,//done
-        createGroup:addNewGroup,//done
-        find:find,//done
-        deleteContact:deleteItem,//done
-        deleteGroup:deleteItem,//done
-        writeToLocalStorage:writeToLocal,//done
-        readFromLocalStorage:readFromLocal,//done
-        changeCurrentGroupByName:changeCurrentGroupByName,
-        resetData:resetData,
+        getAllItems: root,//done
+        getCurrentGroupContacts: getCurrentGroupContacts,//done
+        createContact: addNewContact,//done
+        createGroup: addNewGroup,//done
+        find: find,//done
+        deleteContact: deleteItem,//done
+        deleteGroup: deleteItem,//done
+        writeToLocalStorage: writeToLocal,//done
+        readFromLocalStorage: readFromLocal,//done
+        changeCurrentGroupByName: changeCurrentGroupByName,
+        resetData: resetData,
     }
 })();

@@ -1,14 +1,14 @@
 /**
  * this layer is all about event handlers for the UI
  */
-var controller = (function(){
-    function createContactFormHandler (e) {
+var controller = (function () {
+    function createContactFormHandler(e) {
         e.preventDefault();
         var inputs = document.querySelectorAll('.create-contact input');
         var fName = inputs[0].value;
         var lName = inputs[1].value;
         var phoneNumbers = [];
-        for(var i = 2; i < inputs.length - 2; i++){
+        for (var i = 2; i < inputs.length - 2; i++) {
             phoneNumbers.push(inputs[i].value);
         }
         //create new contact
@@ -16,9 +16,10 @@ var controller = (function(){
         //clean up the form
         e.target.reset();
         modalLayer.writeToLocalStorage();
+        viewLayer.showContactsPanel();
     }
 
-    function createGroupFormHandler (e){
+    function createGroupFormHandler(e) {
         e.preventDefault();
         var inputs = document.querySelectorAll('.create-group input');
         var name = inputs[0].value;
@@ -28,16 +29,18 @@ var controller = (function(){
         e.target.reset();
         modalLayer.writeToLocalStorage();
         viewLayer.reDisplayDirectory();
+        viewLayer.showContactsPanel();
     }
 
-    function deleteGroupFormHandler(){
+    function deleteGroupFormHandler() {
         modalLayer.deleteGroup(currentGroup.id);
         viewLayer.reDisplayDirectory();
         viewLayer.displayCurrentGroup();
         modalLayer.writeToLocalStorage();
+        viewLayer.showContactsPanel();
     }
 
-    function directoryClick (e){
+    function directoryClick(e) {
         //geting the name of the group the user clicked on
         var groupName = e.srcElement.innerText;
         modalLayer.changeCurrentGroupByName(groupName);
@@ -46,10 +49,10 @@ var controller = (function(){
         viewLayer.showContactsPanel();
     }
 
-    function tableClick(e){
+    function tableClick(e) {
         //geting the id of the contact the user wish to delete
         var itemId = e.srcElement.getAttribute('item-id');
-        if (itemId){
+        if (itemId) {
             modalLayer.deleteContact(itemId);
             //saving changes
             modalLayer.writeToLocalStorage();
@@ -60,44 +63,53 @@ var controller = (function(){
 
     //this function adds another phone number input field to the create contact form
 
-    function addPhoneNumber(){
+    function addPhoneNumber() {
         var input = document.createElement('input');
-        input.setAttribute('placeholder',"Phone Numbers");
+        input.setAttribute('placeholder', "Phone Numbers");
         var inputContainer = document.querySelector(".input-field-container");
         inputContainer.appendChild(input);
     }
 
-    function searchContact (e){
+    function searchContact(e) {
         //    geting the search param from the DOM
         var searchParam = e.target.parentNode.previousSibling.previousSibling.value;
         //    geting the results from the modal
         var foundItems = modalLayer.find(searchParam);
         //    printing the results table
-        viewLayer.displaySearchResultTable('result-table',foundItems);
+        viewLayer.displaySearchResultTable('result-table', foundItems);
         //    displaying the results
         viewLayer.toggleSearchResultPanel();
     }
 
-    function deleteContactFromSearchBar(){
+    function deleteContactFromSearchBar() {
         //    geting the search param from the DOM
         var searchParam = document.getElementById('search-bar').value;
         //    geting the results from the modal
         var foundItems = modalLayer.find(searchParam);
         //    printing the results table
-        console.log(searchParam,foundItems);
-        viewLayer.displaySearchResultTable('result-table',foundItems);
+        console.log(searchParam, foundItems);
+        viewLayer.displaySearchResultTable('result-table', foundItems);
 
     }
 
+    function restoreDefault() {
+        modalLayer.resetData();
+        modalLayer.readFromLocalStorage();
+        viewLayer.reDisplayDirectory();
+        viewLayer.displayCurrentGroup();
+        viewLayer.displayCurrentGroupContacts();
+    }
+
     return {
-        createContactFormHandler:createContactFormHandler,
-        createGroupFormHandler:createGroupFormHandler,
-        deleteGroupFormHandler:deleteGroupFormHandler,
-        directoryClick:directoryClick,
-        tableClick:tableClick,
-        addPhoneNumber:addPhoneNumber,
-        searchContact:searchContact,
-        deleteContactFromSearchBar:deleteContactFromSearchBar,
+        createContactFormHandler: createContactFormHandler,
+        createGroupFormHandler: createGroupFormHandler,
+        deleteGroupFormHandler: deleteGroupFormHandler,
+        directoryClick: directoryClick,
+        tableClick: tableClick,
+        addPhoneNumber: addPhoneNumber,
+        searchContact: searchContact,
+        deleteContactFromSearchBar: deleteContactFromSearchBar,
+        restoreDefault: restoreDefault,
     };
 })();
 

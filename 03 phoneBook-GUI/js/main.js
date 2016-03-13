@@ -1,91 +1,65 @@
 /*
-* this file contains all the UI event listeners
-* */
+ * this file contains all the UI event listeners
+ * */
 
-(function tabzNavigation(){
-    var navList = document.querySelectorAll('nav li'); //gets a node list
-    var navArray = Array.prototype.slice.call(navList); // converts NodeList to Array
+(function tabzNavigation() {
+    var tabList = document.querySelectorAll('nav li'); //gets a node list of all nav btn'z
+    var tabArray = Array.prototype.slice.call(tabList); // converts NodeList to Array
 
-    var panelList = document.querySelectorAll('.panel');
-    var panelzArray = Array.prototype.slice.call(panelList);
-
-
-    navArray.forEach(function(panel){
-        panel.addEventListener('click',showPanel);
-    });
-
-    function showPanel(event){
-        var data = event.target.getAttribute("data-val");
-        var panel = document.getElementById(data);
-
-        //removing each of the panelz from screen
-        panelzArray.forEach(function(panel){
-            panel.setAttribute('style',' display: none') ;
+    tabArray.forEach(function (tabBtn) {
+        tabBtn.addEventListener('click', function (e) {
+            viewLayer.showPanel(e);
         });
-        //making the clicked on tab visible
-        panel.setAttribute('style',' display: block');
-        //
-        if (data == '1'){//this means a click event on the firs tab
-            viewLayer.displayCurrentGroupContacts();//which trirgers a re draw of the current group contacts table
-        }
-    }
-
+    });
 
 })();
 
-(function formz(){
-    //adding event listenerz
+(function formz() {
+    //adding some more event  listenerz
     var form = document.querySelector(".create-contact")
 
-    form.addEventListener('submit',function(e){
+    form.addEventListener('submit', function (e) {
         controller.createContactFormHandler(e);
-        viewLayer.showContactsPanel();
     });
 
     form = document.querySelector(".create-group");
-    form.addEventListener('submit',function(e){
+    form.addEventListener('submit', function (e) {
         controller.createGroupFormHandler(e);
-        viewLayer.showContactsPanel();
+
     });
 
     form = document.querySelector("#delete-group");
-    form.addEventListener('submit',function(e){
+    form.addEventListener('submit', function (e) {
         controller.deleteGroupFormHandler(e);
-        viewLayer.showContactsPanel();
     });
 
     var addPhoneNumbers = document.getElementById('add-Phone-num');
-    addPhoneNumbers.addEventListener('click',function(e){
+    addPhoneNumbers.addEventListener('click', function (e) {
         controller.addPhoneNumber(e);
     })
 })();
 
-(function groupsDirectory(){
+(function groupsDirectory() {
     var directory = document.getElementById('directory');
 
 
-    directory.addEventListener('click',function(e){
+    directory.addEventListener('click', function (e) {
         controller.directoryClick(e);
     });
 
     var resetBtn = document.querySelector('#reset');
-    resetBtn.addEventListener('click',function(){
-        modalLayer.resetData();
-        modalLayer.readFromLocalStorage();
-        viewLayer.reDisplayDirectory();
-        viewLayer.displayCurrentGroup();
-        viewLayer.displayCurrentGroupContacts();
-
+    resetBtn.addEventListener('click', function () {
+        controller.restoreDefault();
     })
 })();
 
-(function deleteContact(){
+(function deleteContact() {
     var table = document.getElementById('contacts-table');
-    table.addEventListener('click',function (e){
+    table.addEventListener('click', function (e) {
         controller.tableClick(e);
     });
     var table = document.getElementById('result-table');
-    table.addEventListener('click',function (e){
+    table.addEventListener('click', function (e) {
         controller.tableClick(e);
         controller.deleteContactFromSearchBar();
 
@@ -94,19 +68,19 @@
 
 (function search() {
     var searchBtn = document.querySelector('#search-icon');
-    searchBtn.addEventListener('click',function(e){
+    searchBtn.addEventListener('click', function (e) {
         controller.searchContact(e);
     })
 })();
 
-(function init(){
-    window.onload = function() {
+(function init() {
+    window.onload = function () {
         modalLayer.readFromLocalStorage();
         viewLayer.displayDirectory();
         viewLayer.displayCurrentGroup();
-        (function panel1Init (){
+        (function panel1Init() {
             var panel = document.getElementById("1");
-            panel.setAttribute('style',' display: block');
+            panel.setAttribute('style', ' display: block');
             viewLayer.displayCurrentGroupContacts();
         })();
     }
