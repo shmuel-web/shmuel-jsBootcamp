@@ -64,10 +64,7 @@ var controller = (function () {
     //this function adds another phone number input field to the create contact form
 
     function addPhoneNumber() {
-        var input = document.createElement('input');
-        input.setAttribute('placeholder', "Phone Numbers");
-        var inputContainer = document.querySelector(".input-field-container");
-        inputContainer.appendChild(input);
+        viewLayer.addPhoneNumberInput();
     }
 
     function searchContact(e) {
@@ -87,7 +84,6 @@ var controller = (function () {
         //    geting the results from the modal
         var foundItems = modalLayer.find(searchParam);
         //    printing the results table
-        console.log(searchParam, foundItems);
         viewLayer.displaySearchResultTable('result-table', foundItems);
 
     }

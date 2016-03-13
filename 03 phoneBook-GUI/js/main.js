@@ -1,5 +1,6 @@
 /*
  * this file contains all the UI event listeners
+ * separated to ui components
  * */
 
 (function tabzNavigation() {
@@ -39,7 +40,7 @@
     })
 })();
 
-(function groupsDirectory() {
+(function groupsDirectoryTree() {
     var directory = document.getElementById('directory');
 
 
@@ -66,7 +67,7 @@
     });
 })();
 
-(function search() {
+(function searchBar() {
     var searchBtn = document.querySelector('#search-icon');
     searchBtn.addEventListener('click', function (e) {
         controller.searchContact(e);

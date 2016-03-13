@@ -143,6 +143,13 @@ var viewLayer = (function () {
         }
     }
 
+    function addPhoneNumberInput (){
+        var input = document.createElement('input');
+        input.setAttribute('placeholder', "Phone Numbers");
+        var inputContainer = document.querySelector(".input-field-container");
+        inputContainer.appendChild(input);
+    }
+
     return {
         displayDirectory: displayDirectory,//done
         reDisplayDirectory: reDisplayDirectory,
@@ -153,6 +160,7 @@ var viewLayer = (function () {
         showPanel: showPanel,
         showContactsPanel: showContactsPanel,
         hideResultPanel: hideResultPanel,
+        addPhoneNumberInput:addPhoneNumberInput,
 
 
     }
