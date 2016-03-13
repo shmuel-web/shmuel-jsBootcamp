@@ -49,20 +49,19 @@ var controller = (function () {
         viewLayer.showContactsPanel();
     }
 
-    function tableClick(e) {
+    function contactTableDeleteBtnClickHandler(e) {
         //geting the id of the contact the user wish to delete
         var itemId = e.srcElement.getAttribute('item-id');
         if (itemId) {
             modalLayer.deleteContact(itemId);
             //saving changes
             modalLayer.writeToLocalStorage();
-            //reflecting chnges to the user
+            //reflecting changes to the user
             viewLayer.displayCurrentGroupContacts();
         }
     }
 
     //this function adds another phone number input field to the create contact form
-
     function addPhoneNumber() {
         viewLayer.addPhoneNumberInput();
     }
@@ -78,7 +77,7 @@ var controller = (function () {
         viewLayer.toggleSearchResultPanel();
     }
 
-    function deleteContactFromSearchBar() {
+    function deleteContactFromSearchBarResultTable() {
         //    geting the search param from the DOM
         var searchParam = document.getElementById('search-bar').value;
         //    geting the results from the modal
@@ -101,10 +100,10 @@ var controller = (function () {
         createGroupFormHandler: createGroupFormHandler,
         deleteGroupFormHandler: deleteGroupFormHandler,
         directoryClick: directoryClick,
-        tableClick: tableClick,
+        tableClick: contactTableDeleteBtnClickHandler,
         addPhoneNumber: addPhoneNumber,
         searchContact: searchContact,
-        deleteContactFromSearchBar: deleteContactFromSearchBar,
+        deleteContactFromSearchBar: deleteContactFromSearchBarResultTable,
         restoreDefault: restoreDefault,
     };
 })();

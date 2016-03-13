@@ -95,7 +95,7 @@ var modalLayer = (function () {
         return foundItem;
     }
 
-    //gets id num and deletes the item
+    //gets id number and deletes the item
     function deleteItem(id) {
 
         if (!isNaN(id)) {
@@ -149,16 +149,6 @@ var modalLayer = (function () {
 
     function generateNextId() {
         return nextId++;
-    }
-
-    function findGroup(name) {
-        var subGroup = false;
-        currentGroup.items.forEach(function (item) {
-            if (item.name == name) {
-                subGroup = item;
-            }
-        });
-        return subGroup;
     }
 
     //this function takes all the phone book and turns it into an array of JSON objects

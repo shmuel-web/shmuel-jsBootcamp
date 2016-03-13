@@ -1,6 +1,6 @@
 /*
  * this file contains all the UI event listeners
- * separated to ui components
+ * separated to UI components
  * */
 
 (function tabzNavigation() {

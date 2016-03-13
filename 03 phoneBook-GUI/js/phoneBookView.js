@@ -6,6 +6,7 @@ var viewLayer = (function () {
 
     var directory = document.getElementById('directory');
 
+    //draw the groups tree structure to screen
     function displayDirectory(item) {
         var item = item || modalLayer.getAllItems;
 
@@ -23,7 +24,7 @@ var viewLayer = (function () {
             }
         }
     }
-
+    //displays a title with the current group
     function displayCurrentGroupName() {
         var title = document.querySelector("#current-group-title");
         if (currentGroup.name == '~') {
@@ -32,10 +33,11 @@ var viewLayer = (function () {
         }
         else {
             title.innerText = currentGroup.name;
-            toggleDeleteGroupBtn();//displays the delete group btn for all the groups
+            toggleDeleteGroupBtn();//displays the delete group btn for all rest of the groups
         }
     }
 
+    //draw the contacts table to the screen as default || the search results
     function reDrawTable(tableLocatinID, contactsArry) {
         //seting the default location to draw the table and default array of contacts to work on
         var tableLocatinID = tableLocatinID || 'contacts-table';
@@ -84,12 +86,14 @@ var viewLayer = (function () {
         }
     }
 
+    //removes the outdated groups directory tree and draw the new updated one insted
     function reDisplayDirectory() {
         var directory = document.getElementById('directory');
         directory.innerHTML = "";
         displayDirectory();
     }
 
+    //shows & hides the result panel based on a btn click
     function toggleSearchResultPanel() {
         var resultPanel = document.querySelector('.search-result');
         var searchBtn = document.querySelector('#search-icon');
@@ -105,15 +109,11 @@ var viewLayer = (function () {
         }
     }
 
-    function hideResultPanel() {
-        var resultPanel = document.querySelector('.search-result');
-        resultPanel.setAttribute('style', ' display: none');
-    }
-
     function showContactsPanel() {
         document.getElementById('contacts-btn').click();
     }
 
+    //tabz panel show & hide functionality
     function showPanel(e) {
         var panelList = document.querySelectorAll('.panel');
         var panelzArray = Array.prototype.slice.call(panelList);
@@ -127,11 +127,12 @@ var viewLayer = (function () {
         //making the clicked on tab visible
         panel.setAttribute('style', ' display: block');
         //
-        if (data == '1') {//this means a click event on the firs tab
+        if (data == '1') {//this means a click event on the first tab
             viewLayer.displayCurrentGroupContacts();//which trirgers a re draw of the current group contacts table
         }
     }
 
+    //removes the delete group btn from the tabs if the current group is root because it cant be deleted
     function toggleDeleteGroupBtn(){
         var deleteTab = document.querySelector('.delete-tab');
         var deleteTabState = deleteTab.getAttribute('style');
@@ -143,6 +144,7 @@ var viewLayer = (function () {
         }
     }
 
+    //adds anthor phone number input field to the add new contact form
     function addPhoneNumberInput (){
         var input = document.createElement('input');
         input.setAttribute('placeholder', "Phone Numbers");
@@ -159,7 +161,6 @@ var viewLayer = (function () {
         toggleSearchResultPanel: toggleSearchResultPanel,
         showPanel: showPanel,
         showContactsPanel: showContactsPanel,
-        hideResultPanel: hideResultPanel,
         addPhoneNumberInput:addPhoneNumberInput,
 
 
