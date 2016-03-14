@@ -84,7 +84,6 @@ var controller = (function () {
         var foundItems = modalLayer.find(searchParam);
         //    printing the results table
         viewLayer.displaySearchResultTable('result-table', foundItems);
-
     }
 
     function restoreDefault() {
