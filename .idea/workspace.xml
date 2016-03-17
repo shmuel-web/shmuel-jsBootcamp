@@ -2,10 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9755de8-3a06-459f-b357-a33b485849bf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_6th_week/node practice/client/node_telnet_client.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_6th_week/node practice/server/node-telnet.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBookModel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/event_handelerz.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/event_listenerz.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/contact.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/group.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/js/jquery-2.1.4.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/Icon-search.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/Icon-x-circle.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/css/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/gulpfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/js/PhoneBook.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/js/PhoneBookController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/js/PhoneBookModel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/js/PhoneBookView.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/sass/forms.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/sass/main.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/sass/search.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/sass/table.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_6th_week/node practice/node-express/express.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_6th_week/node practice/node-express/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/practice_6th_week/node practice/client/node_telnet_client.js" afterPath="$PROJECT_DIR$/practice_6th_week/node practice/telnet/client/node_telnet_client.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/practice_6th_week/node practice/server/node-telnet.js" afterPath="$PROJECT_DIR$/practice_6th_week/node practice/telnet/server/node-telnet.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookController.js" afterPath="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookController.js" />
     </list>
     <ignored path="shmuel-jsBootcamp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,21 +52,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="node-telnet.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/practice_6th_week/node practice/server/node-telnet.js">
+      <file leaf-file-name="group.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/style/group.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="16" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contact.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/style/contact.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.666666">
+              <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhoneBookModel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBookModel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhoneBook.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4778626">
+              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6666667">
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node_telnet_client.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/practice_6th_week/node practice/client/node_telnet_client.js">
+      <file leaf-file-name="view.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28">
-              <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="event_listenerz.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/event_listenerz.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="event_handelerz.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/event_handelerz.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -63,32 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/practice_4th_week/jQUery/main.css" />
-        <option value="$PROJECT_DIR$/practice_4th_week/jquery-practice/drag&amp;drop_puzzle/pazzel.js" />
-        <option value="$PROJECT_DIR$/practice_4th_week/jquery-practice/drag&amp;drop_puzzle/index.html" />
-        <option value="$PROJECT_DIR$/practice_4th_week/jquery-practice/drag&amp;drop_puzzle/main.css" />
-        <option value="$PROJECT_DIR$/practice_4th_week/jquery-practice/drag&amp;drop_puzzle/main.js" />
-        <option value="$PROJECT_DIR$/03 phonBook write to file/app.js" />
-        <option value="$PROJECT_DIR$/02 phoneBook-GUI/phoneBook.js" />
-        <option value="$PROJECT_DIR$/practice_4th_week/linkedList/test.js" />
-        <option value="internal/util.js" />
-        <option value="$PROJECT_DIR$/practice_4th_week/linkedList/linkedList.js" />
-        <option value="$PROJECT_DIR$/practice/linkedList.js" />
-        <option value="$PROJECT_DIR$/02 phoneBook-GUI/main.css" />
-        <option value="$PROJECT_DIR$/02 phoneBook-GUI/ui.js" />
-        <option value="$PROJECT_DIR$/02 phoneBook-GUI/index.html" />
-        <option value="$PROJECT_DIR$/practice_4th_week/prototypes/index.html" />
-        <option value="$PROJECT_DIR$/practice_4th_week/prototypes/test.js" />
-        <option value="$PROJECT_DIR$/practice_4th_week/prototypes/prototypes.js" />
-        <option value="$PROJECT_DIR$/practice_4th_week/shapes/shapes.js" />
-        <option value="$PROJECT_DIR$/03 phoneBook-GUI/main.css" />
-        <option value="$PROJECT_DIR$/03 phoneBook-GUI/css/search.css" />
-        <option value="$PROJECT_DIR$/practice_4th_week/mediaWidget/index.html" />
-        <option value="$PROJECT_DIR$/practice_4th_week/mediaWidget/mediaWidget.js" />
-        <option value="$PROJECT_DIR$/practice_4th_week/mediaWidget/main.js" />
-        <option value="$PROJECT_DIR$/03 phoneBook-GUI/phoneBook.js" />
-        <option value="$PROJECT_DIR$/03 phoneBook-GUI/phoneBookView.js" />
-        <option value="$PROJECT_DIR$/03 phoneBook-GUI/wirte.js" />
         <option value="$PROJECT_DIR$/03 phoneBook-GUI/writeToPhoneBook.js" />
         <option value="$PROJECT_DIR$/03 phoneBook-GUI/phoneBookModal.js" />
         <option value="$PROJECT_DIR$/03 phoneBook-GUI/ui.js" />
@@ -114,6 +195,32 @@
         <option value="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookController.js" />
         <option value="$PROJECT_DIR$/practice_6th_week/node practice/client/node_telnet_client.js" />
         <option value="$PROJECT_DIR$/practice_6th_week/node practice/server/node-telnet.js" />
+        <option value="$PROJECT_DIR$/practice_6th_week/node practice/node-express/package.json" />
+        <option value="$PROJECT_DIR$/practice_6th_week/node practice/node-express/express.js" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/phoneBookController.js" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/phoneBookView.js" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/test.js.html" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/model.js" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/phoneBookModal.js" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/test.html" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/index.html" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/main.js" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/PhoneBookController.js" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/PhoneBookView.js" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/PhoneBook.js" />
+        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/PhoneBookModel.js" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/grouptemplate.html" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/PhoneBookTemplate.html" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/style/GroupTemplate.html" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/style/PhoneBookTemplate.html" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/style/contact.html" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/event_listenerz.js" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/event_handelerz.js" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBookModel.js" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/main.css" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" />
       </list>
     </option>
   </component>
@@ -152,27 +259,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shmuel-jsBootcamp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shmuel-jsBootcamp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shmuel-jsBootcamp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -208,11 +294,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="practice_6th_week">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="node practice">
+            <PATH_ELEMENT USER_OBJECT="04 Phone Book v2.0.0">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -226,15 +308,11 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="practice_6th_week">
+            <PATH_ELEMENT USER_OBJECT="04 Phone Book v2.0.0">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="node practice">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="server">
+            <PATH_ELEMENT USER_OBJECT="style">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -248,29 +326,15 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="practice_6th_week">
+            <PATH_ELEMENT USER_OBJECT="04 Phone Book v2.0.0">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="node practice">
+            <PATH_ELEMENT USER_OBJECT="style">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="client">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="shmuel-jsBootcamp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="practice">
+            <PATH_ELEMENT USER_OBJECT="css">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -284,21 +348,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="03 phoneBook-GUI">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="shmuel-jsBootcamp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="03 phoneBook-GUI">
+            <PATH_ELEMENT USER_OBJECT="04 Phone Book v2.0.0">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -307,22 +357,25 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shmuel-jsBootcamp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="shmuel-jsBootcamp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shmuel-jsBootcamp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="03 phoneBook-GUI">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="css">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shmuel-jsBootcamp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -332,7 +385,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -357,22 +410,22 @@
     <property name="jsx.switch.disabled" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/04 Phone Book v2.0.0/js" />
+      <recent name="$PROJECT_DIR$/04 Phone Book v2.0.0/style/js" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/practice_6th_week/hello-Angular" />
+      <recent name="$PROJECT_DIR$/practice_4th_week/prototypes" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/04 Phone Book v2.0.0/style" />
+      <recent name="$PROJECT_DIR$/practice_6th_week/node practice/telnet" />
       <recent name="$PROJECT_DIR$/practice_6th_week/node practice/client" />
       <recent name="$PROJECT_DIR$/practice_6th_week/node practice/server" />
       <recent name="$PROJECT_DIR$/practice_4th_week/jquery-practice/drag&amp;drop_puzzle" />
-      <recent name="$PROJECT_DIR$/practice_4th_week/jquery" />
-      <recent name="$PROJECT_DIR$/practice/requireJs_practice" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/practice_6th_week/hello-Angular" />
-      <recent name="$PROJECT_DIR$/practice_4th_week/prototypes" />
-      <recent name="$PROJECT_DIR$/practice_4th_week/jquery-practice" />
-      <recent name="$PROJECT_DIR$/practice/requireJs_practice/lib" />
-      <recent name="$PROJECT_DIR$/practice/requireJs_practice" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="Node.js Remote Debug.remote">
     <configuration default="false" name="phoneBook.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="$PROJECT_DIR$/01 phoneBook/phoneBook.js" working-dir="$PROJECT_DIR$/01 phoneBook">
       <method />
     </configuration>
@@ -485,24 +538,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="800" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.4319149" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281471" sideWeight="0.48625794" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.36222693" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.4721635" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.4947146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32676056" sideWeight="0.4031008" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676056" sideWeight="0.3967583" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.56808513" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32676056" sideWeight="0.5968992" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676056" sideWeight="0.60324174" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.47498238" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -514,14 +567,14 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.4947146" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32716927" sideWeight="0.40521494" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676056" sideWeight="0.3967583" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.4319149" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.47498238" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32816902" sideWeight="0.4721635" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.56808513" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32716927" sideWeight="0.59478503" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676056" sideWeight="0.60324174" order="3" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -554,158 +607,11 @@
           <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="80" />
+      <option name="time" value="81" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/practice/service locator/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29126215">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/service locator/serviceLocator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09009009">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/requireJs_practice/node_modules/requirejs/require.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1528661">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/requireJs_practice/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/requireJs_practice/lib/require.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/systemJs-practice/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/systemJs-practice/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/systemJs-practice/network.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/systemJs-practice/storage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/requireJs_practice/hello.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35555556">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/requireJs_practice/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="71" selection-start-line="0" selection-start-column="71" selection-end-line="0" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/requireJs_practice/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/requireJs_practice/serviceLocator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36651585">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02 phonBook write to file/node_modules/readline-sync/lib/readline-sync.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4541387">
-          <caret line="470" column="6" selection-start-line="470" selection-start-column="6" selection-end-line="470" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice_4th_week/jquery-practice/drag&amp;drop_puzzle/jquery-2.1.4.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice_4th_week/jquery-practice/drag&amp;drop_puzzle/puzzle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice_4th_week/jquery-practice/drag&amp;drop_puzzle/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6492537">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice_4th_week/jquery-practice/drag&amp;drop_puzzle/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44015443">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice_4th_week/jquery-practice/drag&amp;drop_puzzle/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23552124">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="70" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02 phonBook write to file/phonebook.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="124" selection-start-line="0" selection-start-column="124" selection-end-line="0" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice/linkedList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5066667">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/practice_4th_week/linkedList/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37333333">
@@ -852,6 +758,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -859,6 +766,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -883,13 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.054054055">
-          <caret line="239" column="64" selection-start-line="239" selection-start-column="64" selection-end-line="239" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32222223">
@@ -898,27 +799,226 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/main.js">
+    <entry file="file://$PROJECT_DIR$/practice_6th_week/node practice/telnet/client/node_telnet_client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.28">
+          <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/practice_6th_week/node practice/server/node-telnet.js">
+    <entry file="file://$PROJECT_DIR$/practice_6th_week/node practice/node-express/express.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.16">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practice_6th_week/node practice/node-express/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5106383">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practice_6th_week/node practice/telnet/server/node-telnet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28">
           <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/practice_6th_week/node practice/client/node_telnet_client.js">
+    <entry file="file://$PROJECT_DIR$/practice/requireJs_practice/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28">
-          <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practice/requireJs_practice/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practice/requireJs_practice/hello.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18532819">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/js/PhoneBookView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/js/PhoneBook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15671642">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/js/PhoneBookController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06716418">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <marker date="1458195894000" expanded="true" signature="305:848" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/js/PhoneBookModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51492536">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/style/js/jquery-2.1.4.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03 phoneBook-GUI/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/style/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.666666">
+          <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/style/group.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="16" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/event_listenerz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/event_handelerz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBookModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6666667">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4778626">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

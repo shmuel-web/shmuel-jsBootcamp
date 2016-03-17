@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Book</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Phone Book</h1>
+            <form class="search-container">
+                <input type="text" id="search-bar" placeholder="Search">
+                <a ><img id="search-icon" src="Icon-search.svg"></a>
+                <div class="search-result">
+                    <table id="result-table">
+
+                    </table>
+                </div>
+            </form>
+        </div>
+    </header>
+    <div class="container">
+        <aside >
+            <h2>Groups Directory</h2>
+            <ul id="directory">
+            </ul>
+
+            <h3><a id="reset" class="pointer">Reset to defaults</a> </h3>
+
+        </aside>
+        <div class="main">
+            <h2 id="current-group-title">Phone Book</h2>
+            <nav>
+                <ul>
+                    <li  class="nav-btn pointer" data-val="1" id="contacts-btn">Contacts</li>
+                    <li  class="nav-btn pointer" data-val="2">New Contact</li>
+                    <li  class="nav-btn pointer" data-val="3">New group</li>
+                    <li  class="nav-btn pointer delete-tab" data-val="4">Delete</li>
+                </ul>
+            </nav>
+
+            <div class="panel" id="1">
+                <h3>Contacts</h3>
+                <div id="contacts">
+                    <!--todo-->
+                    <table id="contacts-table">
+
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="panel" id="2">
+                <h3>Create Contact</h3>
+                <form class="create-contact">
+                    <div class="input-field-container">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                        <input type="text" placeholder="Phone Numbers" id='input-phone-number'>
+                    </div>
+                    <input class="form-btn" id="add-Phone-num" type="button" value="add an extra phone number">
+                    <input class="submit" type="submit" value="submit">
+                </form>
+            </div>
+
+            <div class="panel" id="3">
+                <h3>Create Group</h3>
+                <form class="create-group">
+                    <input type="text" placeholder="Group Name">
+                    <input class="submit" type="submit" value="submit">
+                </form>
+            </div>
+
+            <div class="panel" id="4">
+                <h3>Delete Group</h3>
+                <form id="delete-group">
+                    <p>delete this group & all of its content?</p>
+                    <input type="submit" class="submit delete-btn" value="yes">
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <footer>
+        <p>
+           1986 &copy The Greatest PhoneBook Co
+        </p>
+
+    </footer>
+    <script src="js/PhoneBookModel.js"></script>
+    <script src="js/PhoneBookView.js"></script>
+    <script src="js/PhoneBookController.js"></script>
+    <script src="js/PhoneBook.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+
+/*
+ this is a reviling pattern that extends the PhoneBook class model property
+ it gets PhoneBook 'this' and baiscly adds itself to the PhonBook class as the 'model' property
+ */
+
+function view (PhoneBook){
+    return (function (PhoneBook) {
+
+        var directory = document.getElementById('directory');
+
+        //draw the groups tree structure to screen
+        function displayDirectory(item) {
+            var item = item || PhoneBook.model.getAllItems;
+
+            if (item.name) {
+                var li = document.createElement('li');
+                li.innerHTML = item.name;
+                directory.appendChild(li);
+                if (item.items.length > 0) {
+                    var ul = document.createElement('ul');
+                    directory = directory.appendChild(ul);
+                    item.items.forEach(function (childItem) {
+                        displayDirectory(childItem);
+                    });
+                    directory = directory.parentNode;
+                }
+            }
+        }
+        //displays a title with the current group
+        function displayCurrentGroupName() {
+            var title = document.querySelector("#current-group-title");
+            if (PhoneBook.currentGroup.name == '~') {
+                title.innerText = 'Phone Book';
+                toggleDeleteGroupBtn();//removes the delete group btn because root cant be deleted
+            }
+            else {
+                title.innerText = PhoneBook.currentGroup.name;
+                toggleDeleteGroupBtn();//displays the delete group btn for all rest of the groups
+            }
+        }
+
+        //draw the contacts table to the screen as default || the search results
+        function reDrawTable(tableLocatinID, contactsArry) {
+            //seting the default location to draw the table and default array of contacts to work on
+            var tableLocatinID = tableLocatinID || 'contacts-table';
+            var contactsArry = contactsArry ||
+                PhoneBook.currentGroup.items.filter(function (item) {//filtering the array for contacts only
+                    if (item.firstName) {
+                        return item;
+                    }
+                });
+
+            var table = document.getElementById(tableLocatinID);
+            //remove current table from the DOM
+            table.innerHTML = "";
+
+            var td = document.createElement('td');
+            if (contactsArry.length > 0) {
+                //adding the table head
+                table.innerHTML = "<tr> <th>First name</th> <th>Last name</th> <th>Phone number</th> <th>delete</th> </tr>";
+                //adding table row per contact
+                contactsArry.forEach(function (item) {
+
+                    var newRow = document.createElement('tr');
+                    td = document.createElement('td');
+                    td.innerHTML = item.firstName;
+                    newRow.appendChild(td);
+                    td = document.createElement('td');
+                    td.innerHTML = item.lastName;
+                    newRow.appendChild(td);
+                    td = document.createElement('td');
+                    td.innerHTML = item.phoneNumbers;
+                    newRow.appendChild(td);
+                    td = document.createElement('td');
+                    td.innerHTML = "delete";
+                    td.setAttribute('item-id', item.id);
+                    td.setAttribute('class', 'delete-contact-btn pointer')
+                    newRow.appendChild(td);
+                    table.appendChild(newRow);
+
+                });
+            }
+            else if (tableLocatinID == 'result-table') {
+                table.innerHTML = "<tr> <th>No contacts found</th> </tr>";
+            }
+            else {
+                table.innerHTML = "<tr> <th>No contacts available </th> </tr>";
+            }
+        }
+
+        //removes the outdated groups directory tree and draw the new updated one insted
+        function reDisplayDirectory() {
+            var directory = document.getElementById('directory');
+            directory.innerHTML = "";
+            displayDirectory();
+        }
+
+        //shows & hides the result panel based on a btn click
+        function toggleSearchResultPanel() {
+            var resultPanel = document.querySelector('.search-result');
+            var searchBtn = document.querySelector('#search-icon');
+            var resultPanelState = resultPanel.getAttribute('style');
+            if (resultPanelState == 'display: block') {
+                resultPanel.setAttribute('style', 'display: none');
+                searchBtn.setAttribute('src', 'Icon-search.svg');
+                document.getElementById('search-bar').value = "";
+            }
+            else {
+                resultPanel.setAttribute('style', 'display: block');
+                searchBtn.setAttribute('src', 'Icon-x-circle.svg');
+            }
+        }
+
+        function showContactsPanel() {
+            document.getElementById('contacts-btn').click();
+        }
+
+        //tabz panel show & hide functionality
+        function showPanel(e) {
+            var panelList = document.querySelectorAll('.panel');
+            var panelzArray = Array.prototype.slice.call(panelList);
+            var data = e.target.getAttribute("data-val");
+            var panel = document.getElementById(data);
+
+            //removing each of the panelz from screen
+            panelzArray.forEach(function (panel) {
+                panel.setAttribute('style', ' display: none');
+            });
+            //making the clicked on tab visible
+            panel.setAttribute('style', ' display: block');
+            //
+            if (data == '1') {//this means a click event on the first tab
+                PhoneBook.view.displayCurrentGroupContacts();//which trirgers a re draw of the current group contacts table
+            }
+        }
+
+        //removes the delete group btn from the tabs if the current group is root because it cant be deleted
+        function toggleDeleteGroupBtn(){
+            var deleteTab = document.querySelector('.delete-tab');
+            var deleteTabState = deleteTab.getAttribute('style');
+            if (deleteTabState == 'display:none' && PhoneBook.currentGroup.name != '~'){
+                deleteTab.setAttribute('style','display:inline-block');
+            }
+            else if (PhoneBook.currentGroup.name == '~'){
+                deleteTab.setAttribute('style','display:none');
+            }
+        }
+
+        //adds anthor phone number input field to the add new contact form
+        function addPhoneNumberInput (){
+            var input = document.createElement('input');
+            input.setAttribute('placeholder', "Phone Numbers");
+            var inputContainer = document.querySelector(".input-field-container");
+            inputContainer.appendChild(input);
+        }
+
+        return {
+            displayDirectory: displayDirectory,//done
+            reDisplayDirectory: reDisplayDirectory,
+            displayCurrentGroup: displayCurrentGroupName,//done
+            displayCurrentGroupContacts: reDrawTable,
+            displaySearchResultTable: reDrawTable,
+            toggleSearchResultPanel: toggleSearchResultPanel,
+            showPanel: showPanel,
+            showContactsPanel: showContactsPanel,
+            addPhoneNumberInput:addPhoneNumberInput,
+
+
+        }
+    })(PhoneBook);
+}
