@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-controller="AppCtrl as ctrl">
+
+<div class="calc">
+    <input type="text" value="{{ctrl.result}}" placeholder="my-cool-calc">
+    <div class="btn">
+        <button ng-repeat="btn in ctrl.btnz" ng-click="ctrl.calc(btn)">{{btn}}</button>
+    </div>
+</div>
+
+
+<script src="angular.js"></script>
+<script src="myApp.js"></script>
+<script src="appCtrl.js"></script>
+<script src="CalcService.js"></script>
+
+</body>
+</html>

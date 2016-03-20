@@ -1,18 +1,12 @@
-/*
- * this layer is all about data manipulation
- * */
+var app = app || {};
 
-// todo create a class phone book
-
-
-function PhoneBook (){
+app.PhoneBook = function PhoneBook () {
 
     this.currentGroup = {};
 
     //this property encapsulates all the logic & data
-    this.model = model(this);
+    this.model = app.model(this);
 
-}
+};
 
-//test
 

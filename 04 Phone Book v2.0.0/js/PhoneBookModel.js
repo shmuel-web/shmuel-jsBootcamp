@@ -1,42 +1,24 @@
+var app = app || {};
 /*
     this is a reviling pattern that extends the PhoneBook class model property
-    it gets PhoneBook 'this' and baiscly adds itself to the PhonBook class as the 'model' property
+    it gets PhoneBook context {this} and basic adds itself to the PhonBook class as the 'model' property
 */
 
-//todo create classes & print method for each class
-function model(PhoneBook){
-
+app.model = function model(PhoneBookClassInnerScope){
+    //this layer is all about data manipulation
     return (function (PhoneBook) {
 
         var root = createGroup("~");
 
-        var nextId = 0;
-
         PhoneBook.currentGroup = root;
 
-        //Class Item
-        function Item(){
-        //    sets item id , sets item parent, sets inserts the item in current group child items list
-            this.id = generateNextId();
-        }
-
-        //Class Contact
-        function Contact(){
-
-        }
-
-        //Class Group
-        function Group(){
-
-        }
-
         function addNewContact(firstName, lastName, phoneNumbers) {
-            var newContact = createContact(firstName, lastName, phoneNumbers);
+            var newContact = app.Contact(firstName, lastName, phoneNumbers);
             addItem(newContact);
         }
 
         function addNewGroup(name) {
-            var group = createGroup(name);
+            var group = app.Group(name);
             addItem(group);
         }
 
@@ -125,7 +107,6 @@ function model(PhoneBook){
                 });
                 PhoneBook.currentGroup = item.parent;
             }
-
         }
 
         function createContact(firstName, lastName, phoneNumbers) {
@@ -163,10 +144,6 @@ function model(PhoneBook){
             }
             PhoneBook.currentGroup.items.push(item);
             item.parent = PhoneBook.currentGroup;
-        }
-
-        function generateNextId() {
-            return nextId++;
         }
 
         //this function takes all the phone book and turns it into an array of JSON objects
@@ -264,18 +241,18 @@ function model(PhoneBook){
         }
 
         return {
-            getAllItems: root,//done
-            getCurrentGroupContacts: getCurrentGroupContacts,//done
-            createContact: addNewContact,//done
-            createGroup: addNewGroup,//done
-            find: find,//done
-            deleteContact: deleteItem,//done
-            deleteGroup: deleteItem,//done
-            writeToLocalStorage: writeToLocal,//done
-            readFromLocalStorage: readFromLocal,//done
+            getAllItems: root,
+            getCurrentGroupContacts: getCurrentGroupContacts,
+            createContact: addNewContact,
+            createGroup: addNewGroup,
+            find: find,
+            deleteContact: deleteItem,
+            deleteGroup: deleteItem,
+            writeToLocalStorage: writeToLocal,
+            readFromLocalStorage: readFromLocal,
             changeCurrentGroupByName: changeCurrentGroupByName,
             resetData: resetData,
         }
-    })(PhoneBook);
-}
+    })(PhoneBookClassInnerScope);
+};
 
