@@ -43,10 +43,10 @@ function handleCommand(line) {
     var command = parseInt(line);
 
     if (command == Menu.ADD_NEW_CONTACT) {
-        addNewContact();
+        addContact();
     }
     else if(command == Menu.ADD_NEW_GROUP) {
-        addNewGroup();
+        addGroup();
     }
     else if(command == Menu.CHANGE_CURRENT_GROUP) {
         changeCurrentGroup();
@@ -68,7 +68,7 @@ function handleCommand(line) {
     }
 }
 
-function addNewContact(){
+function addContact(){
     var firstName = readNonEmptyString("First Name: ");
     var lastName = readNonEmptyString("Last Name: ");
 
@@ -86,7 +86,7 @@ function addNewContact(){
     addItem(contact);
 }
 
-function addNewGroup(){
+function addGroup(){
     var name = readNonEmptyString("Name: ");
 
     var group = createGroup(name);

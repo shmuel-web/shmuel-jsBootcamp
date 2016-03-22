@@ -12,17 +12,16 @@ app.PhoneBook = (function(){
         };
 
         this.currentGroup = this.root;
-
-        this.nextId = 1;
     }
 
-    PhoneBook.prototype.addNewContact = function(firstName, lastName, phoneNumbers){
-        var newContact = new app.Contact(firstName, lastName, phoneNumbers,this.currentGroup, this.nextId++);
+    PhoneBook.prototype.addContact = function(firstName, lastName, phoneNumbers){
+        var newContact =
+            new app.Contact(firstName, lastName, phoneNumbers,this.currentGroup, app.helpers.genarateId());
         this.currentGroup.childItems.push(newContact);
     };
 
-    PhoneBook.prototype.addNewGroup = function(name){
-        var newGroup = new app.Group(name,this.currentGroup, this.nextId++);
+    PhoneBook.prototype.addGroup = function(name){
+        var newGroup = new app.Group(name,this.currentGroup, app.helpers.genarateId());
         this.currentGroup.childItems.push(newGroup);
     };
 
@@ -89,7 +88,7 @@ app.PhoneBook = (function(){
     //in every object the 'items' property saves the number of child nodes he has,
     //and they wil be the next items in the array
     //
-    PhoneBook.prototype.tojsonArray = function phoneBookToArray(item, PhoneBookItemsArray) {
+    PhoneBook.prototype.toJsonArray = function phoneBookToArray(item, PhoneBookItemsArray) {
         var PhoneBookItems = PhoneBookItemsArray || [];
 
         if (!item) {
@@ -124,12 +123,66 @@ app.PhoneBook = (function(){
 
     };
 
+    PhoneBook.prototype.writeToLocal = function writeToLocal() {
+    //saves the current phone book items to local storage
+        var phoneBookArray = this.toJsonArray();
+        localStorage.setItem("phoneBookArray", JSON.stringify(phoneBookArray));
+    };
 
+
+    PhoneBook.prototype.load = function(item, index, array) {
+        //this function loads every phone book item from the array in to the object
+
+        if (item) {
+            if (item.firstName) {
+                this.addContact(item.firstName, item.lastName, item.phoneNumbers);
+            }
+            else if (item.name && item.name !== "Root") {
+                this.addGroup(item.name);
+
+                if (item.childItems > 0) {
+                    this.currentGroup = group;
+                    //iterating over his children & inserting them
+                    for (var i = ++index; i < index + item.childItems; i++) {
+                        this.load(array[i], i, array);//recurse
+                    }
+                    array.splice(index, item.items);//removing the added items so that the for each loop cold continue properly
+                    this.currentGroup = group.parent;
+                }
+            }
+            else if (item.name == "Root") {
+                if (item.items > 0) {
+
+                    for (var i = ++index; i < index + item.items; i++) {
+                        this.load(array[i], i, array);
+                    }
+                    array.splice(index, item.items);
+                    currentGroup = this.root;
+                }
+            }
+        }
+    };
+
+    PhoneBook.prototype.readFromLocal = function readFromLocal() {
+        //reads the phone book items from local storage
+        var phoneBookArray = JSON.parse(localStorage.getItem("phoneBookArray"));
+        var self = this;
+        if (phoneBookArray) {
+            phoneBookArray.forEach(function (item, index, array) {
+                self.load(item, index, array);
+            })
+        }
+    };
+
+    PhoneBook.prototype.reset = function resetData() {
+        //this function restores the program to a default condition
+            localStorage.phoneBookArray =
+                '[{"name":"Root","items":6},{"name":"family","items":0},{"name":"friends","items":1},{"name":"best-friends","items":0},{"name":"work","items":0},{"name":"milueim","items":0},{"firstName":"jhon ","lastName":"doe","phoneNumbers":["04-8759918"],"items":0},{"firstName":"jane","lastName":"doe","phoneNumbers":["04-8759918"],"items":0}]';
+            this.root.childItems = [];
+            this.currentGroup = this.root;
+            this.readFromLocal();
+        };
 
     return PhoneBook;
 
 })();
-
-
-
-

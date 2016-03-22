@@ -11,6 +11,10 @@ app.Contact = (function(){
         this.id = id;
     }
 
+    Contact.prototype.addPhoneNumber = function(number){
+        this.phoneNum.push(number);
+    };
+
     return Contact
 
 })();

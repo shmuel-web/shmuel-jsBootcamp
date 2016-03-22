@@ -191,14 +191,14 @@ function Group(id, name, parentId) {
  Core functions
  * -------------------------------------------------------------------*/
 
-function addNewContact(fName, lName, phoneNum) {
+function addContact(fName, lName, phoneNum) {
     var unikeId = genarateID();
     var newContact = new Contact(unikeId, fName, lName, phoneNum, currentGroupId);
     contacts.push(newContact);
     printContact(newContact.id);
 }
 
-function addNewGroup(name) {
+function addGroup(name) {
     var unikeId = genarateID();
     var nGroup = new Group(unikeId, name, currentGroupId);
     groups.push(nGroup);
@@ -349,12 +349,12 @@ function phoneBookCLI() {
                 var lName = readlineSync.question('please type contacts last name:');
                 var phoneNum = readlineSync.question('please type contacts phone number or multi phone numbers separated by ",":');
                 var phoneNum = phoneNum.split(',');
-                addNewContact(fName, lName, phoneNum);
+                addContact(fName, lName, phoneNum);
                 break;
 
             case 'Add new group':
                 var name = readlineSync.question('please type group name:');
-                addNewGroup(name);
+                addGroup(name);
                 break;
 
             case 'Change current group':

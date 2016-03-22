@@ -29,12 +29,12 @@ function model(PhoneBook){
 
         }
 
-        function addNewContact(firstName, lastName, phoneNumbers) {
+        function addContact(firstName, lastName, phoneNumbers) {
             var newContact = createContact(firstName, lastName, phoneNumbers);
             addItem(newContact);
         }
 
-        function addNewGroup(name) {
+        function addGroup(name) {
             var group = createGroup(name);
             addItem(group);
         }
@@ -265,8 +265,8 @@ function model(PhoneBook){
         return {
             getAllItems: root,//done
             getCurrentGroupContacts: getCurrentGroupContacts,//done
-            createContact: addNewContact,//done
-            createGroup: addNewGroup,//done
+            createContact: addContact,//done
+            createGroup: addGroup,//done
             find: find,//done
             deleteContact: deleteItem,//done
             deleteGroup: deleteItem,//done

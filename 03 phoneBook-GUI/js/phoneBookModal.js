@@ -11,13 +11,13 @@ var modalLayer = (function () {
 
     currentGroup = root;
 
-    function addNewContact(firstName, lastName, phoneNumbers) {
+    function addContact(firstName, lastName, phoneNumbers) {
         var newContact = createContact(firstName, lastName, phoneNumbers);
         addItem(newContact);
     }
 
 
-    function addNewGroup(name) {
+    function addGroup(name) {
         var group = createGroup(name);
         addItem(group);
     }
@@ -197,7 +197,7 @@ var modalLayer = (function () {
         localStorage.setItem("phoneBookArray", JSON.stringify(phoneBookArray));
     }
 
-    //reads the phone bok items from local storage
+    //reads the phone book items from local storage
     function readFromLocal() {
         var phoneBookArray = JSON.parse(localStorage.getItem("phoneBookArray"));
         if (phoneBookArray) {
@@ -251,8 +251,8 @@ var modalLayer = (function () {
     return {
         getAllItems: root,//done
         getCurrentGroupContacts: getCurrentGroupContacts,//done
-        createContact: addNewContact,//done
-        createGroup: addNewGroup,//done
+        createContact: addContact,//done
+        createGroup: addGroup,//done
         find: find,//done
         deleteContact: deleteItem,//done
         deleteGroup: deleteItem,//done
