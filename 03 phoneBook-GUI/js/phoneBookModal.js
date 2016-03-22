@@ -80,7 +80,7 @@ var modalLayer = (function () {
         return null;
     }
 
-    function findItemById(id, phonbookItem, foundItem) {
+    function getItemById(id, phonbookItem, foundItem) {
         foundItem = foundItem || false;
         var item = phonbookItem || root;
 
@@ -89,7 +89,7 @@ var modalLayer = (function () {
         }
         else if (item.items && item.items.length > 0 && !foundItem) {
             item.items.forEach(function (childItem) {
-                foundItem = findItemById(id, childItem, foundItem);
+                foundItem = getItemById(id, childItem, foundItem);
             });
         }
         return foundItem;
@@ -99,7 +99,7 @@ var modalLayer = (function () {
     function deleteItem(id) {
 
         if (!isNaN(id)) {
-            var item = findItemById(id);
+            var item = getItemById(id);
             item.parent.items.forEach(function (childItem, index, array) {
                 if (childItem.id == id) {
                     array.splice(index, 1);
@@ -151,9 +151,12 @@ var modalLayer = (function () {
         return nextId++;
     }
 
+    //
     //this function takes all the phone book and turns it into an array of JSON objects
-    //and saves the tree structure relationships between the objects
-    //in every object the 'items' property saves the number of child nodes he has and they wil be the next items in the array
+    //while saving the tree structure relationships between the objects
+    //in every object the 'items' property saves the number of child nodes he has,
+    //and they wil be the next items in the array
+    //
     function phoneBookToArray(item, PhoneBookItemsArray) {
         var PhoneBookItems = PhoneBookItemsArray || [];
 

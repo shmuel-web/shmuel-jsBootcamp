@@ -24,7 +24,7 @@ function model(PhoneBook){
 
         }
 
-        //Class Group
+        //Class Group.js
         function Group(){
 
         }
@@ -97,7 +97,7 @@ function model(PhoneBook){
             return null;
         }
 
-        function findItemById(id, phonbookItem, foundItem) {
+        function getItemById(id, phonbookItem, foundItem) {
             foundItem = foundItem || false;
             var item = phonbookItem || root;
 
@@ -106,7 +106,7 @@ function model(PhoneBook){
             }
             else if (item.items && item.items.length > 0 && !foundItem) {
                 item.items.forEach(function (childItem) {
-                    foundItem = findItemById(id, childItem, foundItem);
+                    foundItem = getItemById(id, childItem, foundItem);
                 });
             }
             return foundItem;
@@ -116,7 +116,7 @@ function model(PhoneBook){
         function deleteItem(id) {
 
             if (!isNaN(id)) {
-                var item = findItemById(id);
+                var item = getItemById(id);
                 item.parent.items.forEach(function (childItem, index, array) {
                     if (childItem.id == id) {
                         array.splice(index, 1);

@@ -31,7 +31,14 @@ function printMenu() {
     console.log("8) Exit");
 }
 
+function run(){
+    while(true) {
+        printMenu();
 
+        var command = rl.question("Contact Book> ");
+        handleCommand(command);
+    }
+}
 
 function handleCommand(line) {
     var command = parseInt(line);
@@ -175,7 +182,7 @@ function find(searchParam, item) {
     }
 }
 
-function findItemById(id ,phonbookItem,foundItem){
+function getItemById(id , phonbookItem, foundItem){
     foundItem = foundItem || false;
         var item = phonbookItem || root;
 
@@ -183,7 +190,7 @@ function findItemById(id ,phonbookItem,foundItem){
             foundItem = item;
         }else if(item.items && item.items.length > 0 && !foundItem){
             item.items.forEach(function(childItem){
-               foundItem = findItemById(id ,childItem, foundItem);
+               foundItem = getItemById(id ,childItem, foundItem);
             });
         }
     return foundItem;
@@ -196,7 +203,7 @@ function deleteItem(){
 //    todo
     var id = readNonEmptyString('please type the id of the item you wish to delete :');
     if (!isNaN(id)){
-        var item = findItemById(id);
+        var item = getItemById(id);
         item.parent.items.forEach(function(childItem,index,array){
             if (childItem.id == id){
                 array.splice(index,1);
@@ -298,7 +305,6 @@ function writeToFile(){
     var phoneBookArrey = writePhoneBook();
     var jsonPhonebook = JSON.stringify(phoneBookArrey);
     fs.writeFileSync('phonebook.json',jsonPhonebook,'utf8');
-    console.log(jsonPhonebook);//testing purpose
 }
 
 function findGroup(name){
@@ -313,7 +319,6 @@ function findGroup(name){
 
 function readFile() {
     var phonebook = fs.readFileSync('phonebook.json', 'utf8');
-    //console.log(phonebook);
     phonebook = JSON.parse(phonebook);
     phonebook.forEach(function(item,index,array){
         load(item,index,array);
