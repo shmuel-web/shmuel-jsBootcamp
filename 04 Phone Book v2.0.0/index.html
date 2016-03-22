@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Phone Book II</title>
     <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="style/css/materialize.min.css"  media="screen,projection"/>
 
@@ -13,69 +13,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-<div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper blue darken-3">
-            <ul class="left">
-                <li><a id="up-btn"><i class="flip material-icons left">subdirectory_arrow_left</i>UP</a></li>
-                <li>
-                    <form>
-                        <div class="input-field">
-                            <input id="search" type="search" required>
-                            <label for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                </li>
-            </ul>
+<header>
+    <div class="navbar-fixed">
+
+        <nav>
+            <div class="nav-wrapper blue darken-3">
+                <ul class="left">
+                    <li><a id="up-btn"><i class="flip material-icons left">subdirectory_arrow_left</i>UP</a></li>
+                </ul>
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+
+            </div>
+        </nav>
+    </div>
+
+    <div class="item-main">
+        <div class="item-view">
+            <div class="item-btnz">
+                <a class="waves-effect waves-red btn-flat">
+                    <i class="material-icons red-text">delete</i>
+                </a>
+
+                <a class="waves-effect waves-teal btn-flat">
+                    <i class="material-icons teal-text">edit</i>
+                </a>
+            </div>
+            <i class="material-icons large">group</i>
+            <div id="title"></div>
+
 
         </div>
-    </nav>
-</div>
 
-<div id="print-container">
-
-</div>
-
-<div class="group-main">
-    <i class="material-icons large">group</i>
-    <div id="title"></div>
-    <div class="group-btnz">
-        <a class="waves-effect waves-red btn-flat">
-            <i class="material-icons red-text">delete</i>
-        </a>
-
-        <a class="waves-effect waves-teal btn-flat">
-            <i class="material-icons teal-text">edit</i>
-        </a>
     </div>
-</div>
+</header>
 
+<main>
+    <ul class="collection">
 
-<ul class="collection">
-
-</ul>
-
-<div id="group-FAB" class="fixed-action-btn click-to-toggle" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large red">
-        <i class="large mdi-content-add">
-        </i>
-    </a>
-    <ul>
-        <li><a id="add-contact" class="btn-floating green"><i class="material-icons">person_add</i></a></li>
-        <li><a id="add-group" class="btn-floating blue"><i class="material-icons">group_add</i></a></li>
     </ul>
-</div>
 
-<div id="contact-FAB" class="fixed-action-btn click-to-toggle" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large red">
-        <i class="large mdi-content-add">
-        </i>
-    </a>
-    <ul>
-        <li><a id="add-phone-num" class="btn-floating green"><i class="material-icons">phone</i></a></li>
-    </ul>
-</div>
+    <div id="group-FAB" class="fixed-action-btn click-to-toggle" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red">
+            <i class="large mdi-content-add">
+            </i>
+        </a>
+        <ul>
+            <li><a id="add-contact" class="btn-floating green"><i class="material-icons">person_add</i></a></li>
+            <li><a id="add-group" class="btn-floating blue"><i class="material-icons">group_add</i></a></li>
+        </ul>
+    </div>
+
+    <div id="contact-FAB" class="fixed-action-btn click-to-toggle" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red">
+            <i class="large mdi-content-add">
+            </i>
+        </a>
+        <ul>
+            <li><a id="add-phone-num" class="btn-floating green"><i class="material-icons">phone</i></a></li>
+        </ul>
+    </div>
+</main>
+
+
+
+
 
 
 <footer class="page-footer blue darken-4">

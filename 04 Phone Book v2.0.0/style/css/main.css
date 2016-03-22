@@ -1,7 +1,16 @@
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%; }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+main {
+  flex: 1 0 auto; }
+
+.collection .collection-item.avatar {
+  min-height: 0px; }
+
+.collection {
+  margin-bottom: 0; }
 
 .flip {
   -moz-transform: scaleY(-1);
@@ -9,3 +18,28 @@ footer {
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
   -ms-filter: "FlipH"; }
+
+nav form {
+  height: 64px;
+  float: right;
+  width: calc(100% - 100px); }
+
+.item-main {
+  padding: 2rem;
+  padding-right: 10px; }
+  .item-main .item-view {
+    float: left;
+    width: 100%; }
+  .item-main i {
+    float: left; }
+  .item-main #title {
+    float: left;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-left: 10px; }
+  .item-main .item-btnz {
+    float: right;
+    width: 40px; }
+    .item-main .item-btnz .btn-flat {
+      padding: 0 10px;
+      border-radius: 50%; }

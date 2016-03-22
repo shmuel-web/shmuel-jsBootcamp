@@ -1,6 +1,5 @@
 var app = app || {};
 
-//todo add a input LI to the group view when the add group btn is clicked
 //todo
 
 app.phoneBook = new app.PhoneBook;
@@ -17,6 +16,7 @@ app.view = (function view(phoneBookObj) {
     var upBtn = $("#up-btn");
     var childItemsContainer = $('.collection');
     var phoneNumbersContainer = childItemsContainer;
+    var itemIcon = $('.item-view i.large');
 
     function displayItem(id) {
         var item = phoneBook.getItemById(id);
@@ -26,7 +26,11 @@ app.view = (function view(phoneBookObj) {
 
             upBtn.attr('data-parent', item.parent.id);
             //    print group name
-            title.html(item.name);
+            title.empty();
+            title.prepend(item.name);
+            //print icon
+            itemIcon.empty();
+            itemIcon.html('group');
             //    print child items
             printGroupChildItems(item.childItems);
 
@@ -38,7 +42,11 @@ app.view = (function view(phoneBookObj) {
             //    add the parent id to the up btn
             upBtn.attr('data-parent', item.parent.id);
             //    print contact name
-            title.html(item.fName+''+item.lName);
+            title.empty();
+            title.prepend(item.fName+" "+item.lName);
+            //print icon
+            itemIcon.empty();
+            itemIcon.html('person');
             //    print contact phone numbers
             printPhoneNumbers(item.phoneNum);
 
@@ -117,7 +125,7 @@ app.view = (function view(phoneBookObj) {
     function addContactInput(){
         childItemsContainer.prepend(
             '<li class="collection-item avatar"> ' +
-            '<i class="material-icons circle blue">person</i> ' +
+            '<i class="material-icons circle green">person</i> ' +
             '<input type="text" placeholder="first name ">' +
             '<input type="text" placeholder="last name ">' +
             '<input type="text" placeholder="phone number ">'+

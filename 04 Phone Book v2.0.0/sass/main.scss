@@ -1,10 +1,23 @@
 //todo improve css and design
-
-footer{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
+
+main {
+  flex: 1 0 auto;
+}
+
+//a fix in the for the css framework
+.collection .collection-item.avatar {
+  min-height: 0px;
+}
+
+.collection{
+  margin-bottom: 0;
+}
+
 
 .flip{
   -moz-transform: scaleY(-1);
@@ -12,4 +25,37 @@ footer{
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
   -ms-filter: "FlipH";
+}
+
+nav form {
+  height: 64px;
+  float: right;
+  width:calc(100% - 100px);
+}
+
+.item-main{
+  padding: 2rem;
+  padding-right: 10px;
+  .item-view{
+    float: left;
+    width: 100%;
+  }
+  i{
+    float: left;
+  }
+
+  #title{
+    float: left;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .item-btnz{
+    float: right;
+    width:40px;
+    .btn-flat{
+      padding: 0 10px;
+      border-radius: 50%;
+    }
+  }
 }
