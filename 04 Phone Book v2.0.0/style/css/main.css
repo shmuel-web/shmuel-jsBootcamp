@@ -43,3 +43,6 @@ nav form {
     .item-main .item-btnz .btn-flat {
       padding: 0 10px;
       border-radius: 50%; }
+
+.collection-item input {
+  width: calc(100% - 40px); }

@@ -2,9 +2,9 @@ var app = app || {};
 
 app.dynamicEventListeners = (function () {
 
-    var dispalyItemBtn = $('.secondary-content');
+    var displayItemBtn = $('.secondary-content');
 
-    dispalyItemBtn.on('click', function (e) {
+    displayItemBtn.on('click', function (e) {
         var itemId = e.target.getAttribute('data-id');
         app.view.displayItem(itemId);
         console.log(itemId);
@@ -28,15 +28,32 @@ app.eventListeners = (function () {
 
     addGroupBtn.click(function(){
         app.view.addGroupInputField();
+        var cancelInputBtn = $('#cancel-input');
+        var submit = $('#submit');
+        cancelInputBtn.click(function (){
+            app.view.removeInput();
+        });
+        submit.click(function(){
+            //todo
+            var inputFields = $('li[data-add|="true"]');
+            console.log(inputFields);
+        });
     });
 
     addContactBtn.click(function(){
         app.view.addContactInputField();
+        var cancelInputBtn = $('#cancel-input');
+        cancelInputBtn.click(function (){
+            app.view.removeInput();
+        });
     });
 
     addPhoneBtn.click(function(){
-        console.log(addPhoneBtn);
         app.view.addPhoneNumInputField();
+        var cancelInputBtn = $('#cancel-input');
+        cancelInputBtn.click(function (){
+            app.view.removeInput();
+        });
     });
 
 })();

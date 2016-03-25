@@ -20,22 +20,28 @@ app.view = (function view(phoneBookObj) {
 
     function displayItem(id) {
         var item = phoneBook.getItemById(id);
-        if (item.name) {
+        if (item.name ) {
             var group = item;
-            //    add the parent id to the up btn
-
-            upBtn.attr('data-parent', item.parent.id);
-            //    print group name
+            //remove the current item from view
             title.empty();
-            title.prepend(item.name);
-            //print icon
             itemIcon.empty();
-            itemIcon.html('group');
+            //    add the parent id to the up btn
+            upBtn.attr('data-parent', item.parent.id);
+            if (item.name != "Root"){
+                //    print group name
+                title.prepend(item.name);
+                //    print icon
+                itemIcon.html('group');
+            }
+            else if (item.name =="Root"){
+                //    print group name
+                title.prepend('Phone-Book');
+                //    print icon
+                itemIcon.html('contact_phone');
+            }
             //    print child items
             printGroupChildItems(item.childItems);
-
-            showGroupFAb();
-
+            showGroupFAB();
         }
         else if (item.fName) {
             var contact = item;
@@ -87,12 +93,10 @@ app.view = (function view(phoneBookObj) {
                     '</li>'
                 );
             }
-
         });
     }
 
     function printPhoneNumbers(phoneNumArray){
-
         phoneNumArray.forEach(function(number){
             phoneNumbersContainer.empty();
             phoneNumbersContainer.prepend(
@@ -103,48 +107,95 @@ app.view = (function view(phoneBookObj) {
                 '</li>'
             )
         });
-/*        phoneNumbersContainer.append(
-            '<li class="collection-item"> ' +
-                '<a class="waves-effect waves-teal btn-flat"> ' +
-                    '<i class="material-icons left teal-text"> add </i> ' +
-                '</a> ' +
-                '<input type="text" placeholder="add phone number ">' +
-            '</li>'
-        )*/
     }
 
     function addGroupInput(){
+        var li  = childItemsContainer.children().first();
+        var hasInput = li.attr('data-add');
+        if (hasInput){
+            li.remove();
+        }
+        console.log(hasInput);
         childItemsContainer.prepend(
-            '<li class="collection-item avatar"> ' +
+            '<li data-add="true" class="collection-item avatar"> ' +
                 '<i class="material-icons circle blue">group</i> ' +
-                '<input type="text" placeholder="add group name ">' +
+                '<div class="input-field">' +
+                    '<input id="add_group" type="text" >' +
+                    '<label for="add_group">add new group</label>' +
+                    '<div class="input-btnz">'+
+                        '<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">' +
+                        'Submit ' +
+                        '<i class="material-icons right">send</i>   ' +
+                        '</button>' +'' +
+                        '<a id="cancel-input" class="waves-effect waves-red btn-flat"> ' +
+                        'cancel ' +
+                        '</a> ' +
+                    '</div>' +
+                '</div>' +
             '</li>'
         )
     }
 
     function addContactInput(){
+        var li  = childItemsContainer.children().first();
+        var hasInput = li.attr('data-add');
+        if (hasInput){
+            li.remove();
+        }
         childItemsContainer.prepend(
-            '<li class="collection-item avatar"> ' +
+            '<li data-add="true" class="collection-item avatar"> ' +
             '<i class="material-icons circle green">person</i> ' +
-            '<input type="text" placeholder="first name ">' +
-            '<input type="text" placeholder="last name ">' +
-            '<input type="text" placeholder="phone number ">'+
+            '<div class="input-field">' +
+                '<input id="first_name" type="text" >' +
+                '<label for="first_name">first name</label>' +
+            '</div>' +
+            '<div class="input-field">' +
+                '<input id="last_name" type="text" >' +
+                '<label for="last_name">last name</label>' +
+            '</div>' +
+            '<div class="input-field">' +
+                '<input id="number" type="text" >' +
+                '<label for="number">phone number</label>' +
+            '</div>' +
+            '<div class="input-btnz">'+
+            '<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">' +
+            'Submit ' +
+            '<i class="material-icons right">send</i>   ' +
+            '</button>' +'' +
+            '<a id="cancel-input" class="waves-effect waves-red btn-flat"> ' +
+            'cancel ' +
+            '</a> ' +
+            '</div>' +
             '</li>'
         )
     }
 
     function addPhoneNumInputField (){
+        var li  = childItemsContainer.children().first();
+        var hasInput = li.attr('data-add');
+        if (hasInput){
+            li.remove();
+        }
         phoneNumbersContainer.prepend(
-            '<li class="collection-item"> ' +
-            '<a class="waves-effect waves-teal btn-flat"> ' +
-            '<i class="material-icons left teal-text"> add </i> ' +
-            '</a> ' +
-            '<input type="text" placeholder="add phone number ">' +
+            '<li data-add="true" class="collection-item"> ' +
+            '<div class="input-field">' +
+                '<input id="number" type="text" >' +
+                '<label for="number">phone number</label>' +
+                '<div class="input-btnz">'+
+                    '<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">' +
+                    'Submit ' +
+                    '<i class="material-icons right">send</i>   ' +
+                    '</button>' +'' +
+                    '<a id="cancel-input" class="waves-effect waves-red btn-flat"> ' +
+                    'cancel ' +
+                    '</a> ' +
+                '</div>' +
+            '</div>' +
             '</li>'
         );
     }
 
-    function showGroupFAb(){
+    function showGroupFAB(){
         groupFAB.show();
         contactFAB.hide();
     }
@@ -154,6 +205,13 @@ app.view = (function view(phoneBookObj) {
         groupFAB.hide();
     }
 
+    function removeInput(){
+        var li  = childItemsContainer.children().first();
+        var hasInput = li.attr('data-add');
+        if (hasInput){
+            li.remove();
+        }
+    }
 
 
     return {
@@ -162,6 +220,7 @@ app.view = (function view(phoneBookObj) {
         addGroupInputField:addGroupInput,
         addContactInputField:addContactInput,
         addPhoneNumInputField:addPhoneNumInputField,
+        removeInput:removeInput,
     }
 
 })(app.phoneBook);
