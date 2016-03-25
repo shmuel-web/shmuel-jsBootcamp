@@ -17,6 +17,7 @@ app.view = (function view(phoneBookObj) {
     var childItemsContainer = $('.collection');
     var phoneNumbersContainer = childItemsContainer;
     var itemIcon = $('.item-view i.large');
+    var itemBtnz = $('.item-btnz');
 
     function displayItem(id) {
         var item = phoneBook.getItemById(id);
@@ -32,12 +33,17 @@ app.view = (function view(phoneBookObj) {
                 title.prepend(item.name);
                 //    print icon
                 itemIcon.html('group');
+                itemBtnz.show();
+                upBtn.show();
+
             }
             else if (item.name =="Root"){
                 //    print group name
                 title.prepend('Phone-Book');
                 //    print icon
                 itemIcon.html('contact_phone');
+                itemBtnz.hide();
+                upBtn.hide();
             }
             //    print child items
             printGroupChildItems(item.childItems);
@@ -53,6 +59,8 @@ app.view = (function view(phoneBookObj) {
             //print icon
             itemIcon.empty();
             itemIcon.html('person');
+            itemBtnz.show();
+            upBtn.show();
             //    print contact phone numbers
             printPhoneNumbers(item.phoneNum);
 
