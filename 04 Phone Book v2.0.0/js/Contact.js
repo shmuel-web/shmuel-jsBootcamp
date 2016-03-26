@@ -11,8 +11,11 @@ app.Contact = (function(){
         this.id = id;
     }
 
-    Contact.prototype.addPhoneNumber = function(number){
+    Contact.prototype.addPhoneNumber = function(number,callback){
         this.phoneNum.push(number);
+        if (callback){
+            callback();
+        }
     };
 
     return Contact

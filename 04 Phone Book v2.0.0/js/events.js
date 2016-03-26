@@ -37,26 +37,40 @@ app.eventListeners = (function () {
         cancelInputBtn.click(function (){
             app.view.removeInput();
         });
-        submit.click(function(){
-            //todo
-            var inputFields = $('li[data-add|="true"]');
-            console.log(inputFields);
-        });
+        var addGroupForm = $('#add-group');
+        addGroupForm.on('submit', function (e) {
+            e.preventDefault();
+            var name = $('#group_name').val();
+            var itemId = itemView.attr('data-id');
+
+            var group = app.phoneBook.getItemById(itemId);
+
+            group.addSubGroup(name,function(){
+                app.view.removeInput();
+                Materialize.toast('a new phone book group was created', 4000)
+                app.view.showNewChildItem(itemId);
+            })
+        })
     });
 
     addContactBtn.click(function(){
+        //show the input field
         app.view.addContactInputField();
+        //cancel btn
         var cancelInputBtn = $('#cancel-input');
         cancelInputBtn.click(function (){
             app.view.removeInput();
         });
+
         var addContactForm = $('#add-contact');
         addContactForm.on('submit',function(e){
             e.preventDefault();
             var firstName = $('#first_name').val();
             var lastName = $('#last_name').val();
             var phoneNumber = $('#number').val();
-            var itemId = itemView.attr('data-id')
+            //geting the current group id
+            var itemId = itemView.attr('data-id');
+
             var group = app.phoneBook.getItemById(itemId);
 
             group.addContact(firstName,lastName,phoneNumber,function(){
@@ -73,6 +87,23 @@ app.eventListeners = (function () {
         cancelInputBtn.click(function (){
             app.view.removeInput();
         });
+
+        var addNumberForm = $('#add-number');
+        addNumberForm.on('submit',function(e){
+            e.preventDefault();
+            var phoneNum = $('#number').val();
+            //geting the current group id
+            var itemId = itemView.attr('data-id');
+
+            var contact = app.phoneBook.getItemById(itemId);
+
+            contact.addPhoneNumber(phoneNum,function(){
+                app.view.removeInput();
+                Materialize.toast('a new phone number was added', 4000)
+                app.view.showNewChildItem(itemId);
+            });
+        })
+
     });
 
     deleteBtn.click(function(){

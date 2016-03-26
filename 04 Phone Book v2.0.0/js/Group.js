@@ -10,9 +10,12 @@ app.Group = (function(){
         this.childItems = [];
     }
 
-    Group.prototype.addSubGroup = function (name) {
+    Group.prototype.addSubGroup = function (name,callback) {
         var newSubGroup = new app.Group(name,this,app.helpers.genarateId());
         this.childItems.push(newSubGroup);
+        if(callback){
+            callback();
+        }
     };
 
     Group.prototype.addContact = function (firstName,lastName,phoneNumbers,callback){

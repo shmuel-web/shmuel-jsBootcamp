@@ -104,8 +104,8 @@ app.view = (function view(phoneBookObj) {
     }
 
     function printPhoneNumbers(phoneNumArray){
+        phoneNumbersContainer.empty();
         phoneNumArray.forEach(function(number){
-            phoneNumbersContainer.empty();
             phoneNumbersContainer.prepend(
                 '<li class="collection-item"> ' +
                     '<a class="waves-effect waves-teal btn-flat"> ' +
@@ -122,22 +122,23 @@ app.view = (function view(phoneBookObj) {
         if (hasInput){
             li.remove();
         }
-        console.log(hasInput);
         childItemsContainer.prepend(
             '<li data-add="true" class="collection-item avatar"> ' +
                 '<i class="material-icons circle blue">group</i> ' +
-                '<div class="input-field">' +
-                    '<input id="add_group" type="text" >' +
-                    '<label for="add_group">add new group</label>' +
-                    '<div class="input-btnz">'+
-                        '<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">' +
-                        'Submit ' +
-                        '<i class="material-icons right">send</i>   ' +
-                        '</button>' +'' +
-                        '<a id="cancel-input" class="waves-effect waves-red btn-flat"> ' +
-                        'cancel ' +
-                        '</a> ' +
-                    '</div>' +
+                '<form id="add-group">'+
+                    '<div class="input-field">' +
+                        '<input id="group_name" type="text" >' +
+                        '<label for="group_name">add new group</label>' +
+                        '<div class="input-btnz">'+
+                            '<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">' +
+                            'Submit ' +
+                            '<i class="material-icons right">send</i>   ' +
+                            '</button>' +'' +
+                            '<a id="cancel-input" class="waves-effect waves-red btn-flat"> ' +
+                            'cancel ' +
+                            '</a> ' +
+                        '</div>' +
+                '</form>' +
                 '</div>' +
             '</li>'
         )
@@ -187,19 +188,21 @@ app.view = (function view(phoneBookObj) {
         }
         phoneNumbersContainer.prepend(
             '<li data-add="true" class="collection-item"> ' +
-            '<div class="input-field">' +
-                '<input id="number" type="text" >' +
-                '<label for="number">phone number</label>' +
-                '<div class="input-btnz">'+
-                    '<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">' +
-                    'Submit ' +
-                    '<i class="material-icons right">send</i>   ' +
-                    '</button>' +'' +
-                    '<a id="cancel-input" class="waves-effect waves-red btn-flat"> ' +
-                    'cancel ' +
-                    '</a> ' +
-                '</div>' +
-            '</div>' +
+                '<form id="add-number">' +
+                    '<div class="input-field">' +
+                        '<input id="number" type="text" >' +
+                        '<label for="number">phone number</label>' +
+                        '<div class="input-btnz">'+
+                            '<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">' +
+                            'Submit ' +
+                            '<i class="material-icons right">send</i>   ' +
+                            '</button>' +'' +
+                            '<a id="cancel-input" class="waves-effect waves-red btn-flat"> ' +
+                            'cancel ' +
+                            '</a> ' +
+                        '</div>' +
+                    '</div>' +
+                '</form>'+
             '</li>'
         );
     }
