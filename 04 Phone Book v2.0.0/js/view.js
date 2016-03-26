@@ -1,7 +1,5 @@
 var app = app || {};
 
-//todo
-
 app.phoneBook = new app.PhoneBook;
 
 app.view = (function view(phoneBookObj) {
@@ -16,11 +14,13 @@ app.view = (function view(phoneBookObj) {
     var upBtn = $("#up-btn");
     var childItemsContainer = $('.collection');
     var phoneNumbersContainer = childItemsContainer;
+    var itemView = $('.item-view');
     var itemIcon = $('.item-view i.large');
     var itemBtnz = $('.item-btnz');
 
     function displayItem(id) {
         var item = phoneBook.getItemById(id);
+        itemView.attr('data-id',item.id);
         if (item.name ) {
             var group = item;
             //remove the current item from view
@@ -35,7 +35,6 @@ app.view = (function view(phoneBookObj) {
                 itemIcon.html('group');
                 itemBtnz.show();
                 upBtn.show();
-
             }
             else if (item.name =="Root"){
                 //    print group name
@@ -59,7 +58,7 @@ app.view = (function view(phoneBookObj) {
             //print icon
             itemIcon.empty();
             itemIcon.html('person');
-            itemBtnz.show();
+            itemBtnz.show().attr('data-id',item.id);
             upBtn.show();
             //    print contact phone numbers
             printPhoneNumbers(item.phoneNum);
@@ -153,27 +152,29 @@ app.view = (function view(phoneBookObj) {
         childItemsContainer.prepend(
             '<li data-add="true" class="collection-item avatar"> ' +
             '<i class="material-icons circle green">person</i> ' +
-            '<div class="input-field">' +
-                '<input id="first_name" type="text" >' +
-                '<label for="first_name">first name</label>' +
-            '</div>' +
-            '<div class="input-field">' +
-                '<input id="last_name" type="text" >' +
-                '<label for="last_name">last name</label>' +
-            '</div>' +
-            '<div class="input-field">' +
-                '<input id="number" type="text" >' +
-                '<label for="number">phone number</label>' +
-            '</div>' +
-            '<div class="input-btnz">'+
-            '<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">' +
-            'Submit ' +
-            '<i class="material-icons right">send</i>   ' +
-            '</button>' +'' +
-            '<a id="cancel-input" class="waves-effect waves-red btn-flat"> ' +
-            'cancel ' +
-            '</a> ' +
-            '</div>' +
+                '<form id="add-contact">' +
+                    '<div class="input-field">' +
+                        '<input id="first_name" type="text" >' +
+                        '<label for="first_name">first name</label>' +
+                    '</div>' +
+                    '<div class="input-field">' +
+                        '<input id="last_name" type="text" >' +
+                        '<label for="last_name">last name</label>' +
+                    '</div>' +
+                    '<div class="input-field">' +
+                        '<input id="number" type="text" >' +
+                        '<label for="number">phone number</label>' +
+                    '</div>' +
+                    '<div class="input-btnz">'+
+                    '<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">' +
+                    'Submit ' +
+                    '<i class="material-icons right">send</i>   ' +
+                    '</button>' +'' +
+                    '<a id="cancel-input" class="waves-effect waves-red btn-flat"> ' +
+                    'cancel ' +
+                    '</a> ' +
+                    '</div>' +
+                '</form>' +
             '</li>'
         )
     }
@@ -221,6 +222,10 @@ app.view = (function view(phoneBookObj) {
         }
     }
 
+    function showNewChildItem(itemId){
+        //todo create a more eficent and UX aware function
+        displayItem(itemId);
+    }
 
     return {
         displayItem: displayItem,
@@ -229,6 +234,7 @@ app.view = (function view(phoneBookObj) {
         addContactInputField:addContactInput,
         addPhoneNumInputField:addPhoneNumInputField,
         removeInput:removeInput,
+        showNewChildItem:showNewChildItem,
     }
 
 })(app.phoneBook);

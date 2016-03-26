@@ -4,20 +4,18 @@ app.PhoneBook = (function(){
     //todo write to local storage
     //todo reset to default
     function PhoneBook() {
-        this.root = {
-            id: 0,
-            name: 'Root',
-            childItems: [],
-            parent:false,
-        };
+        this.root = new app.Group('Root',false,0);
 
         this.currentGroup = this.root;
     }
 
-    PhoneBook.prototype.addContact = function(firstName, lastName, phoneNumbers){
+    PhoneBook.prototype.addContact = function(firstName, lastName, phoneNumbers,callback){
         var newContact =
             new app.Contact(firstName, lastName, phoneNumbers,this.currentGroup, app.helpers.genarateId());
         this.currentGroup.childItems.push(newContact);
+        if (callback){
+            callback();
+        }
     };
 
     PhoneBook.prototype.addGroup = function(name){
@@ -25,7 +23,7 @@ app.PhoneBook = (function(){
         this.currentGroup.childItems.push(newGroup);
     };
 
-    PhoneBook.prototype.deleteItem = function deleteItem(id) {
+    PhoneBook.prototype.deleteItem = function deleteItem(id,callback) {
         if (!isNaN(id)) {
             var item = this.getItemById(id);
             item.parent.childItems.forEach(function (childItem, index, array) {
@@ -34,6 +32,9 @@ app.PhoneBook = (function(){
                 }
             });
             currentGroup = item.parent;
+            if (callback){
+                callback();
+            }
         }
     };
 

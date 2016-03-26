@@ -29,11 +29,13 @@ main {
 
 nav form {
   height: 64px;
-  float: right;
-  width:calc(100% - 100px);
+  float: left;
+  width:calc(100% - 91px);
 }
 
 .item-main{
+  display: block;
+  height:10rem;
   padding: 2rem;
   padding-right: 10px;
   .item-view{

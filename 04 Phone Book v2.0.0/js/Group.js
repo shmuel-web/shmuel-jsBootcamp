@@ -15,10 +15,14 @@ app.Group = (function(){
         this.childItems.push(newSubGroup);
     };
 
-    Group.prototype.addContact = function (firstName,lastName,phoneNumbers){
+    Group.prototype.addContact = function (firstName,lastName,phoneNumbers,callback){
         var newContact = new app.Contact(firstName,lastName,phoneNumbers,this,app.helpers.genarateId());
         this.childItems.push(newContact);
+        if (callback){
+            callback();
+        }
     };
+
 
     return Group;
 })();
