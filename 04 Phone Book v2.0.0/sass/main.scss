@@ -1,13 +1,19 @@
 //todo improve css and design
+
+html{
+  overflow-x: hidden;
+}
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 main {
   flex: 1 0 auto;
 }
+
 
 //a fix in the for the css framework
 .collection .collection-item.avatar {
@@ -15,6 +21,7 @@ main {
 }
 
 .collection{
+  margin-top:0;
   margin-bottom: 0;
 }
 
@@ -28,16 +35,17 @@ main {
 }
 
 nav form {
+  //todo make the search bar span the hole width
   height: 64px;
-  float: left;
-  width:calc(100% - 91px);
+  display: inline-block;
+  width: calc(100% - 115px);
 }
 
 .item-main{
-  display: block;
-  height:10rem;
-  padding: 2rem;
-  padding-right: 10px;
+  display: inline-block;
+  min-height:1rem;
+  width: 100%;
+  padding: 2rem 10px 2rem 2rem;
   .item-view{
     float: left;
     width: 100%;
@@ -51,8 +59,12 @@ nav form {
     font-size: 2rem;
     margin-top: 20px;
     margin-left: 10px;
+    div{
+      font-size: 1.3rem;
+    }
   }
   .item-btnz{
+    display: inline-block;
     float: right;
     width:40px;
     .btn-flat{
@@ -65,11 +77,34 @@ nav form {
   input{
     width:calc(100% - 40px);
   }
-  button{
-
+  .secondary-content{
+    cursor: pointer;
   }
-  .input-btnz{
+}
+
+@media (max-width: 600px){
+  .dynamic-padding{
+    padding: 0 1%;
+  }
+  .responsive-fab{
 
   }
 }
 
+@media (min-width: 600px) and (max-width: 1200px){
+  .dynamic-padding{
+    padding: 0 15%;
+  }
+  .responsive-fab{
+    right: 17%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dynamic-padding{
+    padding: 0 20%;
+  }
+  .responsive-fab{
+    right: 22%;
+  }
+}

@@ -12,6 +12,7 @@ app.view = (function view(phoneBookObj) {
 
     var title = $('#title');
     var upBtn = $("#up-btn");
+    var backBtn = $('#back-btn');
     var childItemsContainer = $('.collection');
     var phoneNumbersContainer = childItemsContainer;
     var itemView = $('.item-view');
@@ -35,6 +36,7 @@ app.view = (function view(phoneBookObj) {
                 itemIcon.html('group');
                 itemBtnz.show();
                 upBtn.show();
+                backBtn.hide()
             }
             else if (item.name =="Root"){
                 //    print group name
@@ -43,6 +45,7 @@ app.view = (function view(phoneBookObj) {
                 itemIcon.html('contact_phone');
                 itemBtnz.hide();
                 upBtn.hide();
+                backBtn.hide();
             }
             //    print child items
             printGroupChildItems(item.childItems);
@@ -54,14 +57,15 @@ app.view = (function view(phoneBookObj) {
             upBtn.attr('data-parent', item.parent.id);
             //    print contact name
             title.empty();
-            title.prepend(item.fName+" "+item.lName);
+            title.prepend(contact.fName+" "+contact.lName);
             //print icon
             itemIcon.empty();
             itemIcon.html('person');
-            itemBtnz.show().attr('data-id',item.id);
+            itemBtnz.show().attr('data-id',contact.id);
             upBtn.show();
+            backBtn.hide();
             //    print contact phone numbers
-            printPhoneNumbers(item.phoneNum);
+            printPhoneNumbers(contact.phoneNum);
 
             showContactFAb();
         }
@@ -72,10 +76,6 @@ app.view = (function view(phoneBookObj) {
 
     }
 
-    function displaySearchResults() {
-        //geting the results from the bl
-
-    }
 
     function printGroupChildItems(itemsArray){
         childItemsContainer.empty();
@@ -217,6 +217,11 @@ app.view = (function view(phoneBookObj) {
         groupFAB.hide();
     }
 
+    function hideFAB(){
+        groupFAB.hide();
+        contactFAB.hide();
+    }
+
     function removeInput(){
         var li  = childItemsContainer.children().first();
         var hasInput = li.attr('data-add');
@@ -230,6 +235,32 @@ app.view = (function view(phoneBookObj) {
         displayItem(itemId);
     }
 
+    function displaySearchResults(results,searchParam){
+        //remove the current item from view
+        title.empty();
+        itemIcon.empty();
+        //    print results header
+        if (results.length > 1){
+            title.prepend(searchParam + '<div>was found ' +results.length + ' times</div>');
+        }
+        else if (results.length == 1 ) {
+            title.prepend(searchParam + '<div>was found once</div>');
+        }
+        else if (results.length <= 0 ) {
+            title.prepend(searchParam + '<div>was not found</div>');
+        }
+        //    print icon
+        itemIcon.html('youtube_searched_for');
+        itemBtnz.hide();
+        upBtn.hide();
+        backBtn.show();
+        printGroupChildItems(results);
+        hideFAB();
+        app.dynamicEventListeners();
+
+
+    }
+
     return {
         displayItem: displayItem,
         changeCurrentItem: changeCurrentItem,
@@ -238,6 +269,7 @@ app.view = (function view(phoneBookObj) {
         addPhoneNumInputField:addPhoneNumInputField,
         removeInput:removeInput,
         showNewChildItem:showNewChildItem,
+        displaySearchResults:displaySearchResults,
     }
 
 })(app.phoneBook);

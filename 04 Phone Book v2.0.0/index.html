@@ -17,7 +17,7 @@
     <div class="navbar-fixed">
 
         <nav>
-            <div class="nav-wrapper blue darken-3">
+            <div class="nav-wrapper blue darken-3 dynamic-padding">
                 <ul>
                     <li>
                         <a id="up-btn">
@@ -25,8 +25,14 @@
                             UP
                         </a>
                     </li>
+                    <li>
+                        <a id="back-btn">
+                            <i class="material-icons left">keyboard_backspace</i>
+                            BACK
+                        </a>
+                    </li>
                 </ul>
-                <form>
+                <form id="search-bar">
                     <div class="input-field">
                         <input id="search" type="search" required>
                         <label for="search"><i class="material-icons">search</i></label>
@@ -41,7 +47,7 @@
 
 </header>
 
-<main>
+<main class="dynamic-padding">
     <div class="item-main">
         <div class="item-view">
             <div class="item-btnz">
@@ -64,7 +70,7 @@
 
     </ul>
 
-    <div id="group-FAB" class="fixed-action-btn click-to-toggle" style="bottom: 45px; right: 24px;">
+    <div id="group-FAB" class="fixed-action-btn click-to-toggle responsive-fab" >
         <a class="btn-floating btn-large red">
             <i class="large mdi-content-add">
             </i>
@@ -75,7 +81,7 @@
         </ul>
     </div>
 
-    <div id="contact-FAB" class="fixed-action-btn click-to-toggle" style="bottom: 45px; right: 24px;">
+    <div id="contact-FAB" class="fixed-action-btn click-to-toggle responsive-fab" >
         <a class="btn-floating btn-large red">
             <i class="large mdi-content-add">
             </i>

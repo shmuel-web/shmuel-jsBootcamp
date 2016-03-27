@@ -1,7 +1,11 @@
+html {
+  overflow-x: hidden; }
+
 body {
   display: flex;
   min-height: 100vh;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow-x: hidden; }
 
 main {
   flex: 1 0 auto; }
@@ -10,6 +14,7 @@ main {
   min-height: 0px; }
 
 .collection {
+  margin-top: 0;
   margin-bottom: 0; }
 
 .flip {
@@ -21,14 +26,14 @@ main {
 
 nav form {
   height: 64px;
-  float: left;
-  width: calc(100% - 91px); }
+  display: inline-block;
+  width: calc(100% - 115px); }
 
 .item-main {
-  display: block;
-  height: 10rem;
-  padding: 2rem;
-  padding-right: 10px; }
+  display: inline-block;
+  min-height: 1rem;
+  width: 100%;
+  padding: 2rem 10px 2rem 2rem; }
   .item-main .item-view {
     float: left;
     width: 100%; }
@@ -39,7 +44,10 @@ nav form {
     font-size: 2rem;
     margin-top: 20px;
     margin-left: 10px; }
+    .item-main #title div {
+      font-size: 1.3rem; }
   .item-main .item-btnz {
+    display: inline-block;
     float: right;
     width: 40px; }
     .item-main .item-btnz .btn-flat {
@@ -48,3 +56,22 @@ nav form {
 
 .collection-item input {
   width: calc(100% - 40px); }
+
+.collection-item .secondary-content {
+  cursor: pointer; }
+
+@media (max-width: 600px) {
+  .dynamic-padding {
+    padding: 0 1%; } }
+
+@media (min-width: 600px) and (max-width: 1200px) {
+  .dynamic-padding {
+    padding: 0 15%; }
+  .responsive-fab {
+    right: 17%; } }
+
+@media (min-width: 1200px) {
+  .dynamic-padding {
+    padding: 0 20%; }
+  .responsive-fab {
+    right: 22%; } }

@@ -16,16 +16,35 @@ app.dynamicEventListeners = (function () {
 app.eventListeners = (function () {
 
     var upBtn = $('#up-btn');
+    var backBtn =  $('#back-btn');
     var addGroupBtn = $('#add-group');
     var addContactBtn = $('#add-contact');
     var addPhoneBtn = $('#add-phone-num');
     var deleteBtn = $('#delete-btn');
     var itemView = $('.item-view');
+    var searchBar = $('#search-bar');
+
+
+    searchBar.on('submit',function(e){
+        e.preventDefault();
+        var input = $('#search');
+        var searchParam = input.val();
+        var results = app.phoneBook.search(searchParam);
+        app.view.displaySearchResults(results,searchParam);
+        e.target.reset();
+        input.blur();
+
+    });
 
     upBtn.click(function (e) {
         var parentId = upBtn.attr('data-parent');
         app.view.displayItem(parentId);
         console.log(parentId);
+    })
+
+    backBtn.click(function(){
+        var itemId = itemView.attr('data-id');
+        app.view.displayItem(itemId)
     });
 
     //events for the FAB

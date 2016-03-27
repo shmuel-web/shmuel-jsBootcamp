@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9755de8-3a06-459f-b357-a33b485849bf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/Contact.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/Contact.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/Group.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/Group.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/main.css" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/main.css" />
     </list>
     <ignored path="shmuel-jsBootcamp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Group.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/Group.js">
+      <file leaf-file-name="PhoneBook.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -40,7 +41,17 @@
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+              <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.384">
+              <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -56,24 +67,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="view.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38690478">
-              <caret line="107" column="47" selection-start-line="107" selection-start-column="47" selection-end-line="107" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="88" column="52" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="52" />
               <folding>
-                <marker date="1459030756000" expanded="true" signature="2572:2979" placeholder="..." />
-                <marker date="1459030756000" expanded="true" signature="2699:2721" placeholder="..." />
-                <marker date="1459030756000" expanded="true" signature="2772:2815" placeholder="..." />
-                <marker date="1459030756000" expanded="true" signature="4346:5245" placeholder="..." />
-                <marker date="1459030756000" expanded="true" signature="4346:5263" placeholder="..." />
-                <marker date="1459030756000" expanded="true" signature="4507:5241" placeholder="..." />
-                <marker date="1459030756000" expanded="true" signature="4699:5186" placeholder="..." />
-                <marker date="1459030756000" expanded="true" signature="5575:6855" placeholder="..." />
-                <marker date="1459030756000" expanded="true" signature="5687:6806" placeholder="..." />
-                <marker date="1459030756000" expanded="true" signature="5737:5904" placeholder="..." />
-                <marker date="1459030756000" expanded="true" signature="7169:8013" placeholder="..." />
-                <marker date="1459030756000" expanded="true" signature="7213:7965" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="2623:3030" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="2750:2772" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="2823:2866" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="4397:5296" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="4397:5314" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="4558:5292" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="4750:5237" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="5626:6906" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="5738:6857" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="5788:5955" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="7220:8064" placeholder="..." />
+                <marker date="1459053716000" expanded="true" signature="7264:8016" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -92,12 +103,9 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.703704">
-              <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-8.666667">
+              <caret line="83" column="80" selection-start-line="83" selection-start-column="80" selection-end-line="83" selection-end-column="80" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,13 +191,13 @@
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/app.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/helpers.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/groupView.js" />
-        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" />
-        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/Group.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/Contact.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss" />
       </list>
     </option>
   </component>
@@ -480,7 +488,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.4947146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3857143" sideWeight="0.3967583" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3857143" sideWeight="0.3967583" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.56808513" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676056" sideWeight="0.60324174" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -846,37 +854,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.3333335">
-          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.703704">
-          <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Expirimental-phoneBook-GUI-ObjectOriented/js/PhoneBookModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -900,29 +881,53 @@
     <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.666667">
+          <caret line="83" column="80" selection-start-line="83" selection-start-column="80" selection-end-line="83" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38690478">
-          <caret line="107" column="47" selection-start-line="107" selection-start-column="47" selection-end-line="107" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="52" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="52" />
           <folding>
-            <marker date="1459030756000" expanded="true" signature="2572:2979" placeholder="..." />
-            <marker date="1459030756000" expanded="true" signature="2699:2721" placeholder="..." />
-            <marker date="1459030756000" expanded="true" signature="2772:2815" placeholder="..." />
-            <marker date="1459030756000" expanded="true" signature="4346:5245" placeholder="..." />
-            <marker date="1459030756000" expanded="true" signature="4346:5263" placeholder="..." />
-            <marker date="1459030756000" expanded="true" signature="4507:5241" placeholder="..." />
-            <marker date="1459030756000" expanded="true" signature="4699:5186" placeholder="..." />
-            <marker date="1459030756000" expanded="true" signature="5575:6855" placeholder="..." />
-            <marker date="1459030756000" expanded="true" signature="5687:6806" placeholder="..." />
-            <marker date="1459030756000" expanded="true" signature="5737:5904" placeholder="..." />
-            <marker date="1459030756000" expanded="true" signature="7169:8013" placeholder="..." />
-            <marker date="1459030756000" expanded="true" signature="7213:7965" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="2623:3030" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="2750:2772" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="2823:2866" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="4397:5296" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="4397:5314" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="4558:5292" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="4750:5237" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="5626:6906" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="5738:6857" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="5788:5955" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="7220:8064" placeholder="..." />
+            <marker date="1459053716000" expanded="true" signature="7264:8016" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.384">
+          <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
