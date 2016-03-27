@@ -1,5 +1,5 @@
 var app = app || {};
 
-app.phoneBook.reset();
+app.phoneBook.readFromLocal();
 
 app.view.displayItem(0);

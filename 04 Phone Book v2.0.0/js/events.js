@@ -17,13 +17,13 @@ app.eventListeners = (function () {
 
     var upBtn = $('#up-btn');
     var backBtn =  $('#back-btn');
+    var resetBtn = $('#reset-btn');
     var addGroupBtn = $('#add-group');
     var addContactBtn = $('#add-contact');
     var addPhoneBtn = $('#add-phone-num');
     var deleteBtn = $('#delete-btn');
     var itemView = $('.item-view');
     var searchBar = $('#search-bar');
-
 
     searchBar.on('submit',function(e){
         e.preventDefault();
@@ -40,7 +40,7 @@ app.eventListeners = (function () {
         var parentId = upBtn.attr('data-parent');
         app.view.displayItem(parentId);
         console.log(parentId);
-    })
+    });
 
     backBtn.click(function(){
         var itemId = itemView.attr('data-id');
@@ -66,10 +66,11 @@ app.eventListeners = (function () {
 
             group.addSubGroup(name,function(){
                 app.view.removeInput();
-                Materialize.toast('a new phone book group was created', 4000)
+                Materialize.toast('a new phone book group was created', 4000);
                 app.view.showNewChildItem(itemId);
-            })
-        })
+                app.phoneBook.writeToLocal();
+            });
+        });
     });
 
     addContactBtn.click(function(){
@@ -94,10 +95,11 @@ app.eventListeners = (function () {
 
             group.addContact(firstName,lastName,phoneNumber,function(){
                 app.view.removeInput();
-                Materialize.toast('a new phone book contact was created', 4000)
+                Materialize.toast('a new phone book contact was created', 4000);
                 app.view.showNewChildItem(itemId);
+                app.phoneBook.writeToLocal();
             });
-        })
+        });
     });
 
     addPhoneBtn.click(function(){
@@ -120,8 +122,19 @@ app.eventListeners = (function () {
                 app.view.removeInput();
                 Materialize.toast('a new phone number was added', 4000)
                 app.view.showNewChildItem(itemId);
+                app.phoneBook.writeToLocal();
             });
-        })
+        });
+    });
+
+    resetBtn.click(function(){
+
+        $('#reset-modal').openModal();
+        $('#reset-confirm').click(function(){
+            app.phoneBook.reset();
+            app.view.displayItem(0);
+        });
+
 
     });
 
@@ -136,9 +149,8 @@ app.eventListeners = (function () {
                 upBtn.click();
                 $('#delete-modal').closeModal();
                 Materialize.toast('phone book item was deleted', 4000);
+                app.phoneBook.writeToLocal();
             });
         });
-
     });
-
 })();

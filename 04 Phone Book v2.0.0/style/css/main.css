@@ -26,8 +26,7 @@ main {
 
 nav form {
   height: 64px;
-  display: inline-block;
-  width: calc(100% - 115px); }
+  display: inline-block; }
 
 .item-main {
   display: inline-block;
@@ -66,9 +65,9 @@ nav form {
 
 @media (min-width: 600px) and (max-width: 1200px) {
   .dynamic-padding {
-    padding: 0 15%; }
+    padding: 0 13%; }
   .responsive-fab {
-    right: 17%; } }
+    right: 15%; } }
 
 @media (min-width: 1200px) {
   .dynamic-padding {

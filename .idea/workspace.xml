@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b9755de8-3a06-459f-b357-a33b485849bf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/app.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/main.css" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/main.css" />
     </list>
@@ -27,8 +28,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PhoneBook.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PhoneBook.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2835821">
+              <caret line="145" column="46" selection-start-line="145" selection-start-column="46" selection-end-line="145" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Group.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/Group.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -41,17 +52,17 @@
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+              <caret line="125" column="15" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.384">
-              <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -90,6 +101,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="88.111115">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -100,21 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.666667">
-              <caret line="83" column="80" selection-start-line="83" selection-start-column="80" selection-end-line="83" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="13" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,7 +135,7 @@
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/Contact.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -188,16 +199,16 @@
         <option value="$PROJECT_DIR$/02 phonBook write to file/phonebook.json" />
         <option value="$PROJECT_DIR$/02 phonBook write to file/app.js" />
         <option value="$PROJECT_DIR$/03 phoneBook-GUI/js/phoneBookModal.js" />
-        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/app.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/helpers.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/groupView.js" />
-        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/Group.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/Contact.js" />
-        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" />
-        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/app.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js" />
       </list>
     </option>
   </component>
@@ -822,26 +833,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/groupView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08955224">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -858,46 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/Group.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/Contact.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.666667">
-          <caret line="83" column="80" selection-start-line="83" selection-start-column="80" selection-end-line="83" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -923,10 +878,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/Contact.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.384">
-          <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/Group.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="125" column="15" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="88.111115">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2835821">
+          <caret line="145" column="46" selection-start-line="145" selection-start-column="46" selection-end-line="145" selection-end-column="46" />
           <folding />
         </state>
       </provider>

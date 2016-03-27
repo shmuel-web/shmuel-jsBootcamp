@@ -21,6 +21,7 @@ app.PhoneBook = (function(){
     PhoneBook.prototype.addGroup = function(name){
         var newGroup = new app.Group(name,this.currentGroup, app.helpers.genarateId());
         this.currentGroup.childItems.push(newGroup);
+        return newGroup;
     };
 
     PhoneBook.prototype.deleteItem = function deleteItem(id,callback) {
@@ -139,12 +140,12 @@ app.PhoneBook = (function(){
                 this.addContact(item.firstName, item.lastName, item.phoneNumbers);
             }
             else if (item.name && item.name !== "Root") {
-                this.addGroup(item.name);
+                var group = this.addGroup(item.name);
 
-                if (item.childItems > 0) {
+                if (item.items > 0) {
                     this.currentGroup = group;
                     //iterating over his children & inserting them
-                    for (var i = ++index; i < index + item.childItems; i++) {
+                    for (var i = ++index; i < index + item.items; i++) {
                         this.load(array[i], i, array);//recurse
                     }
                     array.splice(index, item.items);//removing the added items so that the for each loop cold continue properly
@@ -165,6 +166,7 @@ app.PhoneBook = (function(){
     };
 
     PhoneBook.prototype.readFromLocal = function readFromLocal() {
+        //todo clean bug
         //reads the phone book items from local storage
         var phoneBookArray = JSON.parse(localStorage.getItem("phoneBookArray"));
         var self = this;
