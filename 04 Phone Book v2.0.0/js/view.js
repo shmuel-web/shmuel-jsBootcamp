@@ -1,5 +1,9 @@
 var app = app || {};
 
+//todo create an animation modal that will get a callback
+// function that will call when the out animation is finished
+//& then will complete the rest of animation
+
 app.phoneBook = new app.PhoneBook;
 
 app.view = (function view(phoneBookObj) {
@@ -19,7 +23,8 @@ app.view = (function view(phoneBookObj) {
     var itemIcon = $('.item-view i.large');
     var itemBtnz = $('.item-btnz');
 
-    function displayItem(id) {
+
+    function writeItemToDomById(id) {
         var item = phoneBook.getItemById(id);
         itemView.attr('data-id',item.id);
         if (item.name ) {
@@ -61,9 +66,10 @@ app.view = (function view(phoneBookObj) {
             //print icon
             itemIcon.empty();
             itemIcon.html('person');
-            itemBtnz.show().attr('data-id',contact.id);
-            upBtn.show();
+            itemBtnz.fadeIn().attr('data-id',contact.id);
             backBtn.hide();
+            upBtn.fadeIn();
+
             //    print contact phone numbers
             printPhoneNumbers(contact.phoneNum);
 
@@ -71,11 +77,6 @@ app.view = (function view(phoneBookObj) {
         }
         app.dynamicEventListeners();
     }
-
-    function changeCurrentItem() {
-
-    }
-
 
     function printGroupChildItems(itemsArray){
         childItemsContainer.empty();
@@ -123,7 +124,7 @@ app.view = (function view(phoneBookObj) {
             li.remove();
         }
         childItemsContainer.prepend(
-            '<li data-add="true" class="collection-item avatar"> ' +
+            '<li data-add="true" class="collection-item avatar animated slideInUp"> ' +
                 '<i class="material-icons circle blue">group</i> ' +
                 '<form id="add-group">'+
                     '<div class="input-field">' +
@@ -141,7 +142,7 @@ app.view = (function view(phoneBookObj) {
                 '</form>' +
                 '</div>' +
             '</li>'
-        )
+        );
     }
 
     function addContactInput(){
@@ -151,7 +152,7 @@ app.view = (function view(phoneBookObj) {
             li.remove();
         }
         childItemsContainer.prepend(
-            '<li data-add="true" class="collection-item avatar"> ' +
+            '<li data-add="true" class="collection-item avatar animated slideInUp"> ' +
             '<i class="material-icons circle green">person</i> ' +
                 '<form id="add-contact">' +
                     '<div class="input-field">' +
@@ -177,7 +178,7 @@ app.view = (function view(phoneBookObj) {
                     '</div>' +
                 '</form>' +
             '</li>'
-        )
+        );
     }
 
     function addPhoneNumInputField (){
@@ -187,7 +188,7 @@ app.view = (function view(phoneBookObj) {
             li.remove();
         }
         phoneNumbersContainer.prepend(
-            '<li data-add="true" class="collection-item"> ' +
+            '<li data-add="true" class="collection-item animated slideInUp"> ' +
                 '<form id="add-number">' +
                     '<div class="input-field">' +
                         '<input id="number" type="text" >' +
@@ -251,9 +252,9 @@ app.view = (function view(phoneBookObj) {
         }
         //    print icon
         itemIcon.html('youtube_searched_for');
-        itemBtnz.hide();
+        itemBtnz.fadeOut();
         upBtn.hide();
-        backBtn.show();
+        backBtn.fadeIn();
         printGroupChildItems(results);
         hideFAB();
         app.dynamicEventListeners();
@@ -261,15 +262,28 @@ app.view = (function view(phoneBookObj) {
 
     }
 
+    function displayItem(id,revers){
+        if (!revers){
+            app.animation.leftOutRightInAnimation(function(){
+                writeItemToDomById(id);
+            });
+        }
+        else if (revers){
+            app.animation.RightOutLeftInAnimation(function(){
+                writeItemToDomById(id);
+            });
+        }
+    }
+
     return {
         displayItem: displayItem,
-        changeCurrentItem: changeCurrentItem,
         addGroupInputField:addGroupInput,
         addContactInputField:addContactInput,
         addPhoneNumInputField:addPhoneNumInputField,
         removeInput:removeInput,
         showNewChildItem:showNewChildItem,
         displaySearchResults:displaySearchResults,
+        writeItemToDomById:writeItemToDomById,
     }
 
 })(app.phoneBook);

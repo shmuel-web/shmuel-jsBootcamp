@@ -38,13 +38,12 @@ app.eventListeners = (function () {
 
     upBtn.click(function (e) {
         var parentId = upBtn.attr('data-parent');
-        app.view.displayItem(parentId);
-        console.log(parentId);
+        app.view.displayItem(parentId,true);
     });
 
     backBtn.click(function(){
         var itemId = itemView.attr('data-id');
-        app.view.displayItem(itemId)
+        app.view.displayItem(itemId,true);
     });
 
     //events for the FAB

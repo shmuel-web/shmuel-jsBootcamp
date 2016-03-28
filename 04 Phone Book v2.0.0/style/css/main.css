@@ -8,7 +8,8 @@ body {
   overflow-x: hidden; }
 
 main {
-  flex: 1 0 auto; }
+  flex: 1 0 auto;
+  -webkit-animation-duration: 0.01ms; }
 
 .collection .collection-item.avatar {
   min-height: 0px; }
@@ -58,6 +59,9 @@ nav form {
 
 .collection-item .secondary-content {
   cursor: pointer; }
+
+.responsive-fab {
+  bottom: 6%; }
 
 @media (max-width: 600px) {
   .dynamic-padding {

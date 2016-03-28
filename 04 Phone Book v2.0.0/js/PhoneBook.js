@@ -175,6 +175,9 @@ app.PhoneBook = (function(){
                 self.load(item, index, array);
             })
         }
+        else{
+            this.reset();
+        }
     };
 
     PhoneBook.prototype.reset = function resetData() {
