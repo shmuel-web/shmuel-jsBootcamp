@@ -1,8 +1,7 @@
 var app = app || {};
 
 app.PhoneBook = (function(){
-    //todo write to local storage
-    //todo reset to default
+
     function PhoneBook() {
         this.root = new app.Group('Root',false,0);
 
@@ -11,7 +10,7 @@ app.PhoneBook = (function(){
 
     PhoneBook.prototype.addContact = function(firstName, lastName, phoneNumbers,callback){
         var newContact =
-            new app.Contact(firstName, lastName, phoneNumbers,this.currentGroup, app.helpers.genarateId());
+            new app.Contact(firstName, lastName, phoneNumbers,this.currentGroup, app.helpers.generateId());
         this.currentGroup.childItems.push(newContact);
         if (callback){
             callback();
@@ -19,7 +18,7 @@ app.PhoneBook = (function(){
     };
 
     PhoneBook.prototype.addGroup = function(name){
-        var newGroup = new app.Group(name,this.currentGroup, app.helpers.genarateId());
+        var newGroup = new app.Group(name,this.currentGroup, app.helpers.generateId());
         this.currentGroup.childItems.push(newGroup);
         return newGroup;
     };
@@ -84,6 +83,7 @@ app.PhoneBook = (function(){
         }
         return foundItems;
     };
+
     //
     //this function takes all the phone book and turns it into an array of JSON objects
     //while saving the tree structure relationships between the objects
@@ -130,7 +130,6 @@ app.PhoneBook = (function(){
         var phoneBookArray = this.toJsonArray();
         localStorage.setItem("phoneBookArray", JSON.stringify(phoneBookArray));
     };
-
 
     PhoneBook.prototype.load = function(item, index, array) {
         //this function loads every phone book item from the array in to the object
@@ -182,12 +181,12 @@ app.PhoneBook = (function(){
 
     PhoneBook.prototype.reset = function resetData() {
         //this function restores the program to a default condition
-            localStorage.phoneBookArray =
-                '[{"name":"Root","items":6},{"name":"family","items":0},{"name":"friends","items":1},{"name":"best-friends","items":0},{"name":"work","items":0},{"name":"milueim","items":0},{"firstName":"jhon ","lastName":"doe","phoneNumbers":["04-8759918"],"items":0},{"firstName":"jane","lastName":"doe","phoneNumbers":["04-8759918"],"items":0}]';
-            this.root.childItems = [];
-            this.currentGroup = this.root;
-            this.readFromLocal();
-        };
+        localStorage.phoneBookArray =
+            '[{"name":"Root","items":6},{"name":"family","items":0},{"name":"friends","items":1},{"name":"best-friends","items":0},{"name":"work","items":0},{"name":"milueim","items":0},{"firstName":"jhon ","lastName":"doe","phoneNumbers":["04-8759918"],"items":0},{"firstName":"jane","lastName":"doe","phoneNumbers":["04-8759918"],"items":0}]';
+        this.root.childItems = [];
+        this.currentGroup = this.root;
+        this.readFromLocal();
+    };
 
     return PhoneBook;
 

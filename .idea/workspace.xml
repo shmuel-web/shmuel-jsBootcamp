@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9755de8-3a06-459f-b357-a33b485849bf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/animation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_8th_week/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_8th_week/content/1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_8th_week/content/2.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_8th_week/content/3.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_8th_week/content/4.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_8th_week/content/5.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_8th_week/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_8th_week/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/practice_8th_week/q.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/app.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/main.css" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/animate.css" afterPath="$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/animate.css" />
     </list>
     <ignored path="shmuel-jsBootcamp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,24 +45,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="180" column="10" selection-start-line="180" selection-start-column="10" selection-end-line="180" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.8797654">
+              <caret line="206" column="19" selection-start-line="190" selection-start-column="12" selection-end-line="206" selection-end-column="19" />
               <folding>
-                <marker date="1459148836000" expanded="true" signature="2758:3165" placeholder="..." />
-                <marker date="1459148836000" expanded="true" signature="2885:2907" placeholder="..." />
-                <marker date="1459148836000" expanded="true" signature="2958:3001" placeholder="..." />
-                <marker date="1459148836000" expanded="true" signature="4551:5450" placeholder="..." />
-                <marker date="1459148836000" expanded="true" signature="4551:5468" placeholder="..." />
-                <marker date="1459148836000" expanded="true" signature="4712:5446" placeholder="..." />
-                <marker date="1459148836000" expanded="true" signature="4904:5391" placeholder="..." />
-                <marker date="1459148836000" expanded="true" signature="5800:7080" placeholder="..." />
-                <marker date="1459148836000" expanded="true" signature="5912:7031" placeholder="..." />
-                <marker date="1459148836000" expanded="true" signature="5962:6129" placeholder="..." />
-                <marker date="1459148836000" expanded="true" signature="7414:8258" placeholder="..." />
-                <marker date="1459148836000" expanded="true" signature="7458:8210" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="2758:3165" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="2885:2907" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="2958:3001" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="4532:5431" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="4532:5449" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="4693:5427" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="4885:5372" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="5762:7042" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="5874:6993" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="5924:6091" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="7358:8202" placeholder="..." />
+                <marker date="1459163059000" expanded="true" signature="7402:8154" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -86,8 +71,18 @@
       <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5555556">
-              <caret line="106" column="3" selection-start-line="106" selection-start-column="3" selection-end-line="106" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="animate.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/animate.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3209" column="0" selection-start-line="3209" selection-start-column="0" selection-end-line="3209" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -150,7 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/phoneBookModal.js" />
         <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/test.html" />
         <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/index.html" />
         <option value="$PROJECT_DIR$/04 phoneBook-GUI-ObjectOriented/js/main.js" />
@@ -199,8 +193,9 @@
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/animation.js" />
-        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" />
         <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/PhoneBook.js" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/animate.css" />
+        <option value="$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js" />
       </list>
     </option>
   </component>
@@ -212,7 +207,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="790" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -239,52 +234,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="shmuel-jsBootcamp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="shmuel-jsBootcamp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="04 Phone Book v2.0.0">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="shmuel-jsBootcamp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="04 Phone Book v2.0.0">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -306,12 +255,26 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="shmuel-jsBootcamp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../google_sheard_doc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -464,25 +427,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="790" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24665257" sideWeight="0.4319149" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281471" sideWeight="0.48625794" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.36222693" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32714286" sideWeight="0.4721635" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.4947146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3857143" sideWeight="0.3967583" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3857143" sideWeight="0.3967583" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.56808513" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676056" sideWeight="0.60324174" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.4947146" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32714286" sideWeight="0.4721635" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676056" sideWeight="0.60324174" order="3" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281471" sideWeight="0.48625794" order="6" side_tool="false" content_ui="tabs" />
@@ -726,7 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -742,7 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,7 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,7 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -798,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,7 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -814,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -822,7 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6666667">
           <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -838,7 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30697674">
           <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,56 +802,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5555556">
-          <caret line="106" column="3" selection-start-line="106" selection-start-column="3" selection-end-line="106" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/animate.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-78.336">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/animation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="44" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/events.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="32" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="180" column="10" selection-start-line="180" selection-start-column="10" selection-end-line="180" selection-end-column="10" />
-          <folding>
-            <marker date="1459148836000" expanded="true" signature="2758:3165" placeholder="..." />
-            <marker date="1459148836000" expanded="true" signature="2885:2907" placeholder="..." />
-            <marker date="1459148836000" expanded="true" signature="2958:3001" placeholder="..." />
-            <marker date="1459148836000" expanded="true" signature="4551:5450" placeholder="..." />
-            <marker date="1459148836000" expanded="true" signature="4551:5468" placeholder="..." />
-            <marker date="1459148836000" expanded="true" signature="4712:5446" placeholder="..." />
-            <marker date="1459148836000" expanded="true" signature="4904:5391" placeholder="..." />
-            <marker date="1459148836000" expanded="true" signature="5800:7080" placeholder="..." />
-            <marker date="1459148836000" expanded="true" signature="5912:7031" placeholder="..." />
-            <marker date="1459148836000" expanded="true" signature="5962:6129" placeholder="..." />
-            <marker date="1459148836000" expanded="true" signature="7414:8258" placeholder="..." />
-            <marker date="1459148836000" expanded="true" signature="7458:8210" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -922,8 +829,53 @@
     <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/sass/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/style/css/animate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3209" column="0" selection-start-line="3209" selection-start-column="0" selection-end-line="3209" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/animation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="44" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 Phone Book v2.0.0/js/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8797654">
+          <caret line="206" column="19" selection-start-line="190" selection-start-column="12" selection-end-line="206" selection-end-column="19" />
+          <folding>
+            <marker date="1459163059000" expanded="true" signature="2758:3165" placeholder="..." />
+            <marker date="1459163059000" expanded="true" signature="2885:2907" placeholder="..." />
+            <marker date="1459163059000" expanded="true" signature="2958:3001" placeholder="..." />
+            <marker date="1459163059000" expanded="true" signature="4532:5431" placeholder="..." />
+            <marker date="1459163059000" expanded="true" signature="4532:5449" placeholder="..." />
+            <marker date="1459163059000" expanded="true" signature="4693:5427" placeholder="..." />
+            <marker date="1459163059000" expanded="true" signature="4885:5372" placeholder="..." />
+            <marker date="1459163059000" expanded="true" signature="5762:7042" placeholder="..." />
+            <marker date="1459163059000" expanded="true" signature="5874:6993" placeholder="..." />
+            <marker date="1459163059000" expanded="true" signature="5924:6091" placeholder="..." />
+            <marker date="1459163059000" expanded="true" signature="7358:8202" placeholder="..." />
+            <marker date="1459163059000" expanded="true" signature="7402:8154" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -9,10 +9,11 @@ body {
 
 main {
   flex: 1 0 auto;
-  -webkit-animation-duration: 0.01ms; }
+  -webkit-animation-duration: .65s !important;
+  animation-duration: .65s !important; }
 
 .collection .collection-item.avatar {
-  min-height: 0px; }
+  min-height: 63px; }
 
 .collection {
   margin-top: 0;

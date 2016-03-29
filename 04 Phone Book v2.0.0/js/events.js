@@ -1,18 +1,5 @@
 var app = app || {};
 
-
-
-app.dynamicEventListeners = (function () {
-
-    var displayItemBtn = $('.secondary-content');
-
-    displayItemBtn.on('click', function (e) {
-        var itemId = e.target.getAttribute('data-id');
-        app.view.displayItem(itemId);
-        console.log(itemId);
-    });
-});
-
 app.eventListeners = (function () {
 
     var upBtn = $('#up-btn');
@@ -24,8 +11,9 @@ app.eventListeners = (function () {
     var deleteBtn = $('#delete-btn');
     var itemView = $('.item-view');
     var searchBar = $('#search-bar');
+    var title = $('#title');
 
-    searchBar.on('submit',function(e){
+    searchBar.on('submit',function(e){//self explanetory
         e.preventDefault();
         var input = $('#search');
         var searchParam = input.val();
@@ -33,38 +21,36 @@ app.eventListeners = (function () {
         app.view.displaySearchResults(results,searchParam);
         e.target.reset();
         input.blur();
-
     });
 
     upBtn.click(function (e) {
-        var parentId = upBtn.attr('data-parent');
-        app.view.displayItem(parentId,true);
+        var parentId = upBtn.attr('data-parent');//get the parent id from the data attr
+        app.view.displayItem(parentId,true);//display the parent item with the revers animation flag
     });
 
     backBtn.click(function(){
-        var itemId = itemView.attr('data-id');
-        app.view.displayItem(itemId,true);
+        var itemId = itemView.attr('data-id');//get the last displayed item id
+        app.view.displayItem(itemId,true);//display the item with the revers animation flag
     });
 
     //events for the FAB
-
     addGroupBtn.click(function(){
         app.view.addGroupInputField();
         var cancelInputBtn = $('#cancel-input');
-        var submit = $('#submit');
         cancelInputBtn.click(function (){
             app.view.removeInput();
         });
+
         var addGroupForm = $('#add-group');
         addGroupForm.on('submit', function (e) {
             e.preventDefault();
             var name = $('#group_name').val();
             var itemId = itemView.attr('data-id');
-
             var group = app.phoneBook.getItemById(itemId);
 
             group.addSubGroup(name,function(){
                 app.view.removeInput();
+                //shows a nice sucess msg to the user
                 Materialize.toast('a new phone book group was created', 4000);
                 app.view.showNewChildItem(itemId);
                 app.phoneBook.writeToLocal();
@@ -92,8 +78,9 @@ app.eventListeners = (function () {
 
             var group = app.phoneBook.getItemById(itemId);
 
-            group.addContact(firstName,lastName,phoneNumber,function(){
+            group.addContact(firstName,lastName,[phoneNumber],function(){
                 app.view.removeInput();
+                //shows a nice success msg to the user
                 Materialize.toast('a new phone book contact was created', 4000);
                 app.view.showNewChildItem(itemId);
                 app.phoneBook.writeToLocal();
@@ -112,9 +99,11 @@ app.eventListeners = (function () {
         addNumberForm.on('submit',function(e){
             e.preventDefault();
             var phoneNum = $('#number').val();
+
             //geting the current group id
             var itemId = itemView.attr('data-id');
 
+            //geting the current object by the the id from the DOM
             var contact = app.phoneBook.getItemById(itemId);
 
             contact.addPhoneNumber(phoneNum,function(){
@@ -133,12 +122,10 @@ app.eventListeners = (function () {
             app.phoneBook.reset();
             app.view.displayItem(0);
         });
-
-
     });
 
     deleteBtn.click(function(){
-    //    show confermation modal
+        //show confermation modal
         $('#delete-modal').openModal();
         $('#delete-confirm').click(function(){
             var itemId = itemView.attr('data-id');
@@ -152,4 +139,23 @@ app.eventListeners = (function () {
             });
         });
     });
+
+    //
+    //exiting an item name edit mode event which saves the new names
+    //to the object and to the local storage
+    //
+    title.on('blur',function(e){
+
+        var newText = e.target.innerHTML;
+        var itemId = itemView.attr('data-id');
+        var item = app.phoneBook.getItemById(itemId);
+        item.changeName(newText);
+        app.phoneBook.writeToLocal();
+
+    }).on('keypress',function(e){
+        if (e.which == 13){
+            e.preventDefault();
+            e.target.blur();
+        }
+    })
 })();

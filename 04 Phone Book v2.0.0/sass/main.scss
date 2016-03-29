@@ -12,16 +12,17 @@ body {
 
 main {
   flex: 1 0 auto;
-  -webkit-animation-duration: 0.01ms;
+  //-webkit-animation-duration: 0.01ms;
   //-webkit-animation-delay: 2s;
   //-webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: .65s !important;
+  animation-duration: .65s !important;
 
 }
 
-
 //a fix in the for the css framework
 .collection .collection-item.avatar {
-  min-height: 0px;
+  min-height: 63px;
 }
 
 .collection{

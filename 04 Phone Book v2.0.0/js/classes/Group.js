@@ -11,21 +11,26 @@ app.Group = (function(){
     }
 
     Group.prototype.addSubGroup = function (name,callback) {
-        var newSubGroup = new app.Group(name,this,app.helpers.genarateId());
+        var newSubGroup = new app.Group(name,this,app.helpers.generateId());
         this.childItems.push(newSubGroup);
         if(callback){
+            //activate an optional callback function
             callback();
         }
     };
 
     Group.prototype.addContact = function (firstName,lastName,phoneNumbers,callback){
-        var newContact = new app.Contact(firstName,lastName,phoneNumbers,this,app.helpers.genarateId());
+        var newContact = new app.Contact(firstName,lastName,phoneNumbers,this,app.helpers.generateId());
         this.childItems.push(newContact);
         if (callback){
+            //activate an optional callback function
             callback();
         }
     };
 
+    Group.prototype.changeName = function(newName){
+        this.name = newName;
+    };
 
     return Group;
 })();

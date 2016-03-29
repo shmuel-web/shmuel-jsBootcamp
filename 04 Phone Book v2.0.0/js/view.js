@@ -23,7 +23,9 @@ app.view = (function view(phoneBookObj) {
     var itemIcon = $('.item-view i.large');
     var itemBtnz = $('.item-btnz');
 
-
+    //
+    //
+    //
     function writeItemToDomById(id) {
         var item = phoneBook.getItemById(id);
         itemView.attr('data-id',item.id);
@@ -37,6 +39,7 @@ app.view = (function view(phoneBookObj) {
             if (item.name != "Root"){
                 //    print group name
                 title.prepend(item.name);
+                title.attr('contenteditable','true');
                 //    print icon
                 itemIcon.html('group');
                 itemBtnz.show();
@@ -46,6 +49,7 @@ app.view = (function view(phoneBookObj) {
             else if (item.name =="Root"){
                 //    print group name
                 title.prepend('Phone-Book');
+                title.attr('contenteditable','false');
                 //    print icon
                 itemIcon.html('contact_phone');
                 itemBtnz.hide();
@@ -63,6 +67,7 @@ app.view = (function view(phoneBookObj) {
             //    print contact name
             title.empty();
             title.prepend(contact.fName+" "+contact.lName);
+            title.attr('contenteditable','true');
             //print icon
             itemIcon.empty();
             itemIcon.html('person');
@@ -78,18 +83,19 @@ app.view = (function view(phoneBookObj) {
         app.dynamicEventListeners();
     }
 
+
     function printGroupChildItems(itemsArray){
         childItemsContainer.empty();
         itemsArray.forEach(function(item){
             if(item.name){
-                childItemsContainer.prepend(
+                $(
                     '<li class="collection-item avatar"> ' +
                         '<i class="material-icons circle blue">group</i> ' +
                         '<span class="title">'+ item.name +'</span> ' +
                         '<p class="grey-text">'+ item.childItems.length +' sub items </p> ' +
                         '<a class="secondary-content"><i data-id="'+ item.id +'" class="material-icons display-item">send</i></a>' +
                     '</li>'
-                );
+                ).prependTo(childItemsContainer).show();
             }
             else if(item.fName){
                 childItemsContainer.prepend(
@@ -106,12 +112,13 @@ app.view = (function view(phoneBookObj) {
 
     function printPhoneNumbers(phoneNumArray){
         phoneNumbersContainer.empty();
-        phoneNumArray.forEach(function(number){
+        phoneNumArray.forEach(function(number ,index){
             phoneNumbersContainer.prepend(
-                '<li class="collection-item"> ' +
+                '<li class="collection-item" > ' +
                     '<a class="waves-effect waves-teal btn-flat"> ' +
                     '<i class="material-icons left teal-text">call </i> ' +
-                    '</a>'+ number +' ' +
+                    '</a>'+
+                    '<span contenteditable="true" data-index="'+ index +'">'+ number +'</span>' +
                 '</li>'
             )
         });
@@ -123,8 +130,8 @@ app.view = (function view(phoneBookObj) {
         if (hasInput){
             li.remove();
         }
-        childItemsContainer.prepend(
-            '<li data-add="true" class="collection-item avatar animated slideInUp"> ' +
+        $(
+            '<li data-add="true" class="collection-item avatar" style="display: none;"> ' +
                 '<i class="material-icons circle blue">group</i> ' +
                 '<form id="add-group">'+
                     '<div class="input-field">' +
@@ -142,7 +149,7 @@ app.view = (function view(phoneBookObj) {
                 '</form>' +
                 '</div>' +
             '</li>'
-        );
+        ).prependTo(childItemsContainer).show('slow');
     }
 
     function addContactInput(){
@@ -151,8 +158,8 @@ app.view = (function view(phoneBookObj) {
         if (hasInput){
             li.remove();
         }
-        childItemsContainer.prepend(
-            '<li data-add="true" class="collection-item avatar animated slideInUp"> ' +
+        $(
+            '<li data-add="true" class="collection-item avatar" style="display:none;"> ' +
             '<i class="material-icons circle green">person</i> ' +
                 '<form id="add-contact">' +
                     '<div class="input-field">' +
@@ -178,7 +185,7 @@ app.view = (function view(phoneBookObj) {
                     '</div>' +
                 '</form>' +
             '</li>'
-        );
+        ).prependTo(childItemsContainer).show('slow');
     }
 
     function addPhoneNumInputField (){
@@ -187,8 +194,8 @@ app.view = (function view(phoneBookObj) {
         if (hasInput){
             li.remove();
         }
-        phoneNumbersContainer.prepend(
-            '<li data-add="true" class="collection-item animated slideInUp"> ' +
+        $(
+            '<li data-add="true" class="collection-item" style="display: none;" > ' +
                 '<form id="add-number">' +
                     '<div class="input-field">' +
                         '<input id="number" type="text" >' +
@@ -205,7 +212,7 @@ app.view = (function view(phoneBookObj) {
                     '</div>' +
                 '</form>'+
             '</li>'
-        );
+        ).prependTo(childItemsContainer).show('slow');
     }
 
     function showGroupFAB(){
@@ -227,13 +234,53 @@ app.view = (function view(phoneBookObj) {
         var li  = childItemsContainer.children().first();
         var hasInput = li.attr('data-add');
         if (hasInput){
-            li.remove();
+            li.hide('fast',function(){
+                li.remove();
+            })
         }
     }
 
     function showNewChildItem(itemId){
-        //todo create a more eficent and UX aware function
-        displayItem(itemId);
+        //gets the new child item & shows only him
+        var item = app.phoneBook.getItemById(itemId);
+        if (item.name){
+            var newItem = item.childItems[item.childItems.length - 1];
+            if(newItem.name){
+                $(
+                    '<li class="collection-item avatar" style="display: none"> ' +
+                    '<i class="material-icons circle blue">group</i> ' +
+                    '<span class="title">'+ newItem.name +'</span> ' +
+                    '<p class="grey-text">'+ newItem.childItems.length +' sub items </p> ' +
+                    '<a class="secondary-content"><i data-id="'+ newItem.id +'" class="material-icons display-item">send</i></a>' +
+                    '</li>'
+                ).prependTo(childItemsContainer).show('slow');
+            }
+            else if(newItem.fName){
+                $(
+                    '<li class="collection-item avatar" style="display: none">' +
+                    '<i class="material-icons circle green">person</i> ' +
+                    '<span class="title">'+newItem.fName+' '+newItem.lName+'</span> ' +
+                    '<p>'+newItem.phoneNum+'</p> ' +
+                    '<a class="secondary-content"><i data-id="'+newItem.id+'" class="material-icons display-item">send</i></a> ' +
+                    '</li>'
+                ).prependTo(childItemsContainer).show('slow');
+            }
+
+        }
+        else {
+            var number = item.phoneNum[item.phoneNum.length - 1];
+
+            $(
+                '<li class="collection-item" style="display: none"> ' +
+                '<a class="waves-effect waves-teal btn-flat"> ' +
+                '<i class="material-icons left teal-text">call </i> ' +
+                '</a>' +
+                '<span contenteditable="true" data-index="'+ (item.phoneNum.length - 1) + '">'+ number +'</span>'+
+                '</li>'
+            ).prependTo(childItemsContainer).show(500);
+        }
+
+        app.dynamicEventListeners();
     }
 
     function displaySearchResults(results,searchParam){
@@ -250,6 +297,7 @@ app.view = (function view(phoneBookObj) {
         else if (results.length <= 0 ) {
             title.prepend(searchParam + '<div>was not found</div>');
         }
+        title.attr('contenteditable','false');
         //    print icon
         itemIcon.html('youtube_searched_for');
         itemBtnz.fadeOut();
@@ -275,6 +323,19 @@ app.view = (function view(phoneBookObj) {
         }
     }
 
+    function removePhoneNum(index){
+        //[data-index|="'+ index +'"]
+        var phonenumbers = $('li span ');
+        phonenumbers.each(function(){
+            if ($(this).attr('data-index') == index){
+                var li = $(this).parent();
+                li.hide('slow',function(){
+                    li.remove();
+                })
+            }
+        })
+    }
+
     return {
         displayItem: displayItem,
         addGroupInputField:addGroupInput,
@@ -284,6 +345,7 @@ app.view = (function view(phoneBookObj) {
         showNewChildItem:showNewChildItem,
         displaySearchResults:displaySearchResults,
         writeItemToDomById:writeItemToDomById,
+        removePhoneNum:removePhoneNum,
     }
 
 })(app.phoneBook);
