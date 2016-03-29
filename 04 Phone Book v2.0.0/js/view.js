@@ -135,7 +135,7 @@ app.view = (function view(phoneBookObj) {
                 '<i class="material-icons circle blue">group</i> ' +
                 '<form id="add-group">'+
                     '<div class="input-field">' +
-                        '<input id="group_name" type="text" >' +
+                        '<input id="group_name" type="text">' +
                         '<label for="group_name">add new group</label>' +
                         '<div class="input-btnz">'+
                             '<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">' +
@@ -150,6 +150,7 @@ app.view = (function view(phoneBookObj) {
                 '</div>' +
             '</li>'
         ).prependTo(childItemsContainer).show('slow');
+        $('input')[1].focus();
     }
 
     function addContactInput(){
@@ -167,7 +168,7 @@ app.view = (function view(phoneBookObj) {
                         '<label for="first_name">first name</label>' +
                     '</div>' +
                     '<div class="input-field">' +
-                        '<input id="last_name" type="text" >' +
+                        '<input id="last_name" type="text"  >' +
                         '<label for="last_name">last name</label>' +
                     '</div>' +
                     '<div class="input-field">' +
@@ -186,6 +187,7 @@ app.view = (function view(phoneBookObj) {
                 '</form>' +
             '</li>'
         ).prependTo(childItemsContainer).show('slow');
+        $('input')[1].focus();
     }
 
     function addPhoneNumInputField (){
@@ -198,7 +200,7 @@ app.view = (function view(phoneBookObj) {
             '<li data-add="true" class="collection-item" style="display: none;" > ' +
                 '<form id="add-number">' +
                     '<div class="input-field">' +
-                        '<input id="number" type="text" >' +
+                        '<input id="number" type="tel" >' +
                         '<label for="number">phone number</label>' +
                         '<div class="input-btnz">'+
                             '<button id="submit" class="btn waves-effect waves-light" type="submit" name="action">' +
@@ -213,6 +215,7 @@ app.view = (function view(phoneBookObj) {
                 '</form>'+
             '</li>'
         ).prependTo(childItemsContainer).show('slow');
+        $('input')[1].focus();
     }
 
     function showGroupFAB(){
@@ -335,6 +338,21 @@ app.view = (function view(phoneBookObj) {
             }
         })
     }
+
+    //function enterEditMode(element){
+    //
+    //    $(
+    //        '<div class="number-btnz" style="display: none;"> ' +
+    //            '<a class="num-delete-btn" class="waves-effect waves-red btn-flat"> ' +
+    //                '<i class="material-icons red-text">delete</i> ' +
+    //            '</a> ' +
+    //            '<a class="num-edit-btn" class="waves-effect waves-teal btn-flat"> ' +
+    //                '<i class="material-icons teal-text">edit</i> ' +
+    //            '</a> ' +
+    //        '</div>'
+    //    ).prependTo(element).show('slow');
+    //    //app.phoneNumEditModeEvent();
+    //}
 
     return {
         displayItem: displayItem,

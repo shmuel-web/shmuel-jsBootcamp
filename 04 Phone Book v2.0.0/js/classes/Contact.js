@@ -28,12 +28,16 @@ app.Contact = (function(){
     Contact.prototype.changePhoneNum = function(newNum,index){
         if (newNum == ""){
             //if the user deletes the hole number then we remove that phone number from the contact
-            this.phoneNum.splice(index,1);
+            this.deletePhoneNum(index)
         }
         else{
             this.phoneNum[index] = newNum;
         }
 
+    };
+
+    Contact.prototype.deletePhoneNum = function(index){
+        this.phoneNum.splice(index,1);
     };
 
     return Contact

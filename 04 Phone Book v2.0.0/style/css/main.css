@@ -44,7 +44,14 @@ nav form {
     float: left;
     font-size: 2rem;
     margin-top: 20px;
-    margin-left: 10px; }
+    margin-left: 10px;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: initial;
+    transition-delay: initial; }
+    .item-main #title:focus {
+      outline: none;
+      box-shadow: 0 2px 0 0 #26a69a; }
     .item-main #title div {
       font-size: 1.3rem; }
   .item-main .item-btnz {
@@ -60,6 +67,28 @@ nav form {
 
 .collection-item .secondary-content {
   cursor: pointer; }
+
+.collection-item .number-btnz {
+  display: inline-block;
+  float: right;
+  width: 25px;
+  margin-top: -3px;
+  font-size: 1rem; }
+  .collection-item .number-btnz .material-icons {
+    font-size: 1.3rem; }
+  .collection-item .number-btnz .btn-flat {
+    padding: 0 10px;
+    border-radius: 50%; }
+
+.collection-item span {
+  padding-bottom: 5px;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: initial;
+  transition-delay: initial; }
+  .collection-item span:focus {
+    outline: none;
+    box-shadow: 0 2px 0 0 #26a69a; }
 
 .responsive-fab {
   bottom: 6%; }

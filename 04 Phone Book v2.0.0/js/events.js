@@ -9,6 +9,7 @@ app.eventListeners = (function () {
     var addContactBtn = $('#add-contact');
     var addPhoneBtn = $('#add-phone-num');
     var deleteBtn = $('#delete-btn');
+    var editBtn = $('#edit-btn');
     var itemView = $('.item-view');
     var searchBar = $('#search-bar');
     var title = $('#title');
@@ -138,6 +139,10 @@ app.eventListeners = (function () {
                 app.phoneBook.writeToLocal();
             });
         });
+    });
+
+    editBtn.on('click',function(){
+        title.focus();
     });
 
     //
