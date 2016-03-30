@@ -40,31 +40,23 @@ app.dynamicEventListeners = (function () {
             e.target.blur();
         }
     });
+
+
+    $('.phone-num').one('click', function (e) {
+        app.view.enterEditMode(e.target);
+    })
+
+    var deletNumeBtn = $('.num-delete-btn');
+    var itemView = $('.item-view');
+    var itemId = itemView.attr('data-id');//gets the the curently displayed item from the DOM
+    deletNumeBtn.on('click',function(e){
+        console.log('yesh');
+        var index = $(e.target).parent().parent().prev().attr('data-index');
+        console.log(index);
+        var contact = app.phoneBook.getItemById(itemId);
+        contact.deletePhoneNum(index);
+        app.view.removePhoneNum(index);
+        app.phoneBook.writeToLocal();
+
+    });
 });
-
-//app.phoneNumEvents = (function(){
-//    $('.collection-item').one('click',function(){
-//        app.view.enterEditMode(this);
-//    })
-//});
-
-//app.phoneNumEditModeEvent = (function(){
-//    var deleteBtn = $('.num-delete-btn');
-//    var editBtn = $('.num-edit-btn');
-//    var itemView = $('.item-view');
-//    var itemId = itemView.attr('data-id');//gets the the curently displayed item from the DOM
-//    deleteBtn.on('click',function(e){
-//        console.log('yesh');
-//        var index = $(e.target).children().last().attr('data-index');
-//        var contact = app.phoneBook.getItemById(itemId);
-//        contact.deletePhoneNum(index);
-//        app.view.removePhoneNum(index);
-//        app.phoneBook.writeToLocal();
-//
-//    });
-//
-//    editBtn.on('click',function(e){
-//        console.log($(e.target).find('span'));
-//        $(e.target).children().find('span').focus();
-//    });
-//});

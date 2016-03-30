@@ -116,11 +116,16 @@ app.view = (function view(phoneBookObj) {
         phoneNumbersContainer.empty();
         phoneNumArray.forEach(function (number, index) {
             phoneNumbersContainer.prepend(
-                '<li class="collection-item" > ' +
+                '<li class="collection-item phone-num" > ' +
                 '<a class="waves-effect waves-teal btn-flat"> ' +
                 '<i class="material-icons left teal-text">call </i> ' +
                 '</a>' +
                 '<span contenteditable="true" data-index="' + index + '">' + number + '</span>' +
+                '<div class="number-btnz" style="display: none;"> ' +
+                    '<a class="num-delete-btn" class="waves-effect waves-red btn-flat"> ' +
+                        '<i class="material-icons red-text">delete</i> ' +
+                    '</a> ' +
+                '</div>'+
                 '</li>'
             )
         });
@@ -162,7 +167,7 @@ app.view = (function view(phoneBookObj) {
             li.remove();
         }
         $(
-            '<li data-add="true" class="collection-item avatar" style="display:none;"> ' +
+            '<li data-add="true" class="collection-item avatar " style="display:none;"> ' +
             '<i class="material-icons circle green">person</i> ' +
             '<form id="add-contact">' +
             '<div class="input-field">' +
@@ -276,11 +281,16 @@ app.view = (function view(phoneBookObj) {
             var number = item.phoneNum[item.phoneNum.length - 1];
 
             $(
-                '<li class="collection-item" style="display: none"> ' +
+                '<li class="collection-item phone-num" style="display: none"> ' +
                 '<a class="waves-effect waves-teal btn-flat"> ' +
                 '<i class="material-icons left teal-text">call </i> ' +
                 '</a>' +
                 '<span contenteditable="true" data-index="' + (item.phoneNum.length - 1) + '">' + number + '</span>' +
+                '<div class="number-btnz" style="display: none;"> ' +
+                    '<a class="num-delete-btn" class="waves-effect waves-red btn-flat"> ' +
+                        '<i class="material-icons red-text">delete</i> ' +
+                    '</a> ' +
+                '</div>'+
                 '</li>'
             ).prependTo(childItemsContainer).show(500);
         }
@@ -341,20 +351,10 @@ app.view = (function view(phoneBookObj) {
         })
     }
 
-    //function enterEditMode(element){
-    //
-    //    $(
-    //        '<div class="number-btnz" style="display: none;"> ' +
-    //            '<a class="num-delete-btn" class="waves-effect waves-red btn-flat"> ' +
-    //                '<i class="material-icons red-text">delete</i> ' +
-    //            '</a> ' +
-    //            '<a class="num-edit-btn" class="waves-effect waves-teal btn-flat"> ' +
-    //                '<i class="material-icons teal-text">edit</i> ' +
-    //            '</a> ' +
-    //        '</div>'
-    //    ).prependTo(element).show('slow');
-    //    //app.phoneNumEditModeEvent();
-    //}
+    function enterEditMode(element){
+        var phonNumBtnz = $(element).children().last();
+        phonNumBtnz.show('slow');
+    }
 
     return {
         displayItem: displayItem,
@@ -366,6 +366,7 @@ app.view = (function view(phoneBookObj) {
         displaySearchResults: displaySearchResults,
         writeItemToDomById: writeItemToDomById,
         removePhoneNum: removePhoneNum,
+        enterEditMode:enterEditMode,
     }
 
 })(app.phoneBook);
