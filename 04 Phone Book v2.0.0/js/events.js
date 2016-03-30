@@ -147,6 +147,7 @@ app.eventListeners = (function () {
 
     editBtn.on('click', function () {
         title.focus();
+        $('.number-btnz').show('slow');
     });
 
     //
