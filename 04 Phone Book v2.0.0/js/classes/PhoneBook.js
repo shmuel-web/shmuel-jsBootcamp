@@ -69,12 +69,12 @@ app.PhoneBook = (function () {
         var item = item || this.root;
 
         if (item.fName) {
-            if (item.fName.toUpperCase() == sParam || item.lName.toUpperCase() == sParam) {
+            if (item.fName.toUpperCase().indexOf(sParam) != -1 || item.lName.toUpperCase().indexOf(sParam) != -1) {
                 foundItems.push(item);
             }
         }
         else if (item.name) {
-            if (item.name.toUpperCase() == sParam) {
+            if (item.name.toUpperCase().indexOf(sParam) != -1) {
                 foundItems.push(item);
             }
             if (item.childItems.length > 0) {
