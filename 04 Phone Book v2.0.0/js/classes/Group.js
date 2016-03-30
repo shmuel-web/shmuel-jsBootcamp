@@ -1,8 +1,10 @@
+"use strict";
+
 var app = app || {};
 
-app.Group = (function(){
+app.Group = (function () {
     //Class Group
-    function Group(name,currentGroup,id) {
+    function Group(name, currentGroup, id) {
 
         this.name = name;
         this.parent = currentGroup;
@@ -10,25 +12,25 @@ app.Group = (function(){
         this.childItems = [];
     }
 
-    Group.prototype.addSubGroup = function (name,callback) {
-        var newSubGroup = new app.Group(name,this,app.helpers.generateId());
+    Group.prototype.addSubGroup = function (name, callback) {
+        var newSubGroup = new app.Group(name, this, app.helpers.generateId());
         this.childItems.push(newSubGroup);
-        if(callback){
+        if (callback) {
             //activate an optional callback function
             callback();
         }
     };
 
-    Group.prototype.addContact = function (firstName,lastName,phoneNumbers,callback){
-        var newContact = new app.Contact(firstName,lastName,phoneNumbers,this,app.helpers.generateId());
+    Group.prototype.addContact = function (firstName, lastName, phoneNumbers, callback) {
+        var newContact = new app.Contact(firstName, lastName, phoneNumbers, this, app.helpers.generateId());
         this.childItems.push(newContact);
-        if (callback){
+        if (callback) {
             //activate an optional callback function
             callback();
         }
     };
 
-    Group.prototype.changeName = function(newName){
+    Group.prototype.changeName = function (newName) {
         this.name = newName;
     };
 

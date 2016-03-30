@@ -1,3 +1,5 @@
+"use strict";
+
 var app = app || {};
 
 //gets the data from the users local storage if exists else loads the default data

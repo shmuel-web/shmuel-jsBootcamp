@@ -1,13 +1,15 @@
+"use strict";
+
 var app = app || {};
 
-app.helpers = (function(){
+app.helpers = (function () {
     var nextId = 1;
 
-    function generateId(){
+    function generateId() {
         return nextId++;
     }
 
     return {
-        generateId:generateId,
+        generateId: generateId,
     }
 })();

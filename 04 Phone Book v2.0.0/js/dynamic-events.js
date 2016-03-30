@@ -1,3 +1,5 @@
+"use strict";
+
 var app = app || {};
 
 //
@@ -16,7 +18,7 @@ app.dynamicEventListeners = (function () {
     });
 
     var phoneNumber = $('li span');//geting the phone number edit mode element
-    phoneNumber.on('blur',function(e){
+    phoneNumber.on('blur', function (e) {
         //when exiting the edit mode
         var newNumber = e.target.innerHTML;
 
@@ -24,14 +26,14 @@ app.dynamicEventListeners = (function () {
 
         var index = $(e.target).attr('data-index');//gets the index of the phone number from the DOM
         var contact = app.phoneBook.getItemById(itemId);
-        contact.changePhoneNum(newNumber,index);
+        contact.changePhoneNum(newNumber, index);
         app.phoneBook.writeToLocal();
-        if (newNumber == ""){
+        if (newNumber == "") {
             //if the user deletes the hole number remove the item from the DOM
             app.view.removePhoneNum(index);
         }
-    }).on('keypress',function(e){
-        if (e.which == 13){
+    }).on('keypress', function (e) {
+        if (e.which == 13) {
             //when the user press ENTER in edit mode
             e.preventDefault();
             //exits the edit mode & activate the blur event from above which will do all the rest...

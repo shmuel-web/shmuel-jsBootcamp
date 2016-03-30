@@ -1,29 +1,31 @@
+"use strict";
+
 var app = app || {};
 
-app.PhoneBook = (function(){
+app.PhoneBook = (function () {
 
     function PhoneBook() {
-        this.root = new app.Group('Root',false,0);
+        this.root = new app.Group('Root', false, 0);
 
         this.currentGroup = this.root;
     }
 
-    PhoneBook.prototype.addContact = function(firstName, lastName, phoneNumbers,callback){
+    PhoneBook.prototype.addContact = function (firstName, lastName, phoneNumbers, callback) {
         var newContact =
-            new app.Contact(firstName, lastName, phoneNumbers,this.currentGroup, app.helpers.generateId());
+            new app.Contact(firstName, lastName, phoneNumbers, this.currentGroup, app.helpers.generateId());
         this.currentGroup.childItems.push(newContact);
-        if (callback){
+        if (callback) {
             callback();
         }
     };
 
-    PhoneBook.prototype.addGroup = function(name){
-        var newGroup = new app.Group(name,this.currentGroup, app.helpers.generateId());
+    PhoneBook.prototype.addGroup = function (name) {
+        var newGroup = new app.Group(name, this.currentGroup, app.helpers.generateId());
         this.currentGroup.childItems.push(newGroup);
         return newGroup;
     };
 
-    PhoneBook.prototype.deleteItem = function deleteItem(id,callback) {
+    PhoneBook.prototype.deleteItem = function deleteItem(id, callback) {
         if (!isNaN(id)) {
             var item = this.getItemById(id);
             item.parent.childItems.forEach(function (childItem, index, array) {
@@ -31,30 +33,30 @@ app.PhoneBook = (function(){
                     array.splice(index, 1);
                 }
             });
-            currentGroup = item.parent;
-            if (callback){
+            this.currentGroup = item.parent;
+            if (callback) {
                 callback();
             }
         }
     };
 
-    PhoneBook.prototype.getItemById = function getItemById(id , phoneBookItem, foundItem){
+    PhoneBook.prototype.getItemById = function getItemById(id, phoneBookItem, foundItem) {
         foundItem = foundItem || false;
         var item = phoneBookItem || this.root;
 
-        if (item.id == id){
+        if (item.id == id) {
             foundItem = item;
-        }else if(item.childItems && item.childItems.length > 0 && !foundItem){
-            item.childItems.forEach(function(childItem){
-                foundItem = getItemById(id ,childItem, foundItem);
+        } else if (item.childItems && item.childItems.length > 0 && !foundItem) {
+            item.childItems.forEach(function (childItem) {
+                foundItem = getItemById(id, childItem, foundItem);
             });
         }
         return foundItem;
     };
 
-    PhoneBook.prototype.changeCurrentGroup = function changeCurrentGroup(id){
+    PhoneBook.prototype.changeCurrentGroup = function changeCurrentGroup(id) {
         var group = this.getItemById(id);
-        if (group.name){
+        if (group.name) {
             this.currentGroup = group;
         }
 
@@ -126,12 +128,12 @@ app.PhoneBook = (function(){
     };
 
     PhoneBook.prototype.writeToLocal = function writeToLocal() {
-    //saves the current phone book items to local storage
+        //saves the current phone book items to local storage
         var phoneBookArray = this.toJsonArray();
         localStorage.setItem("phoneBookArray", JSON.stringify(phoneBookArray));
     };
 
-    PhoneBook.prototype.load = function(item, index, array) {
+    PhoneBook.prototype.load = function (item, index, array) {
         //this function loads every phone book item from the array in to the object
 
         if (item) {
@@ -158,7 +160,7 @@ app.PhoneBook = (function(){
                         this.load(array[i], i, array);
                     }
                     array.splice(index, item.items);
-                    currentGroup = this.root;
+                    this.currentGroup = this.root;
                 }
             }
         }
@@ -174,7 +176,7 @@ app.PhoneBook = (function(){
                 self.load(item, index, array);
             })
         }
-        else{
+        else {
             this.reset();
         }
     };
