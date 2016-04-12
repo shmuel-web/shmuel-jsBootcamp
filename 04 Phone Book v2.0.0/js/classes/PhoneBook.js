@@ -69,10 +69,10 @@ app.PhoneBook = (function () {
         var item = item || this.root;
 
         if (item.fName) {
-            var fullName = item.fName + " " + item.lName;
+            var fullName = item.fName.toUpperCase() + " " + item.lName.toUpperCase();
             if (item.fName.toUpperCase().indexOf(sParam) != -1 ||
                 item.lName.toUpperCase().indexOf(sParam) != -1 ||
-                fullName.toUpperCase().indexOf(sParam) != -1) {
+                fullName.indexOf(sParam) != -1) {
                 foundItems.push(item);
             }
         }
